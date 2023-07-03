@@ -32,13 +32,18 @@ public:
         if (Process->objectName().isEmpty())
             Process->setObjectName(QString::fromUtf8("Process"));
         Process->resize(640, 480);
+        Process->setStyleSheet(QString::fromUtf8("background-color:white;\n"
+"color:black;\n"
+"font: 300 10pt \"Segoe UI Light\";"));
         verticalLayout = new QVBoxLayout(Process);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         pushButton_4 = new QPushButton(Process);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         QFont font;
-        font.setPointSize(15);
-        font.setBold(true);
+        font.setFamilies({QString::fromUtf8("Segoe UI Light")});
+        font.setPointSize(10);
+        font.setBold(false);
+        font.setItalic(false);
         pushButton_4->setFont(font);
 
         verticalLayout->addWidget(pushButton_4);

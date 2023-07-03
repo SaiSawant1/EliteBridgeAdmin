@@ -13,7 +13,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -34,16 +33,16 @@ public:
     QLabel *label;
     QLabel *label_2;
     QComboBox *comboBox;
-    QHBoxLayout *horizontalLayout;
+    QGridLayout *gridLayout;
     QGridLayout *_2;
     QPushButton *btn_EDI;
     QLabel *label_6;
     QPushButton *btn_process;
     QLabel *label_10;
     QPushButton *btn_reporting;
-    QLabel *label_3;
     QLabel *label_9;
     QPushButton *btn_sysConfig;
+    QLabel *label_3;
     QTabWidget *tabWidget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -52,7 +51,7 @@ public:
     {
         if (Admin->objectName().isEmpty())
             Admin->setObjectName(QString::fromUtf8("Admin"));
-        Admin->resize(888, 682);
+        Admin->resize(905, 704);
         Admin->setStyleSheet(QString::fromUtf8("background-color:rgb(255, 255, 255)"));
         centralwidget = new QWidget(Admin);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
@@ -63,10 +62,15 @@ public:
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
         QFont font;
-        font.setPointSize(19);
-        font.setBold(true);
+        font.setFamilies({QString::fromUtf8("Segoe UI Light")});
+        font.setPointSize(10);
+        font.setBold(false);
+        font.setItalic(false);
         label->setFont(font);
         label->setAutoFillBackground(false);
+        label->setStyleSheet(QString::fromUtf8("background-color:white;\n"
+"color:black;\n"
+"font: 300 10pt \"Segoe UI Light\";"));
         label->setFrameShadow(QFrame::Sunken);
         label->setAlignment(Qt::AlignCenter);
 
@@ -74,19 +78,19 @@ public:
 
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        QFont font1;
-        font1.setPointSize(10);
-        font1.setBold(false);
-        label_2->setFont(font1);
+        label_2->setFont(font);
+        label_2->setStyleSheet(QString::fromUtf8("background-color:white;\n"
+"color:black;\n"
+"font: 300 10pt \"Segoe UI Light\";"));
 
         verticalLayout->addWidget(label_2);
 
         comboBox = new QComboBox(centralwidget);
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        QFont font2;
-        font2.setPointSize(16);
-        font2.setBold(true);
-        comboBox->setFont(font2);
+        QFont font1;
+        font1.setPointSize(16);
+        font1.setBold(true);
+        comboBox->setFont(font1);
         comboBox->setStyleSheet(QString::fromUtf8("border: 2px solid black;"));
 
         verticalLayout->addWidget(comboBox);
@@ -94,17 +98,16 @@ public:
 
         verticalLayout_2->addLayout(verticalLayout);
 
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        gridLayout = new QGridLayout();
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         _2 = new QGridLayout();
         _2->setObjectName(QString::fromUtf8("_2"));
         btn_EDI = new QPushButton(centralwidget);
         btn_EDI->setObjectName(QString::fromUtf8("btn_EDI"));
-        QFont font3;
-        font3.setPointSize(15);
-        font3.setBold(true);
-        btn_EDI->setFont(font3);
-        btn_EDI->setStyleSheet(QString::fromUtf8("border: 4px solid black;"));
+        btn_EDI->setFont(font);
+        btn_EDI->setStyleSheet(QString::fromUtf8("background-color:white;\n"
+"color:black;\n"
+"font: 300 10pt \"Segoe UI Light\";"));
 
         _2->addWidget(btn_EDI, 2, 2, 1, 1);
 
@@ -116,8 +119,10 @@ public:
 
         btn_process = new QPushButton(centralwidget);
         btn_process->setObjectName(QString::fromUtf8("btn_process"));
-        btn_process->setFont(font3);
-        btn_process->setStyleSheet(QString::fromUtf8("border: 4px solid black;"));
+        btn_process->setFont(font);
+        btn_process->setStyleSheet(QString::fromUtf8("background-color:white;\n"
+"color:black;\n"
+"font: 300 10pt \"Segoe UI Light\";"));
 
         _2->addWidget(btn_process, 4, 2, 1, 1);
 
@@ -129,19 +134,12 @@ public:
 
         btn_reporting = new QPushButton(centralwidget);
         btn_reporting->setObjectName(QString::fromUtf8("btn_reporting"));
-        QFont font4;
-        font4.setPointSize(12);
-        font4.setBold(true);
-        btn_reporting->setFont(font4);
-        btn_reporting->setStyleSheet(QString::fromUtf8("border: 4px solid black;"));
+        btn_reporting->setFont(font);
+        btn_reporting->setStyleSheet(QString::fromUtf8("background-color:white;\n"
+"color:black;\n"
+"font: 300 10pt \"Segoe UI Light\";"));
 
         _2->addWidget(btn_reporting, 0, 2, 2, 1);
-
-        label_3 = new QLabel(centralwidget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setPixmap(QPixmap(QString::fromUtf8("C:/Users/Dell/OneDrive/Pictures/Screenshots/Screenshot 2023-06-10 121132.png")));
-
-        _2->addWidget(label_3, 0, 0, 2, 2);
 
         label_9 = new QLabel(centralwidget);
         label_9->setObjectName(QString::fromUtf8("label_9"));
@@ -151,27 +149,35 @@ public:
 
         btn_sysConfig = new QPushButton(centralwidget);
         btn_sysConfig->setObjectName(QString::fromUtf8("btn_sysConfig"));
-        btn_sysConfig->setFont(font3);
-        btn_sysConfig->setStyleSheet(QString::fromUtf8("border: 4px solid black;"));
+        btn_sysConfig->setFont(font);
+        btn_sysConfig->setStyleSheet(QString::fromUtf8("background-color:white;\n"
+"color:black;\n"
+"font: 300 10pt \"Segoe UI Light\";"));
 
         _2->addWidget(btn_sysConfig, 3, 2, 1, 1);
 
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setPixmap(QPixmap(QString::fromUtf8("C:/Users/Dell/OneDrive/Pictures/Screenshots/Screenshot 2023-06-10 121132.png")));
 
-        horizontalLayout->addLayout(_2);
+        _2->addWidget(label_3, 0, 0, 1, 2);
+
+
+        gridLayout->addLayout(_2, 0, 0, 1, 1);
 
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setStyleSheet(QString::fromUtf8("border: 2px solid black;"));
 
-        horizontalLayout->addWidget(tabWidget);
+        gridLayout->addWidget(tabWidget, 0, 1, 1, 1);
 
 
-        verticalLayout_2->addLayout(horizontalLayout);
+        verticalLayout_2->addLayout(gridLayout);
 
         Admin->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Admin);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 888, 25));
+        menubar->setGeometry(QRect(0, 0, 905, 25));
         Admin->setMenuBar(menubar);
         statusbar = new QStatusBar(Admin);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -195,9 +201,9 @@ public:
         btn_process->setText(QCoreApplication::translate("Admin", "Process", nullptr));
         label_10->setText(QString());
         btn_reporting->setText(QCoreApplication::translate("Admin", "Reporting", nullptr));
-        label_3->setText(QString());
         label_9->setText(QString());
         btn_sysConfig->setText(QCoreApplication::translate("Admin", "system configuration", nullptr));
+        label_3->setText(QString());
     } // retranslateUi
 
 };

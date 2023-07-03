@@ -18,9 +18,16 @@
     <widget class="QPushButton" name="pushButton_3">
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
-       <bold>true</bold>
+       <family>Segoe UI Light</family>
+       <pointsize>10</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;
+color:black;
+font: 300 10pt &quot;Segoe UI Light&quot;;</string>
      </property>
      <property name="text">
       <string>Machine Setup</string>
@@ -31,9 +38,16 @@
     <widget class="QPushButton" name="pushButton">
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
-       <bold>true</bold>
+       <family>Segoe UI Light</family>
+       <pointsize>10</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;
+color:black;
+font: 300 10pt &quot;Segoe UI Light&quot;;</string>
      </property>
      <property name="text">
       <string>View Open Stock Transfer</string>
@@ -44,9 +58,16 @@
     <widget class="QPushButton" name="pushButton_2">
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
-       <bold>true</bold>
+       <family>Segoe UI Light</family>
+       <pointsize>10</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;
+color:black;
+font: 300 10pt &quot;Segoe UI Light&quot;;</string>
      </property>
      <property name="text">
       <string>Stock Transfer</string>

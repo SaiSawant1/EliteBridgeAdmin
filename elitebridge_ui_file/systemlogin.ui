@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>787</width>
+    <height>524</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,31 +29,6 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLabel" name="label">
-       <property name="maximumSize">
-        <size>
-         <width>16777155</width>
-         <height>131</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>26</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>System Login</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-       <property name="margin">
-        <number>0</number>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QFrame" name="frame">
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
@@ -62,15 +37,77 @@
         <enum>QFrame::Raised</enum>
        </property>
        <layout class="QGridLayout" name="gridLayout">
+        <item row="2" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="font">
+             <font>
+              <family>Segoe UI Light</family>
+              <pointsize>14</pointsize>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+color:black;
+font: 300 14pt &quot;Segoe UI Light&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Password:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="password">
+            <property name="font">
+             <font>
+              <pointsize>21</pointsize>
+             </font>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
         <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/elitebridgelogollp.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="styleSheet">
+           <string notr="true">background-color:white;
+color:black;
+font: 300 10pt &quot;Segoe UI Light&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Copyright © 2023 EliteBridge Business Solution India LLP - All Rights Reserved.</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <widget class="QLabel" name="label_2">
             <property name="font">
              <font>
-              <pointsize>21</pointsize>
-              <bold>true</bold>
+              <family>Segoe UI Light</family>
+              <pointsize>14</pointsize>
+              <italic>false</italic>
+              <bold>false</bold>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+color:black;
+font: 300 14pt &quot;Segoe UI Light&quot;;</string>
             </property>
             <property name="text">
              <string>User Name:</string>
@@ -88,38 +125,20 @@
           </item>
          </layout>
         </item>
-        <item row="1" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="QLabel" name="label_3">
-            <property name="font">
-             <font>
-              <pointsize>26</pointsize>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>password:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="password">
-            <property name="font">
-             <font>
-              <pointsize>21</pointsize>
-             </font>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="2" column="0">
+        <item row="3" column="0">
          <widget class="QPushButton" name="pushButton">
           <property name="font">
            <font>
-            <pointsize>18</pointsize>
+            <family>Segoe UI Light</family>
+            <pointsize>10</pointsize>
+            <italic>false</italic>
+            <bold>false</bold>
            </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:white;
+color:black;
+font: 300 10pt &quot;Segoe UI Light&quot;;</string>
           </property>
           <property name="text">
            <string>Login</string>

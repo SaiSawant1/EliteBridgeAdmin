@@ -19,6 +19,7 @@ public:
 private:
     Ui::userWindow *ui;
     ClickableLabel* addUserLabel;
+    void addUserForm();
 };
 
 #endif // USERWINDOW_H

@@ -13,13 +13,20 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:white;
+color:black;
+font: 300 10pt &quot;Segoe UI Light&quot;;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QPushButton" name="pushButton_4">
      <property name="font">
       <font>
-       <pointsize>15</pointsize>
-       <bold>true</bold>
+       <family>Segoe UI Light</family>
+       <pointsize>10</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -31,8 +38,10 @@
     <widget class="QPushButton" name="pushButton_3">
      <property name="font">
       <font>
-       <pointsize>15</pointsize>
-       <bold>true</bold>
+       <family>Segoe UI Light</family>
+       <pointsize>10</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -44,8 +53,10 @@
     <widget class="QPushButton" name="pushButton">
      <property name="font">
       <font>
-       <pointsize>15</pointsize>
-       <bold>true</bold>
+       <family>Segoe UI Light</family>
+       <pointsize>10</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -57,8 +68,10 @@
     <widget class="QPushButton" name="pushButton_5">
      <property name="font">
       <font>
-       <pointsize>15</pointsize>
-       <bold>true</bold>
+       <family>Segoe UI Light</family>
+       <pointsize>10</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -70,8 +83,10 @@
     <widget class="QPushButton" name="pushButton_2">
      <property name="font">
       <font>
-       <pointsize>15</pointsize>
-       <bold>true</bold>
+       <family>Segoe UI Light</family>
+       <pointsize>10</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">

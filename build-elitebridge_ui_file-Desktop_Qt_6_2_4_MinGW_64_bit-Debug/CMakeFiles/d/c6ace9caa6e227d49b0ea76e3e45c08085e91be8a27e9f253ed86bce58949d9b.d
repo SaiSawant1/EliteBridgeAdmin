@@ -480,6 +480,8 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/main.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.h \
+  D:/ElieteBridge-git/elitebridge_ui_file/newuserform.cpp \
+  D:/ElieteBridge-git/elitebridge_ui_file/newuserform.h \
   D:/ElieteBridge-git/elitebridge_ui_file/process.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/process.h \
   D:/ElieteBridge-git/elitebridge_ui_file/reporting.cpp \
@@ -493,6 +495,7 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/admin.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/edi.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.ui \
+  D:/ElieteBridge-git/elitebridge_ui_file/newuserform.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/process.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/reporting.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/sysconfig.ui \

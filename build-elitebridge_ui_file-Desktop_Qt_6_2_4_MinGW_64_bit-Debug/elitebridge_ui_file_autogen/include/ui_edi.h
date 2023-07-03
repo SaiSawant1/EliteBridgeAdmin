@@ -33,13 +33,18 @@ public:
         if (EDI->objectName().isEmpty())
             EDI->setObjectName(QString::fromUtf8("EDI"));
         EDI->resize(400, 300);
+        EDI->setStyleSheet(QString::fromUtf8("background-color:white;\n"
+"color:black;\n"
+"font: 300 10pt \"Segoe UI Light\";"));
         verticalLayout = new QVBoxLayout(EDI);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         pushButton_6 = new QPushButton(EDI);
         pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
         QFont font;
-        font.setPointSize(11);
-        font.setBold(true);
+        font.setFamilies({QString::fromUtf8("Segoe UI Light")});
+        font.setPointSize(10);
+        font.setBold(false);
+        font.setItalic(false);
         pushButton_6->setFont(font);
 
         verticalLayout->addWidget(pushButton_6);

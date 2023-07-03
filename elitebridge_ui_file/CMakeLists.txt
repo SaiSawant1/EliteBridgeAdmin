@@ -41,6 +41,10 @@ set(PROJECT_SOURCES
         userwindow.h
         userwindow.ui
         ClickableLabel.h
+        newuserform.cpp
+        newuserform.h
+        newuserform.ui
+
         ${TS_FILES}
 )
 

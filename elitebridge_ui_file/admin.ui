@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>888</width>
-    <height>682</height>
+    <width>905</width>
+    <height>704</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,12 +24,19 @@
        <widget class="QLabel" name="label">
         <property name="font">
          <font>
-          <pointsize>19</pointsize>
-          <bold>true</bold>
+          <family>Segoe UI Light</family>
+          <pointsize>10</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
          </font>
         </property>
         <property name="autoFillBackground">
          <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:white;
+color:black;
+font: 300 10pt &quot;Segoe UI Light&quot;;</string>
         </property>
         <property name="frameShadow">
          <enum>QFrame::Sunken</enum>
@@ -46,9 +53,16 @@
        <widget class="QLabel" name="label_2">
         <property name="font">
          <font>
+          <family>Segoe UI Light</family>
           <pointsize>10</pointsize>
+          <italic>false</italic>
           <bold>false</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:white;
+color:black;
+font: 300 10pt &quot;Segoe UI Light&quot;;</string>
         </property>
         <property name="text">
          <string>Select a location from the List</string>
@@ -71,19 +85,23 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
        <layout class="QGridLayout" name="_2">
         <item row="2" column="2">
          <widget class="QPushButton" name="btn_EDI">
           <property name="font">
            <font>
-            <pointsize>15</pointsize>
-            <bold>true</bold>
+            <family>Segoe UI Light</family>
+            <pointsize>10</pointsize>
+            <italic>false</italic>
+            <bold>false</bold>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">border: 4px solid black;</string>
+           <string notr="true">background-color:white;
+color:black;
+font: 300 10pt &quot;Segoe UI Light&quot;;</string>
           </property>
           <property name="text">
            <string>EDI</string>
@@ -104,12 +122,16 @@
          <widget class="QPushButton" name="btn_process">
           <property name="font">
            <font>
-            <pointsize>15</pointsize>
-            <bold>true</bold>
+            <family>Segoe UI Light</family>
+            <pointsize>10</pointsize>
+            <italic>false</italic>
+            <bold>false</bold>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">border: 4px solid black;</string>
+           <string notr="true">background-color:white;
+color:black;
+font: 300 10pt &quot;Segoe UI Light&quot;;</string>
           </property>
           <property name="text">
            <string>Process</string>
@@ -130,25 +152,19 @@
          <widget class="QPushButton" name="btn_reporting">
           <property name="font">
            <font>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
+            <family>Segoe UI Light</family>
+            <pointsize>10</pointsize>
+            <italic>false</italic>
+            <bold>false</bold>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">border: 4px solid black;</string>
+           <string notr="true">background-color:white;
+color:black;
+font: 300 10pt &quot;Segoe UI Light&quot;;</string>
           </property>
           <property name="text">
            <string>Reporting</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0" rowspan="2" colspan="2">
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string/>
-          </property>
-          <property name="pixmap">
-           <pixmap>C:/Users/Dell/OneDrive/Pictures/Screenshots/Screenshot 2023-06-10 121132.png</pixmap>
           </property>
          </widget>
         </item>
@@ -166,21 +182,35 @@
          <widget class="QPushButton" name="btn_sysConfig">
           <property name="font">
            <font>
-            <pointsize>15</pointsize>
-            <bold>true</bold>
+            <family>Segoe UI Light</family>
+            <pointsize>10</pointsize>
+            <italic>false</italic>
+            <bold>false</bold>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">border: 4px solid black;</string>
+           <string notr="true">background-color:white;
+color:black;
+font: 300 10pt &quot;Segoe UI Light&quot;;</string>
           </property>
           <property name="text">
            <string>system configuration</string>
           </property>
          </widget>
         </item>
+        <item row="0" column="0" colspan="2">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>C:/Users/Dell/OneDrive/Pictures/Screenshots/Screenshot 2023-06-10 121132.png</pixmap>
+          </property>
+         </widget>
+        </item>
        </layout>
       </item>
-      <item>
+      <item row="0" column="1">
        <widget class="QTabWidget" name="tabWidget">
         <property name="styleSheet">
          <string notr="true">border: 2px solid black;</string>
@@ -199,7 +229,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>888</width>
+     <width>905</width>
      <height>25</height>
     </rect>
    </property>

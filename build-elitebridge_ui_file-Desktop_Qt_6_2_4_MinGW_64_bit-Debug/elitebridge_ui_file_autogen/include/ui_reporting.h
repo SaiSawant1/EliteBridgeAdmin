@@ -38,14 +38,23 @@ public:
         pushButton_2 = new QPushButton(Reporting);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         QFont font;
-        font.setPointSize(15);
+        font.setFamilies({QString::fromUtf8("Segoe UI Light")});
+        font.setPointSize(10);
+        font.setBold(false);
+        font.setItalic(false);
         pushButton_2->setFont(font);
+        pushButton_2->setStyleSheet(QString::fromUtf8("background-color:white;\n"
+"color:black;\n"
+"font: 300 10pt \"Segoe UI Light\";"));
 
         verticalLayout->addWidget(pushButton_2);
 
         pushButton = new QPushButton(Reporting);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setFont(font);
+        pushButton->setStyleSheet(QString::fromUtf8("background-color:white;\n"
+"color:black;\n"
+"font: 300 10pt \"Segoe UI Light\";"));
 
         verticalLayout->addWidget(pushButton);
 
