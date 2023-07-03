@@ -307,6 +307,12 @@
 			null
 		],
 		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/systemlogin.h",
+			"MU",
+			"EWIEGA46WW/moc_systemlogin.cpp",
+			null
+		],
+		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/userwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_userwindow.cpp",
@@ -382,6 +388,7 @@
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/process.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/reporting.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/sysconfig.cpp", "MU", null ],
+		[ "D:/ElieteBridge-git/elitebridge_ui_file/systemlogin.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/userwindow.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

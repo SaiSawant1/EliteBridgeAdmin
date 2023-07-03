@@ -37,6 +37,9 @@ set(PROJECT_SOURCES
         process.cpp
         process.h
         process.ui
+        systemlogin.h
+        systemlogin.cpp
+        systemlogin.ui
         ${TS_FILES}
 )
 
