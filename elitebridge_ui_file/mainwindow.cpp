@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "userwindow.h"
 #include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -17,7 +18,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    UserWindow* user=new UserWindow;
-    user->show();
+    userWindow* newUserwindow=new userWindow;
+    newUserwindow->show();
 }
 

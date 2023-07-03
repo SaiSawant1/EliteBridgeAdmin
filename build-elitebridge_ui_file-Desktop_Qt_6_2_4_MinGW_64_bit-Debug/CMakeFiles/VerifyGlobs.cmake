@@ -69,6 +69,7 @@ endif()
 # _directory_contents at C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:83 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/ElieteBridge-git/elitebridge_ui_file/*.h")
 set(OLD_GLOB
+  "D:/ElieteBridge-git/elitebridge_ui_file/ClickableLabel.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/admin.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/edi.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.h"

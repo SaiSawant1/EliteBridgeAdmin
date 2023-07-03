@@ -1,22 +1,24 @@
 #ifndef USERWINDOW_H
 #define USERWINDOW_H
 
-#include <QDialog>
-
+#include <QObject>
+#include <QMainWindow>
+#include "ClickableLabel.h"
 namespace Ui {
-class UserWindow;
+class userWindow;
 }
 
-class UserWindow : public QDialog
+class userWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit UserWindow(QWidget *parent = nullptr);
-    ~UserWindow();
+    explicit userWindow(QWidget *parent = nullptr);
+    ~userWindow();
 
 private:
-    Ui::UserWindow *ui;
+    Ui::userWindow *ui;
+    ClickableLabel* addUserLabel;
 };
 
 #endif // USERWINDOW_H

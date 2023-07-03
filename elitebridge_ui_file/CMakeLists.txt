@@ -22,9 +22,6 @@ set(PROJECT_SOURCES
         admin.cpp
         admin.h
         admin.ui
-        userwindow.h
-        userwindow.cpp
-        userwindow.ui
         reporting.cpp
         reporting.h
         reporting.ui
@@ -40,6 +37,10 @@ set(PROJECT_SOURCES
         systemlogin.h
         systemlogin.cpp
         systemlogin.ui
+        userwindow.cpp
+        userwindow.h
+        userwindow.ui
+        ClickableLabel.h
         ${TS_FILES}
 )
 

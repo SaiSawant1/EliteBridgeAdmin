@@ -271,6 +271,12 @@
 	"HEADERS" : 
 	[
 		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/ClickableLabel.h",
+			"MU",
+			"EWIEGA46WW/moc_ClickableLabel.cpp",
+			null
+		],
+		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/admin.h",
 			"MU",
 			"EWIEGA46WW/moc_admin.cpp",
