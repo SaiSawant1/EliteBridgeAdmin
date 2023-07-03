@@ -43,8 +43,10 @@ void newUserForm::on_pushButton_clicked()
     query.addBindValue( radioValue);
     if (query.exec()) {
          QMessageBox::information(nullptr, "Success", "Data inserted successfully!");
+        reject();
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
+        reject();
     }
     db.close();
 

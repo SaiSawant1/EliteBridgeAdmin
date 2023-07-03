@@ -20,6 +20,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -44,6 +45,7 @@ public:
     QLabel *label;
     QLabel *label_9;
     QTableWidget *tableWidget;
+    QPushButton *pushButton;
     QMenuBar *menubar;
     QMenu *menufile;
     QMenu *menuView;
@@ -57,7 +59,7 @@ public:
     {
         if (userWindow->objectName().isEmpty())
             userWindow->setObjectName(QString::fromUtf8("userWindow"));
-        userWindow->resize(1163, 421);
+        userWindow->resize(1163, 445);
         centralwidget = new QWidget(userWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -126,8 +128,15 @@ public:
 
         tableWidget = new QTableWidget(centralwidget);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+        tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        tableWidget->setAlternatingRowColors(true);
 
         verticalLayout->addWidget(tableWidget);
+
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        verticalLayout->addWidget(pushButton);
 
         userWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(userWindow);
@@ -173,6 +182,7 @@ public:
         label_3->setText(QString());
         label->setText(QString());
         label_9->setText(QString());
+        pushButton->setText(QCoreApplication::translate("userWindow", "PushButton", nullptr));
         menufile->setTitle(QCoreApplication::translate("userWindow", "File", nullptr));
         menuView->setTitle(QCoreApplication::translate("userWindow", "View", nullptr));
         menuRecord->setTitle(QCoreApplication::translate("userWindow", "Record", nullptr));

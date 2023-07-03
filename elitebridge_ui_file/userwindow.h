@@ -3,6 +3,12 @@
 
 #include <QObject>
 #include <QMainWindow>
+#include <QMessageBox>
+#include <QObject>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QTableView>
 #include "ClickableLabel.h"
 namespace Ui {
 class userWindow;
@@ -16,10 +22,16 @@ public:
     explicit userWindow(QWidget *parent = nullptr);
     ~userWindow();
 
+private slots:
+
+    void on_pushButton_clicked();
+
 private:
+    int row=0;
     Ui::userWindow *ui;
     ClickableLabel* addUserLabel;
     void addUserForm();
+    void readDb();
 };
 
 #endif // USERWINDOW_H
