@@ -62,7 +62,7 @@
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>-75</y>
+           <y>0</y>
            <width>697</width>
            <height>420</height>
           </rect>
@@ -92,7 +92,7 @@
                 </size>
                </property>
                <property name="text">
-                <string>User ID</string>
+                <string>User ID           </string>
                </property>
               </widget>
              </item>
@@ -274,7 +274,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="Image"/>
+              <widget class="QLineEdit" name="user_image"/>
              </item>
             </layout>
            </widget>

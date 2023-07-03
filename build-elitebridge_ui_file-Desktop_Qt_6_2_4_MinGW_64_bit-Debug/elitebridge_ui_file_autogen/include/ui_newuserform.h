@@ -58,7 +58,7 @@ public:
     QFrame *frame_8;
     QHBoxLayout *horizontalLayout_20;
     QLabel *label_21;
-    QLineEdit *Image;
+    QLineEdit *user_image;
     QFrame *frame_11;
     QHBoxLayout *horizontalLayout_21;
     QLabel *label_22;
@@ -95,7 +95,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, -75, 697, 420));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 697, 420));
         verticalLayout_3 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         frame_2 = new QFrame(scrollAreaWidgetContents);
@@ -217,10 +217,10 @@ public:
 
         horizontalLayout_20->addWidget(label_21);
 
-        Image = new QLineEdit(frame_8);
-        Image->setObjectName(QString::fromUtf8("Image"));
+        user_image = new QLineEdit(frame_8);
+        user_image->setObjectName(QString::fromUtf8("user_image"));
 
-        horizontalLayout_20->addWidget(Image);
+        horizontalLayout_20->addWidget(user_image);
 
 
         verticalLayout_3->addWidget(frame_8);
@@ -273,7 +273,7 @@ public:
     {
         newUserForm->setWindowTitle(QCoreApplication::translate("newUserForm", "Dialog", nullptr));
         label->setText(QCoreApplication::translate("newUserForm", "Create New user", nullptr));
-        label_2->setText(QCoreApplication::translate("newUserForm", "User ID", nullptr));
+        label_2->setText(QCoreApplication::translate("newUserForm", "User ID           ", nullptr));
         label_23->setText(QCoreApplication::translate("newUserForm", "  Name           ", nullptr));
         label_18->setText(QCoreApplication::translate("newUserForm", "Alias               ", nullptr));
         label_20->setText(QCoreApplication::translate("newUserForm", "Password         ", nullptr));

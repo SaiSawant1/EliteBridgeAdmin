@@ -122,6 +122,12 @@ elitebridge_ui_file_autogen/timestamp: \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qvectornd.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.2.4/mingw_64/include/QtSql/QSqlDatabase \
+  C:/Qt/6.2.4/mingw_64/include/QtSql/QSqlQuery \
+  C:/Qt/6.2.4/mingw_64/include/QtSql/qsqldatabase.h \
+  C:/Qt/6.2.4/mingw_64/include/QtSql/qsqlquery.h \
+  C:/Qt/6.2.4/mingw_64/include/QtSql/qtsql-config.h \
+  C:/Qt/6.2.4/mingw_64/include/QtSql/qtsqlglobal.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QDialog \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow \
@@ -205,6 +211,14 @@ elitebridge_ui_file_autogen/timestamp: \
   C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsTargets-relwithdebinfo.cmake \
   C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsTargets.cmake \
   C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsVersionlessTargets.cmake \
+  C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake \
+  C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake \
+  C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake \
+  C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake \
+  C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake \
+  C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake \
+  C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake \
+  C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Sql/Qt6SqlVersionlessTargets.cmake \
   C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake \
   C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake \
   C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake \

@@ -2,7 +2,8 @@
 #define NEWUSERFORM_H
 
 #include <QDialog>
-
+#include <QSqlDatabase>
+#include <QSqlQuery>
 namespace Ui {
 class newUserForm;
 }
@@ -14,6 +15,9 @@ class newUserForm : public QDialog
 public:
     explicit newUserForm(QWidget *parent = nullptr);
     ~newUserForm();
+
+private slots:
+    void on_pushButton_clicked();
 
 private:
     Ui::newUserForm *ui;
