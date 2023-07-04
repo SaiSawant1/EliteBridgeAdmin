@@ -50,7 +50,12 @@ set(PROJECT_SOURCES
         newitemform.cpp
         newitemform.ui
         newitemform.h
-
+        jobmainwindow.cpp
+        jobmainwindow.h
+        jobmainwindow.ui
+        newjobform.cpp
+        newjobform.h
+        newjobform.ui
         ${TS_FILES}
 )
 

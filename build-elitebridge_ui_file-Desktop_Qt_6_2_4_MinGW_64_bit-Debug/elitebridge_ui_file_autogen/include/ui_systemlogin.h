@@ -68,6 +68,7 @@ public:
         label_3->setStyleSheet(QString::fromUtf8("\n"
 "color:black;\n"
 "font: 300 14pt \"Segoe UI Light\";"));
+        label_3->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_2->addWidget(label_3);
 
@@ -84,7 +85,11 @@ public:
 
         label = new QLabel(frame);
         label->setObjectName(QString::fromUtf8("label"));
+        QFont font2;
+        font2.setPointSize(34);
+        label->setFont(font2);
         label->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/elitebridgelogollp.png")));
+        label->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(label, 0, 0, 1, 1);
 
@@ -104,6 +109,7 @@ public:
         label_2->setStyleSheet(QString::fromUtf8("\n"
 "color:black;\n"
 "font: 300 14pt \"Segoe UI Light\";"));
+        label_2->setAlignment(Qt::AlignCenter);
 
         horizontalLayout->addWidget(label_2);
 
@@ -118,12 +124,12 @@ public:
 
         pushButton = new QPushButton(frame);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        QFont font2;
-        font2.setFamilies({QString::fromUtf8("Segoe UI Light")});
-        font2.setPointSize(10);
-        font2.setBold(false);
-        font2.setItalic(false);
-        pushButton->setFont(font2);
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("Segoe UI Light")});
+        font3.setPointSize(10);
+        font3.setBold(false);
+        font3.setItalic(false);
+        pushButton->setFont(font3);
         pushButton->setStyleSheet(QString::fromUtf8("background-color:white;\n"
 "color:black;\n"
 "font: 300 10pt \"Segoe UI Light\";"));
@@ -145,10 +151,10 @@ public:
     void retranslateUi(QDialog *SystemLogin)
     {
         SystemLogin->setWindowTitle(QCoreApplication::translate("SystemLogin", "Dialog", nullptr));
-        label_3->setText(QCoreApplication::translate("SystemLogin", "Password:", nullptr));
-        label->setText(QString());
+        label_3->setText(QCoreApplication::translate("SystemLogin", "Password:                        ", nullptr));
+        label->setText(QCoreApplication::translate("SystemLogin", "Login", nullptr));
         label_4->setText(QCoreApplication::translate("SystemLogin", "Copyright \302\251 2023 EliteBridge Business Solution India LLP - All Rights Reserved.", nullptr));
-        label_2->setText(QCoreApplication::translate("SystemLogin", "User Name:", nullptr));
+        label_2->setText(QCoreApplication::translate("SystemLogin", "User Name:                     ", nullptr));
         pushButton->setText(QCoreApplication::translate("SystemLogin", "Login", nullptr));
     } // retranslateUi
 

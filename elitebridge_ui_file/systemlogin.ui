@@ -55,7 +55,10 @@ color:black;
 font: 300 14pt &quot;Segoe UI Light&quot;;</string>
             </property>
             <property name="text">
-             <string>Password:</string>
+             <string>Password:                        </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -72,11 +75,19 @@ font: 300 14pt &quot;Segoe UI Light&quot;;</string>
         </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <pointsize>34</pointsize>
+           </font>
+          </property>
           <property name="text">
-           <string/>
+           <string>Login</string>
           </property>
           <property name="pixmap">
            <pixmap>../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/elitebridgelogollp.png</pixmap>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -110,7 +121,10 @@ color:black;
 font: 300 14pt &quot;Segoe UI Light&quot;;</string>
             </property>
             <property name="text">
-             <string>User Name:</string>
+             <string>User Name:                     </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>

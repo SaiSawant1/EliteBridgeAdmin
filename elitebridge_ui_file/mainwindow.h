@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "userwindow.h"
+#include "jobmainwindow.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -16,9 +17,12 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
 
     void on_items_clicked();
+
+    void on_jobs_clicked();
+
+    void on_users_clicked();
 
 private:
     Ui::MainWindow *ui;

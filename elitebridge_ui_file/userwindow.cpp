@@ -64,9 +64,9 @@ void userWindow:: readDb()
         return;
     }
 
-    ui->tableWidget->setColumnCount(6);
+    ui->tableWidget->setColumnCount(7);
     QStringList labels;
-    labels << "Item" << "Qty" << "Description" << "Alias" << "Group" << "Sub_Group";
+    labels << "UserID" << "Name" << "Alias" << "Password"<<"ImageFile" << "ImageFile" << "AllowtoLogin";
     ui->tableWidget->setHorizontalHeaderLabels(labels);
 
     int rowCount=0;

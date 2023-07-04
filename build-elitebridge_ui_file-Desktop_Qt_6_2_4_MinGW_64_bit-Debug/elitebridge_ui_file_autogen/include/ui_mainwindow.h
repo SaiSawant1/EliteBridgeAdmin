@@ -55,7 +55,7 @@ public:
     QLabel *label_48;
     QLabel *label_49;
     QPushButton *pushButton_43;
-    QPushButton *pushButton_44;
+    QPushButton *jobs;
     QPushButton *pushButton_45;
     QPushButton *pushButton_46;
     QPushButton *pushButton_47;
@@ -235,10 +235,10 @@ public:
 
         gridLayout_14->addWidget(pushButton_43, 1, 0, 1, 1);
 
-        pushButton_44 = new QPushButton(centralwidget);
-        pushButton_44->setObjectName(QString::fromUtf8("pushButton_44"));
+        jobs = new QPushButton(centralwidget);
+        jobs->setObjectName(QString::fromUtf8("jobs"));
 
-        gridLayout_14->addWidget(pushButton_44, 1, 1, 1, 1);
+        gridLayout_14->addWidget(jobs, 1, 1, 1, 1);
 
         pushButton_45 = new QPushButton(centralwidget);
         pushButton_45->setObjectName(QString::fromUtf8("pushButton_45"));
@@ -419,7 +419,7 @@ public:
         label_48->setText(QString());
         label_49->setText(QString());
         pushButton_43->setText(QCoreApplication::translate("MainWindow", "User Cost Centers", nullptr));
-        pushButton_44->setText(QCoreApplication::translate("MainWindow", "Jobs", nullptr));
+        jobs->setText(QCoreApplication::translate("MainWindow", "Jobs", nullptr));
         pushButton_45->setText(QCoreApplication::translate("MainWindow", "Restrictions", nullptr));
         pushButton_46->setText(QCoreApplication::translate("MainWindow", "Modify", nullptr));
         pushButton_47->setText(QCoreApplication::translate("MainWindow", "Job Groups", nullptr));

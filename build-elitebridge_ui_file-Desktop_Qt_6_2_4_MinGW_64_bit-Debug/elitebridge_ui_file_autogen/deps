@@ -515,11 +515,15 @@ elitebridge_ui_file_autogen/timestamp: \
 	D:/ElieteBridge-git/elitebridge_ui_file/edi.h \
 	D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.cpp \
 	D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.h \
+	D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.cpp \
+	D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.h \
 	D:/ElieteBridge-git/elitebridge_ui_file/main.cpp \
 	D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.cpp \
 	D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.h \
 	D:/ElieteBridge-git/elitebridge_ui_file/newitemform.cpp \
 	D:/ElieteBridge-git/elitebridge_ui_file/newitemform.h \
+	D:/ElieteBridge-git/elitebridge_ui_file/newjobform.cpp \
+	D:/ElieteBridge-git/elitebridge_ui_file/newjobform.h \
 	D:/ElieteBridge-git/elitebridge_ui_file/newuserform.cpp \
 	D:/ElieteBridge-git/elitebridge_ui_file/newuserform.h \
 	D:/ElieteBridge-git/elitebridge_ui_file/process.cpp \
@@ -535,8 +539,10 @@ elitebridge_ui_file_autogen/timestamp: \
 	D:/ElieteBridge-git/elitebridge_ui_file/admin.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/edi.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.ui \
+	D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/newitemform.ui \
+	D:/ElieteBridge-git/elitebridge_ui_file/newjobform.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/newuserform.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/process.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/reporting.ui \

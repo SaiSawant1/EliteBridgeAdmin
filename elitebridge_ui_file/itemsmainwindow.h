@@ -24,6 +24,9 @@ public:
     explicit ItemsMainWindow(QWidget *parent = nullptr);
     ~ItemsMainWindow();
 
+private slots:
+    void on_refereshTable_clicked();
+
 private:
     Ui::ItemsMainWindow *ui;
     ClickableLabel* addItemLabel;
