@@ -44,6 +44,12 @@ set(PROJECT_SOURCES
         newuserform.cpp
         newuserform.h
         newuserform.ui
+        itemsmainwindow.cpp
+        itemsmainwindow.h
+        itemsmainwindow.ui
+        newitemform.cpp
+        newitemform.ui
+        newitemform.h
 
         ${TS_FILES}
 )

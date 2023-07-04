@@ -27,7 +27,7 @@ private slots:
     void on_pushButton_clicked();
 
 private:
-    int row=0;
+
     Ui::userWindow *ui;
     ClickableLabel* addUserLabel;
     void addUserForm();

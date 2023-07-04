@@ -38,7 +38,7 @@ public:
     QLabel *label_7;
     QLabel *label_2;
     QLabel *label_3;
-    QPushButton *pushButton;
+    QPushButton *users;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
@@ -71,7 +71,7 @@ public:
     QLabel *label_41;
     QLabel *label_42;
     QPushButton *pushButton_36;
-    QPushButton *pushButton_37;
+    QPushButton *items;
     QPushButton *pushButton_38;
     QPushButton *pushButton_39;
     QPushButton *pushButton_40;
@@ -90,7 +90,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(779, 554);
+        MainWindow->resize(779, 601);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout_16 = new QGridLayout(centralwidget);
@@ -143,10 +143,10 @@ public:
 
         gridLayout->addWidget(label_3, 0, 2, 1, 1);
 
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        users = new QPushButton(centralwidget);
+        users->setObjectName(QString::fromUtf8("users"));
 
-        gridLayout->addWidget(pushButton, 1, 0, 1, 1);
+        gridLayout->addWidget(users, 1, 0, 1, 1);
 
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
@@ -322,10 +322,10 @@ public:
 
         gridLayout_12->addWidget(pushButton_36, 1, 0, 1, 1);
 
-        pushButton_37 = new QPushButton(centralwidget);
-        pushButton_37->setObjectName(QString::fromUtf8("pushButton_37"));
+        items = new QPushButton(centralwidget);
+        items->setObjectName(QString::fromUtf8("items"));
 
-        gridLayout_12->addWidget(pushButton_37, 1, 1, 1, 1);
+        gridLayout_12->addWidget(items, 1, 1, 1, 1);
 
         pushButton_38 = new QPushButton(centralwidget);
         pushButton_38->setObjectName(QString::fromUtf8("pushButton_38"));
@@ -404,7 +404,7 @@ public:
         label_7->setText(QString());
         label_2->setText(QString());
         label_3->setText(QString());
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Users", nullptr));
+        users->setText(QCoreApplication::translate("MainWindow", "Users", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "Location", nullptr));
         pushButton_3->setText(QCoreApplication::translate("MainWindow", "Terminology", nullptr));
         pushButton_4->setText(QCoreApplication::translate("MainWindow", "Clean Active ", nullptr));
@@ -433,7 +433,7 @@ public:
         label_41->setText(QString());
         label_42->setText(QString());
         pushButton_36->setText(QCoreApplication::translate("MainWindow", "User Group", nullptr));
-        pushButton_37->setText(QCoreApplication::translate("MainWindow", "Drawer Setup", nullptr));
+        items->setText(QCoreApplication::translate("MainWindow", "Items", nullptr));
         pushButton_38->setText(QCoreApplication::translate("MainWindow", "Rationing", nullptr));
         pushButton_39->setText(QCoreApplication::translate("MainWindow", " Setup User", nullptr));
         pushButton_40->setText(QCoreApplication::translate("MainWindow", "Troubleshoot", nullptr));

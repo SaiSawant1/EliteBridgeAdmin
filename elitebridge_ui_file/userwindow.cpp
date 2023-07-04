@@ -106,7 +106,6 @@ void userWindow:: readDb()
 
 void userWindow::on_pushButton_clicked()
 {
-    QMessageBox::information(this, "Button Clicked", "The button was clicked!");
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);
     QStringList label;

@@ -182,7 +182,7 @@ public:
         label_3->setText(QString());
         label->setText(QString());
         label_9->setText(QString());
-        pushButton->setText(QCoreApplication::translate("userWindow", "PushButton", nullptr));
+        pushButton->setText(QCoreApplication::translate("userWindow", "referesh", nullptr));
         menufile->setTitle(QCoreApplication::translate("userWindow", "File", nullptr));
         menuView->setTitle(QCoreApplication::translate("userWindow", "View", nullptr));
         menuRecord->setTitle(QCoreApplication::translate("userWindow", "Record", nullptr));

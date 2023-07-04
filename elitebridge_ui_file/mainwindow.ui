@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>779</width>
-    <height>554</height>
+    <height>601</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -92,7 +92,7 @@
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="users">
             <property name="text">
              <string>Users</string>
             </property>
@@ -353,9 +353,9 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QPushButton" name="pushButton_37">
+           <widget class="QPushButton" name="items">
             <property name="text">
-             <string>Drawer Setup</string>
+             <string>Items</string>
             </property>
            </widget>
           </item>

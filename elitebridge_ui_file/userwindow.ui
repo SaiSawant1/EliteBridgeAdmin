@@ -123,7 +123,7 @@
     <item>
      <widget class="QPushButton" name="pushButton">
       <property name="text">
-       <string>PushButton</string>
+       <string>referesh</string>
       </property>
      </widget>
     </item>

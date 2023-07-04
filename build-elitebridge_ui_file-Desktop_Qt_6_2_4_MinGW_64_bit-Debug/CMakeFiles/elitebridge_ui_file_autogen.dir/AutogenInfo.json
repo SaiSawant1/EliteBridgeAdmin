@@ -323,9 +323,21 @@
 			null
 		],
 		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_itemsmainwindow.cpp",
+			null
+		],
+		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/newitemform.h",
+			"MU",
+			"EWIEGA46WW/moc_newitemform.cpp",
 			null
 		],
 		[
@@ -431,8 +443,14 @@
 	[
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/admin.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/edi.cpp", "MU", null ],
+		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.cpp",
+			"MU",
+			null
+		],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/main.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.cpp", "MU", null ],
+		[ "D:/ElieteBridge-git/elitebridge_ui_file/newitemform.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/newuserform.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/process.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/reporting.cpp", "MU", null ],
