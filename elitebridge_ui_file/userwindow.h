@@ -26,6 +26,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_create_transaction_triggered();
+
 private:
 
     Ui::userWindow *ui;

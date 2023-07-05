@@ -317,6 +317,12 @@
 			null
 		],
 		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.h",
+			"MU",
+			"EWIEGA46WW/moc_createusertransaction.cpp",
+			null
+		],
+		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/edi.h",
 			"MU",
 			"EWIEGA46WW/moc_edi.cpp",
@@ -454,6 +460,11 @@
 	"SOURCES" : 
 	[
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/admin.cpp", "MU", null ],
+		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.cpp",
+			"MU",
+			null
+		],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/edi.cpp", "MU", null ],
 		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.cpp",

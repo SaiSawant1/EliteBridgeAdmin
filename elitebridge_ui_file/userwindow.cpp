@@ -7,6 +7,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QTableView>
+#include "createusertransaction.h"
 
 
 
@@ -113,5 +114,12 @@ void userWindow::on_pushButton_clicked()
     ui->tableWidget->setHorizontalHeaderLabels(label);
     readDb();
 
+}
+
+
+void userWindow::on_create_transaction_triggered()
+{
+    CreateUserTransaction* createWindow=new CreateUserTransaction();
+    createWindow->show();
 }
 

@@ -128,6 +128,7 @@ elitebridge_ui_file_autogen/timestamp: \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qvectornd.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.2.4/mingw_64/include/QtSql/QSql \
   C:/Qt/6.2.4/mingw_64/include/QtSql/QSqlDatabase \
   C:/Qt/6.2.4/mingw_64/include/QtSql/QSqlError \
   C:/Qt/6.2.4/mingw_64/include/QtSql/QSqlQuery \
@@ -511,6 +512,8 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/ClickableLabel.h \
   D:/ElieteBridge-git/elitebridge_ui_file/admin.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/admin.h \
+  D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.cpp \
+  D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.h \
   D:/ElieteBridge-git/elitebridge_ui_file/edi.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/edi.h \
   D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.cpp \
@@ -537,6 +540,7 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/userwindow.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/userwindow.h \
   D:/ElieteBridge-git/elitebridge_ui_file/admin.ui \
+  D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/edi.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.ui \

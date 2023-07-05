@@ -31,6 +31,8 @@ QT_BEGIN_NAMESPACE
 class Ui_userWindow
 {
 public:
+    QAction *create_transaction;
+    QAction *actionupdate_transaction;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QFrame *frame;
@@ -53,6 +55,7 @@ public:
     QMenu *menuAudit;
     QMenu *menuLocation;
     QMenu *menuUser;
+    QMenu *menuTransaction;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *userWindow)
@@ -60,6 +63,10 @@ public:
         if (userWindow->objectName().isEmpty())
             userWindow->setObjectName(QString::fromUtf8("userWindow"));
         userWindow->resize(1163, 445);
+        create_transaction = new QAction(userWindow);
+        create_transaction->setObjectName(QString::fromUtf8("create_transaction"));
+        actionupdate_transaction = new QAction(userWindow);
+        actionupdate_transaction->setObjectName(QString::fromUtf8("actionupdate_transaction"));
         centralwidget = new QWidget(userWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -154,6 +161,8 @@ public:
         menuLocation->setObjectName(QString::fromUtf8("menuLocation"));
         menuUser = new QMenu(menubar);
         menuUser->setObjectName(QString::fromUtf8("menuUser"));
+        menuTransaction = new QMenu(menuUser);
+        menuTransaction->setObjectName(QString::fromUtf8("menuTransaction"));
         userWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(userWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -165,6 +174,11 @@ public:
         menubar->addAction(menuAudit->menuAction());
         menubar->addAction(menuLocation->menuAction());
         menubar->addAction(menuUser->menuAction());
+        menuUser->addAction(menuTransaction->menuAction());
+        menuTransaction->addSeparator();
+        menuTransaction->addSeparator();
+        menuTransaction->addAction(create_transaction);
+        menuTransaction->addAction(actionupdate_transaction);
 
         retranslateUi(userWindow);
 
@@ -174,6 +188,8 @@ public:
     void retranslateUi(QMainWindow *userWindow)
     {
         userWindow->setWindowTitle(QCoreApplication::translate("userWindow", "MainWindow", nullptr));
+        create_transaction->setText(QCoreApplication::translate("userWindow", "create transaction", nullptr));
+        actionupdate_transaction->setText(QCoreApplication::translate("userWindow", "update transaction", nullptr));
         label_7->setText(QString());
         label_6->setText(QString());
         label_5->setText(QString());
@@ -189,6 +205,7 @@ public:
         menuAudit->setTitle(QCoreApplication::translate("userWindow", "Audit", nullptr));
         menuLocation->setTitle(QCoreApplication::translate("userWindow", "Location", nullptr));
         menuUser->setTitle(QCoreApplication::translate("userWindow", "User", nullptr));
+        menuTransaction->setTitle(QCoreApplication::translate("userWindow", "Transaction", nullptr));
     } // retranslateUi
 
 };

@@ -167,6 +167,16 @@
     <property name="title">
      <string>User</string>
     </property>
+    <widget class="QMenu" name="menuTransaction">
+     <property name="title">
+      <string>Transaction</string>
+     </property>
+     <addaction name="separator"/>
+     <addaction name="separator"/>
+     <addaction name="create_transaction"/>
+     <addaction name="actionupdate_transaction"/>
+    </widget>
+    <addaction name="menuTransaction"/>
    </widget>
    <addaction name="menufile"/>
    <addaction name="menuView"/>
@@ -176,6 +186,16 @@
    <addaction name="menuUser"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="create_transaction">
+   <property name="text">
+    <string>create transaction</string>
+   </property>
+  </action>
+  <action name="actionupdate_transaction">
+   <property name="text">
+    <string>update transaction</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

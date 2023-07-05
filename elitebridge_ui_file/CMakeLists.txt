@@ -56,6 +56,9 @@ set(PROJECT_SOURCES
         newjobform.cpp
         newjobform.h
         newjobform.ui
+        createusertransaction.cpp
+        createusertransaction.h
+        createusertransaction.ui
         ${TS_FILES}
 )
 
