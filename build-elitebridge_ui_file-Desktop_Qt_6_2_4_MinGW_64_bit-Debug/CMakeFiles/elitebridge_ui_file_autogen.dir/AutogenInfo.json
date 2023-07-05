@@ -393,6 +393,12 @@
 			"MU",
 			"EWIEGA46WW/moc_userwindow.cpp",
 			null
+		],
+		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/viewgrants.h",
+			"MU",
+			"EWIEGA46WW/moc_viewgrants.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -485,7 +491,8 @@
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/reporting.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/sysconfig.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/systemlogin.cpp", "MU", null ],
-		[ "D:/ElieteBridge-git/elitebridge_ui_file/userwindow.cpp", "MU", null ]
+		[ "D:/ElieteBridge-git/elitebridge_ui_file/userwindow.cpp", "MU", null ],
+		[ "D:/ElieteBridge-git/elitebridge_ui_file/viewgrants.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

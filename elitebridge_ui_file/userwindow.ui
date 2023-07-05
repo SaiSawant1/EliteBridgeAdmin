@@ -175,6 +175,7 @@
      <addaction name="separator"/>
      <addaction name="create_transaction"/>
      <addaction name="actionupdate_transaction"/>
+     <addaction name="actionuser_grants"/>
     </widget>
     <addaction name="menuTransaction"/>
    </widget>
@@ -194,6 +195,11 @@
   <action name="actionupdate_transaction">
    <property name="text">
     <string>update transaction</string>
+   </property>
+  </action>
+  <action name="actionuser_grants">
+   <property name="text">
+    <string>user grants</string>
    </property>
   </action>
  </widget>

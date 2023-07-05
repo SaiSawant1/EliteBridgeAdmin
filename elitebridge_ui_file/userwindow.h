@@ -28,6 +28,8 @@ private slots:
 
     void on_create_transaction_triggered();
 
+    void on_actionuser_grants_triggered();
+
 private:
 
     Ui::userWindow *ui;

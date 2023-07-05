@@ -33,6 +33,7 @@ class Ui_userWindow
 public:
     QAction *create_transaction;
     QAction *actionupdate_transaction;
+    QAction *actionuser_grants;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QFrame *frame;
@@ -67,6 +68,8 @@ public:
         create_transaction->setObjectName(QString::fromUtf8("create_transaction"));
         actionupdate_transaction = new QAction(userWindow);
         actionupdate_transaction->setObjectName(QString::fromUtf8("actionupdate_transaction"));
+        actionuser_grants = new QAction(userWindow);
+        actionuser_grants->setObjectName(QString::fromUtf8("actionuser_grants"));
         centralwidget = new QWidget(userWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -179,6 +182,7 @@ public:
         menuTransaction->addSeparator();
         menuTransaction->addAction(create_transaction);
         menuTransaction->addAction(actionupdate_transaction);
+        menuTransaction->addAction(actionuser_grants);
 
         retranslateUi(userWindow);
 
@@ -190,6 +194,7 @@ public:
         userWindow->setWindowTitle(QCoreApplication::translate("userWindow", "MainWindow", nullptr));
         create_transaction->setText(QCoreApplication::translate("userWindow", "create transaction", nullptr));
         actionupdate_transaction->setText(QCoreApplication::translate("userWindow", "update transaction", nullptr));
+        actionuser_grants->setText(QCoreApplication::translate("userWindow", "user grants", nullptr));
         label_7->setText(QString());
         label_6->setText(QString());
         label_5->setText(QString());

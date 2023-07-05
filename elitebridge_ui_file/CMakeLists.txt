@@ -59,6 +59,9 @@ set(PROJECT_SOURCES
         createusertransaction.cpp
         createusertransaction.h
         createusertransaction.ui
+        viewgrants.cpp
+        viewgrants.h
+        viewgrants.ui
         ${TS_FILES}
 )
 

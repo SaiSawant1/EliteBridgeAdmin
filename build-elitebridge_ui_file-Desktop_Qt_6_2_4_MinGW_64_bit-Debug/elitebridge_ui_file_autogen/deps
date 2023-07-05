@@ -539,6 +539,8 @@ elitebridge_ui_file_autogen/timestamp: \
 	D:/ElieteBridge-git/elitebridge_ui_file/systemlogin.h \
 	D:/ElieteBridge-git/elitebridge_ui_file/userwindow.cpp \
 	D:/ElieteBridge-git/elitebridge_ui_file/userwindow.h \
+	D:/ElieteBridge-git/elitebridge_ui_file/viewgrants.cpp \
+	D:/ElieteBridge-git/elitebridge_ui_file/viewgrants.h \
 	D:/ElieteBridge-git/elitebridge_ui_file/admin.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/edi.ui \
@@ -553,4 +555,5 @@ elitebridge_ui_file_autogen/timestamp: \
 	D:/ElieteBridge-git/elitebridge_ui_file/sysconfig.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/systemlogin.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/userwindow.ui \
+	D:/ElieteBridge-git/elitebridge_ui_file/viewgrants.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

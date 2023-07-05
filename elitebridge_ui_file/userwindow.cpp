@@ -8,7 +8,7 @@
 #include <QSqlError>
 #include <QTableView>
 #include "createusertransaction.h"
-
+#include "viewgrants.h"
 
 
 userWindow::userWindow(QWidget *parent) :
@@ -121,5 +121,12 @@ void userWindow::on_create_transaction_triggered()
 {
     CreateUserTransaction* createWindow=new CreateUserTransaction();
     createWindow->show();
+}
+
+
+void userWindow::on_actionuser_grants_triggered()
+{
+    ViewGrants* grantsDialog=new ViewGrants;
+    grantsDialog->show();
 }
 
