@@ -48,6 +48,7 @@ set(OLD_GLOB
   "D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.cpp"
   "D:/ElieteBridge-git/elitebridge_ui_file/main.cpp"
   "D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.cpp"
+  "D:/ElieteBridge-git/elitebridge_ui_file/newgroupform.cpp"
   "D:/ElieteBridge-git/elitebridge_ui_file/newitemform.cpp"
   "D:/ElieteBridge-git/elitebridge_ui_file/newjobform.cpp"
   "D:/ElieteBridge-git/elitebridge_ui_file/newuserform.cpp"
@@ -56,6 +57,7 @@ set(OLD_GLOB
   "D:/ElieteBridge-git/elitebridge_ui_file/reporting.cpp"
   "D:/ElieteBridge-git/elitebridge_ui_file/sysconfig.cpp"
   "D:/ElieteBridge-git/elitebridge_ui_file/systemlogin.cpp"
+  "D:/ElieteBridge-git/elitebridge_ui_file/usergroupmainwindow.cpp"
   "D:/ElieteBridge-git/elitebridge_ui_file/userwindow.cpp"
   "D:/ElieteBridge-git/elitebridge_ui_file/viewgrants.cpp"
   )
@@ -83,6 +85,7 @@ set(OLD_GLOB
   "D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.h"
+  "D:/ElieteBridge-git/elitebridge_ui_file/newgroupform.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/newitemform.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/newjobform.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/newuserform.h"
@@ -91,6 +94,7 @@ set(OLD_GLOB
   "D:/ElieteBridge-git/elitebridge_ui_file/reporting.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/sysconfig.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/systemlogin.h"
+  "D:/ElieteBridge-git/elitebridge_ui_file/usergroupmainwindow.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/userwindow.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/viewgrants.h"
   )
@@ -198,6 +202,7 @@ set(OLD_GLOB
   "D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.ui"
   "D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.ui"
   "D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.ui"
+  "D:/ElieteBridge-git/elitebridge_ui_file/newgroupform.ui"
   "D:/ElieteBridge-git/elitebridge_ui_file/newitemform.ui"
   "D:/ElieteBridge-git/elitebridge_ui_file/newjobform.ui"
   "D:/ElieteBridge-git/elitebridge_ui_file/newuserform.ui"
@@ -206,6 +211,7 @@ set(OLD_GLOB
   "D:/ElieteBridge-git/elitebridge_ui_file/reporting.ui"
   "D:/ElieteBridge-git/elitebridge_ui_file/sysconfig.ui"
   "D:/ElieteBridge-git/elitebridge_ui_file/systemlogin.ui"
+  "D:/ElieteBridge-git/elitebridge_ui_file/usergroupmainwindow.ui"
   "D:/ElieteBridge-git/elitebridge_ui_file/userwindow.ui"
   "D:/ElieteBridge-git/elitebridge_ui_file/viewgrants.ui"
   )

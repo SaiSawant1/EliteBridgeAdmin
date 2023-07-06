@@ -42,3 +42,10 @@ void MainWindow::on_users_clicked()
     newUserwindow->show();
 }
 
+
+void MainWindow::on_pushButton_36_clicked()
+{
+    UserGroupMainWindow *userGroup=new UserGroupMainWindow;
+    userGroup->show();
+}
+

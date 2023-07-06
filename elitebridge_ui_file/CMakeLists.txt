@@ -62,6 +62,13 @@ set(PROJECT_SOURCES
         viewgrants.cpp
         viewgrants.h
         viewgrants.ui
+        usergroupmainwindow.cpp
+        usergroupmainwindow.h
+        usergroupmainwindow.ui
+        newgroupform.cpp
+        newgroupform.h
+        newgroupform.ui
+
         ${TS_FILES}
 )
 

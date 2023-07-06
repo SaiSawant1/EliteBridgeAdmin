@@ -15,12 +15,19 @@ CreateUserTransaction::~CreateUserTransaction()
 
 void CreateUserTransaction::on_pushButton_clicked()
 {
+
+    if(ui->lineEdit->text()==""){
+        QMessageBox::warning(this, "Field Empty", "Please enter a value in the userID.");
+        return ;
+    }
+
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
     db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
 
     if (!db.open()) {
         qInfo()<<"db connection failed";
+        return ;
     }
 
 

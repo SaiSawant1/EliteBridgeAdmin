@@ -38,6 +38,18 @@ void ViewGrants::on_viewGrants_clicked()
         return;
     }
 
+    // Clear previous layout from the scroll area
+    QLayout* previousLayout = ui->scrollArea->layout();
+    if (previousLayout)
+    {
+        QLayoutItem* child;
+        while ((child = previousLayout->takeAt(0)) != nullptr)
+        {
+            delete child->widget();
+            delete child;
+        }
+        delete previousLayout;
+    }
 
     QVBoxLayout *layout = new QVBoxLayout;
 

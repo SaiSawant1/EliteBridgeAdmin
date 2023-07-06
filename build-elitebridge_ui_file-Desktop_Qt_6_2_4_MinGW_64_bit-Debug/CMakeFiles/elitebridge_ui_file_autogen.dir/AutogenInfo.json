@@ -347,6 +347,12 @@
 			null
 		],
 		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/newgroupform.h",
+			"MU",
+			"EWIEGA46WW/moc_newgroupform.cpp",
+			null
+		],
+		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/newitemform.h",
 			"MU",
 			"EWIEGA46WW/moc_newitemform.cpp",
@@ -386,6 +392,12 @@
 			"D:/ElieteBridge-git/elitebridge_ui_file/systemlogin.h",
 			"MU",
 			"EWIEGA46WW/moc_systemlogin.cpp",
+			null
+		],
+		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/usergroupmainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_usergroupmainwindow.cpp",
 			null
 		],
 		[
@@ -484,6 +496,11 @@
 		],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/main.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.cpp", "MU", null ],
+		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/newgroupform.cpp",
+			"MU",
+			null
+		],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/newitemform.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/newjobform.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/newuserform.cpp", "MU", null ],
@@ -491,6 +508,11 @@
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/reporting.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/sysconfig.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/systemlogin.cpp", "MU", null ],
+		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/usergroupmainwindow.cpp",
+			"MU",
+			null
+		],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/userwindow.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/viewgrants.cpp", "MU", null ]
 	],
