@@ -25,13 +25,18 @@ public:
 private slots:
 
     void on_pushButton_clicked();
-
+    void onCellClicked(int row, int column);
     void on_create_transaction_triggered();
 
     void on_actionuser_grants_triggered();
 
-private:
+    void on_delete_2_clicked();
 
+signals:
+    void cellSelected(const QString& selectedValue);
+
+private:
+    QString selectedValue;
     Ui::userWindow *ui;
     ClickableLabel* addUserLabel;
     void addUserForm();

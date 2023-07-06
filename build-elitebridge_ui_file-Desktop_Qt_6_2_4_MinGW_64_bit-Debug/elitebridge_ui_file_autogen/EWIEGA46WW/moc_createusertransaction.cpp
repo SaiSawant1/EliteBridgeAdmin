@@ -8,6 +8,7 @@
 
 #include <memory>
 #include "../../../elitebridge_ui_file/createusertransaction.h"
+#include <QtGui/qtextcursor.h>
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
@@ -22,8 +23,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_CreateUserTransaction_t {
-    const uint offsetsAndSize[6];
-    char stringdata0[45];
+    const uint offsetsAndSize[10];
+    char stringdata0[74];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_CreateUserTransaction_t, stringdata0) + ofs), len 
@@ -31,11 +32,13 @@ static const qt_meta_stringdata_CreateUserTransaction_t qt_meta_stringdata_Creat
     {
 QT_MOC_LITERAL(0, 21), // "CreateUserTransaction"
 QT_MOC_LITERAL(22, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(44, 0) // ""
+QT_MOC_LITERAL(44, 0), // ""
+QT_MOC_LITERAL(45, 14), // "onCellSelected"
+QT_MOC_LITERAL(60, 13) // "selectedValue"
 
     },
     "CreateUserTransaction\0on_pushButton_clicked\0"
-    ""
+    "\0onCellSelected\0selectedValue"
 };
 #undef QT_MOC_LITERAL
 
@@ -45,7 +48,7 @@ static const uint qt_meta_data_CreateUserTransaction[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -53,10 +56,12 @@ static const uint qt_meta_data_CreateUserTransaction[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   20,    2, 0x08,    1 /* Private */,
+       1,    0,   26,    2, 0x08,    1 /* Private */,
+       3,    1,   27,    2, 0x08,    2 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    4,
 
        0        // eod
 };
@@ -68,10 +73,10 @@ void CreateUserTransaction::qt_static_metacall(QObject *_o, QMetaObject::Call _c
         (void)_t;
         switch (_id) {
         case 0: _t->on_pushButton_clicked(); break;
+        case 1: _t->onCellSelected((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject CreateUserTransaction::staticMetaObject = { {
@@ -82,7 +87,7 @@ const QMetaObject CreateUserTransaction::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_CreateUserTransaction_t
 , QtPrivate::TypeAndForceComplete<CreateUserTransaction, std::true_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>
 
 
 >,
@@ -109,13 +114,13 @@ int CreateUserTransaction::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }

@@ -3,9 +3,12 @@
 
 CreateUserTransaction::CreateUserTransaction(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::CreateUserTransaction)
+    ui(new Ui::CreateUserTransaction),
+    m_userWindowInstance(nullptr)
 {
     ui->setupUi(this);
+
+
 }
 
 CreateUserTransaction::~CreateUserTransaction()
@@ -106,4 +109,13 @@ void CreateUserTransaction::on_pushButton_clicked()
     }
     db.close();
 }
-
+void CreateUserTransaction::onCellSelected(const QString& selectedValue)
+{
+    // Handle the selected value as needed
+    value=selectedValue;
+}
+void CreateUserTransaction::setUserWindowInstance(userWindow* userWindowInstance)
+{
+    m_userWindowInstance = userWindowInstance;
+    connect(m_userWindowInstance, &userWindow::cellSelected, this, &CreateUserTransaction::onCellSelected);
+}

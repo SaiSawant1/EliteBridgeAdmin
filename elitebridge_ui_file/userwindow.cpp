@@ -26,6 +26,7 @@ userWindow::userWindow(QWidget *parent) :
     QObject::connect(addUserLabel, &ClickableLabel::clicked,this,[&]() {
         addUserForm();
     });
+    connect(ui->tableWidget, &QTableWidget::cellClicked, this, &userWindow::onCellClicked);
 
     ui->horizontalLayout->insertWidget(0,addUserLabel);
 
@@ -103,7 +104,15 @@ void userWindow:: readDb()
     dataBase.close();
 }
 
-
+void userWindow::onCellClicked(int row, int column)
+{
+    QTableWidgetItem *item = ui->tableWidget->item(row, column);
+    if (item != nullptr)
+    {
+        selectedValue = item->text();
+        emit cellSelected(selectedValue);
+    }
+}
 
 void userWindow::on_pushButton_clicked()
 {
@@ -120,7 +129,9 @@ void userWindow::on_pushButton_clicked()
 void userWindow::on_create_transaction_triggered()
 {
     CreateUserTransaction* createWindow=new CreateUserTransaction();
+    createWindow->setUserWindowInstance(this);
     createWindow->show();
+
 }
 
 
@@ -128,5 +139,36 @@ void userWindow::on_actionuser_grants_triggered()
 {
     ViewGrants* grantsDialog=new ViewGrants;
     grantsDialog->show();
+}
+
+
+void userWindow::on_delete_2_clicked()
+{
+    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+    QSqlDatabase dataBase;
+    dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
+    dataBase.setDatabaseName(dbPath);
+
+    if(!dataBase.open())
+    {
+        qDebug()<<"dataBase open error";
+        return ;
+    }
+
+
+    QSqlQuery query(dataBase);
+    query.prepare("DELETE FROM Users WHERE UserID = :rowId");
+    query.bindValue(":rowId", selectedValue);
+
+    if (query.exec()) {
+        // Deletion successful
+        QMessageBox::information(this, "Success", "Record deleted successfully.");
+
+    } else {
+        // Deletion failed
+        QMessageBox::information(this, "Failed", "Record not deleted.");
+
+    }
+    dataBase.close();
 }
 

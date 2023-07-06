@@ -48,6 +48,10 @@ public:
     QLabel *label;
     QLabel *label_9;
     QTableWidget *tableWidget;
+    QFrame *frame_2;
+    QHBoxLayout *horizontalLayout_2;
+    QPushButton *delete_2;
+    QPushButton *update;
     QPushButton *pushButton;
     QMenuBar *menubar;
     QMenu *menufile;
@@ -63,7 +67,7 @@ public:
     {
         if (userWindow->objectName().isEmpty())
             userWindow->setObjectName(QString::fromUtf8("userWindow"));
-        userWindow->resize(1163, 445);
+        userWindow->resize(1163, 523);
         create_transaction = new QAction(userWindow);
         create_transaction->setObjectName(QString::fromUtf8("create_transaction"));
         actionupdate_transaction = new QAction(userWindow);
@@ -143,10 +147,32 @@ public:
 
         verticalLayout->addWidget(tableWidget);
 
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        frame_2 = new QFrame(centralwidget);
+        frame_2->setObjectName(QString::fromUtf8("frame_2"));
+        frame_2->setFrameShape(QFrame::StyledPanel);
+        frame_2->setFrameShadow(QFrame::Raised);
+        horizontalLayout_2 = new QHBoxLayout(frame_2);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        delete_2 = new QPushButton(frame_2);
+        delete_2->setObjectName(QString::fromUtf8("delete_2"));
+        delete_2->setStyleSheet(QString::fromUtf8("background:red;"));
 
-        verticalLayout->addWidget(pushButton);
+        horizontalLayout_2->addWidget(delete_2);
+
+        update = new QPushButton(frame_2);
+        update->setObjectName(QString::fromUtf8("update"));
+        update->setStyleSheet(QString::fromUtf8("background:blue;"));
+
+        horizontalLayout_2->addWidget(update);
+
+        pushButton = new QPushButton(frame_2);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setStyleSheet(QString::fromUtf8("background:green;"));
+
+        horizontalLayout_2->addWidget(pushButton);
+
+
+        verticalLayout->addWidget(frame_2);
 
         userWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(userWindow);
@@ -203,6 +229,8 @@ public:
         label_3->setText(QString());
         label->setText(QString());
         label_9->setText(QString());
+        delete_2->setText(QCoreApplication::translate("userWindow", "delete", nullptr));
+        update->setText(QCoreApplication::translate("userWindow", "update", nullptr));
         pushButton->setText(QCoreApplication::translate("userWindow", "referesh", nullptr));
         menufile->setTitle(QCoreApplication::translate("userWindow", "File", nullptr));
         menuView->setTitle(QCoreApplication::translate("userWindow", "View", nullptr));
