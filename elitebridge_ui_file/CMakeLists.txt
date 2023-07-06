@@ -68,7 +68,9 @@ set(PROJECT_SOURCES
         newgroupform.cpp
         newgroupform.h
         newgroupform.ui
-
+        updateuser.cpp
+        updateuser.h
+        updateuser.ui
         ${TS_FILES}
 )
 

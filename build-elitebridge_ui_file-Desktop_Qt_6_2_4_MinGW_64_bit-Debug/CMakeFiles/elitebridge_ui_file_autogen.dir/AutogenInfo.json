@@ -395,6 +395,12 @@
 			null
 		],
 		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/updateuser.h",
+			"MU",
+			"EWIEGA46WW/moc_updateuser.cpp",
+			null
+		],
+		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/usergroupmainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_usergroupmainwindow.cpp",
@@ -508,6 +514,7 @@
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/reporting.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/sysconfig.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/systemlogin.cpp", "MU", null ],
+		[ "D:/ElieteBridge-git/elitebridge_ui_file/updateuser.cpp", "MU", null ],
 		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/usergroupmainwindow.cpp",
 			"MU",

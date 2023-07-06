@@ -32,6 +32,8 @@ private slots:
 
     void on_delete_2_clicked();
 
+    void on_update_clicked();
+
 signals:
     void cellSelected(const QString& selectedValue);
 

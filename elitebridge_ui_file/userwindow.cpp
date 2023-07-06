@@ -9,6 +9,7 @@
 #include <QTableView>
 #include "createusertransaction.h"
 #include "viewgrants.h"
+#include "updateuser.h"
 
 
 userWindow::userWindow(QWidget *parent) :
@@ -170,5 +171,12 @@ void userWindow::on_delete_2_clicked()
 
     }
     dataBase.close();
+}
+
+
+void userWindow::on_update_clicked()
+{
+    UpdateUser* updateUser=new UpdateUser;
+    updateUser->show();
 }
 
