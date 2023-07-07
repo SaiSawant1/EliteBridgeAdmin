@@ -45,23 +45,65 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-933</y>
+        <y>0</y>
         <width>599</width>
         <height>1500</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QCheckBox" name="return_rework_to_general">
+        <widget class="QCheckBox" name="change_password">
          <property name="text">
-          <string>Return from Rework to General</string>
+          <string>Change Password</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="change_password">
+        <widget class="QCheckBox" name="cycle_count">
          <property name="text">
-          <string>Change Password</string>
+          <string>Cycle Count</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="free_issue_withdraw">
+         <property name="text">
+          <string>Free Issue Withdraw</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="initiate_stock_transfer">
+         <property name="text">
+          <string>Initiate Stock Transfer</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="scrap">
+         <property name="text">
+          <string>Scrap</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="load_rework">
+         <property name="text">
+          <string>Load Rework</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="move_stock">
+         <property name="text">
+          <string>Move Stock</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="return_rework_to_general">
+         <property name="text">
+          <string>Return from Rework to General</string>
          </property>
         </widget>
        </item>
@@ -101,23 +143,9 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="cycle_count">
-         <property name="text">
-          <string>Cycle Count</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <widget class="QCheckBox" name="retrun_rework_used">
          <property name="text">
           <string>Return from Rework to Used</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="free_issue_withdraw">
-         <property name="text">
-          <string>Free Issue Withdraw</string>
          </property>
         </widget>
        </item>
@@ -132,13 +160,6 @@
         <widget class="QCheckBox" name="return_rework_scrap">
          <property name="text">
           <string>Return from Rework to Scrap</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="initiate_stock_transfer">
-         <property name="text">
-          <string>Initiate Stock Transfer</string>
          </property>
         </widget>
        </item>
@@ -160,13 +181,6 @@
         <widget class="QCheckBox" name="withdraw_reserved_item">
          <property name="text">
           <string>Withdraw Reserved Item</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="scrap">
-         <property name="text">
-          <string>Scrap</string>
          </property>
         </widget>
        </item>
@@ -199,13 +213,6 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="load_rework">
-         <property name="text">
-          <string>Load Rework</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <widget class="QCheckBox" name="withdraw_general">
          <property name="text">
           <string>Withdraw General</string>
@@ -223,13 +230,6 @@
         <widget class="QCheckBox" name="priority_withdraw">
          <property name="text">
           <string>Priority Withdraw</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="move_stock">
-         <property name="text">
-          <string>Move Stock</string>
          </property>
         </widget>
        </item>

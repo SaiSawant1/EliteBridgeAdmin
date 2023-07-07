@@ -10,6 +10,22 @@
 #include <QSqlError>
 #include <QTableView>
 #include "ClickableLabel.h"
+#include <QLineEdit>
+
+
+
+struct undoStruct{
+    QString id;
+    QString name;
+    QString alias;
+    QString pass;
+    QString imageFile;
+    QString cost;
+    QString allowlogin;
+};
+
+
+
 namespace Ui {
 class userWindow;
 }
@@ -24,15 +40,16 @@ public:
 
 private slots:
 
-    void on_pushButton_clicked();
     void onCellClicked(int row, int column);
     void on_create_transaction_triggered();
 
     void on_actionuser_grants_triggered();
-
-    void on_delete_2_clicked();
-
-    void on_update_clicked();
+    void search();
+    void deleteUser();
+    void updateUser();
+    void userSave();
+    void fillUndoStruct();
+    void undoFunc();
 
 signals:
     void cellSelected(const QString& selectedValue);
@@ -41,6 +58,15 @@ private:
     QString selectedValue;
     Ui::userWindow *ui;
     ClickableLabel* addUserLabel;
+    ClickableLabel* addUpdateLabel;
+    ClickableLabel* addSaveLabel;
+    ClickableLabel* addUndoLabel;
+    ClickableLabel* addfindLabel;
+    ClickableLabel* addDeleteLabel;
+    ClickableLabel* addExitLabel;
+    undoStruct* undo;
+    QLineEdit* lineEdit;
+
     void addUserForm();
     void readDb();
 };

@@ -109,6 +109,7 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtGui/qkeysequence.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpaintdevice.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpalette.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/qpen.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpicture.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpixelformat.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpixmap.h \
@@ -118,7 +119,10 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtGui/qrgb.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qrgba64.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qscreen.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/qtextcursor.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qtextdocument.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/qtextformat.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/qtextoption.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qtgui-config.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qtguiglobal.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qtransform.h \
@@ -136,6 +140,7 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtSql/qtsql-config.h \
   C:/Qt/6.2.4/mingw_64/include/QtSql/qtsqlglobal.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/QLineEdit \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QTableView \
@@ -147,6 +152,7 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlineedit.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qmainwindow.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qrubberband.h \

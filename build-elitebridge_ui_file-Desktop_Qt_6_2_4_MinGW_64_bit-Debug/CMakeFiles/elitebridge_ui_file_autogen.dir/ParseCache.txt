@@ -2072,6 +2072,7 @@ D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qkeysequence.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpaintdevice.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpalette.h
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpen.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpicture.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpixelformat.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpixmap.h
@@ -2081,7 +2082,10 @@ D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qrgb.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qrgba64.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qscreen.h
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtextcursor.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtextdocument.h
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtextformat.h
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtextoption.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtgui-config.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtguiglobal.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtransform.h
@@ -2100,6 +2104,7 @@ D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtSql/qtsqlglobal.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QDialog
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QLineEdit
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QTableView
@@ -2111,6 +2116,7 @@ D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlabel.h
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlineedit.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qmainwindow.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qrubberband.h
@@ -4443,6 +4449,7 @@ D:/ElieteBridge-git/elitebridge_ui_file/userwindow.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qkeysequence.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpaintdevice.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpalette.h
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpen.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpicture.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpixelformat.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpixmap.h
@@ -4452,7 +4459,10 @@ D:/ElieteBridge-git/elitebridge_ui_file/userwindow.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qrgb.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qrgba64.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qscreen.h
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtextcursor.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtextdocument.h
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtextformat.h
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtextoption.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtgui-config.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtguiglobal.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtransform.h
@@ -4470,6 +4480,7 @@ D:/ElieteBridge-git/elitebridge_ui_file/userwindow.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtSql/qtsql-config.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtSql/qtsqlglobal.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QLineEdit
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QTableView
@@ -4481,6 +4492,7 @@ D:/ElieteBridge-git/elitebridge_ui_file/userwindow.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlabel.h
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlineedit.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qmainwindow.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qrubberband.h
@@ -5940,6 +5952,7 @@ D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qkeysequence.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpaintdevice.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpalette.h
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpen.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpicture.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpixelformat.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qpixmap.h
@@ -5949,7 +5962,10 @@ D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qrgb.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qrgba64.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qscreen.h
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtextcursor.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtextdocument.h
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtextformat.h
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtextoption.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtgui-config.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtguiglobal.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtGui/qtransform.h
@@ -5969,6 +5985,7 @@ D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtSql/qtsqlglobal.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QDialog
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QLineEdit
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/QTableView
@@ -5980,6 +5997,7 @@ D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlabel.h
+ mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlineedit.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qmainwindow.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h
  mdp:C:/Qt/6.2.4/mingw_64/include/QtWidgets/qrubberband.h
