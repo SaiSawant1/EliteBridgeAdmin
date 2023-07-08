@@ -66,7 +66,6 @@ public:
     QLabel *label_36;
     QLabel *label_37;
     QLabel *label_38;
-    QLabel *label_39;
     QLabel *label_40;
     QLabel *label_41;
     QLabel *label_42;
@@ -77,6 +76,7 @@ public:
     QPushButton *pushButton_40;
     QPushButton *pushButton_41;
     QPushButton *pushButton_42;
+    QLabel *label_39;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuView;
@@ -121,7 +121,9 @@ public:
 
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/user2.png")));
+        label->setMaximumSize(QSize(100, 100));
+        label->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/user-svgrepo-com.svg")));
+        label->setScaledContents(true);
 
         gridLayout->addWidget(label, 0, 0, 1, 1);
 
@@ -293,12 +295,6 @@ public:
 
         gridLayout_12->addWidget(label_38, 0, 3, 1, 1);
 
-        label_39 = new QLabel(centralwidget);
-        label_39->setObjectName(QString::fromUtf8("label_39"));
-        label_39->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/usercost.png")));
-
-        gridLayout_12->addWidget(label_39, 0, 0, 1, 1);
-
         label_40 = new QLabel(centralwidget);
         label_40->setObjectName(QString::fromUtf8("label_40"));
         label_40->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/auxfiled.png")));
@@ -307,7 +303,9 @@ public:
 
         label_41 = new QLabel(centralwidget);
         label_41->setObjectName(QString::fromUtf8("label_41"));
-        label_41->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/drawer.png")));
+        label_41->setMaximumSize(QSize(100, 100));
+        label_41->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/general-repair-repair-tool-svgrepo-com.svg")));
+        label_41->setScaledContents(true);
 
         gridLayout_12->addWidget(label_41, 0, 1, 1, 1);
 
@@ -351,6 +349,14 @@ public:
         pushButton_42->setObjectName(QString::fromUtf8("pushButton_42"));
 
         gridLayout_12->addWidget(pushButton_42, 1, 6, 1, 1);
+
+        label_39 = new QLabel(centralwidget);
+        label_39->setObjectName(QString::fromUtf8("label_39"));
+        label_39->setMaximumSize(QSize(100, 100));
+        label_39->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/group-svgrepo-com.svg")));
+        label_39->setScaledContents(true);
+
+        gridLayout_12->addWidget(label_39, 0, 0, 1, 1);
 
 
         gridLayout_11->addLayout(gridLayout_12, 0, 0, 1, 1);
@@ -428,7 +434,6 @@ public:
         label_36->setText(QString());
         label_37->setText(QString());
         label_38->setText(QString());
-        label_39->setText(QString());
         label_40->setText(QString());
         label_41->setText(QString());
         label_42->setText(QString());
@@ -439,6 +444,7 @@ public:
         pushButton_40->setText(QCoreApplication::translate("MainWindow", "Troubleshoot", nullptr));
         pushButton_41->setText(QCoreApplication::translate("MainWindow", "Kits", nullptr));
         pushButton_42->setText(QCoreApplication::translate("MainWindow", "Aux3", nullptr));
+        label_39->setText(QString());
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuView->setTitle(QCoreApplication::translate("MainWindow", "View", nullptr));
         menuData->setTitle(QCoreApplication::translate("MainWindow", "Data", nullptr));
