@@ -85,7 +85,14 @@
      <addaction name="actionupdate_transaction"/>
      <addaction name="actionuser_grants"/>
     </widget>
+    <widget class="QMenu" name="menuGroups">
+     <property name="title">
+      <string>Groups</string>
+     </property>
+     <addaction name="actionAdd_User_To_Group"/>
+    </widget>
     <addaction name="menuTransaction"/>
+    <addaction name="menuGroups"/>
    </widget>
    <addaction name="menufile"/>
    <addaction name="menuView"/>
@@ -108,6 +115,11 @@
   <action name="actionuser_grants">
    <property name="text">
     <string>user grants</string>
+   </property>
+  </action>
+  <action name="actionAdd_User_To_Group">
+   <property name="text">
+    <string>Add User To Group</string>
    </property>
   </action>
  </widget>

@@ -30,6 +30,7 @@ public:
     QAction *create_transaction;
     QAction *actionupdate_transaction;
     QAction *actionuser_grants;
+    QAction *actionAdd_User_To_Group;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QFrame *frame;
@@ -42,6 +43,7 @@ public:
     QMenu *menuLocation;
     QMenu *menuUser;
     QMenu *menuTransaction;
+    QMenu *menuGroups;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *userWindow)
@@ -55,6 +57,8 @@ public:
         actionupdate_transaction->setObjectName(QString::fromUtf8("actionupdate_transaction"));
         actionuser_grants = new QAction(userWindow);
         actionuser_grants->setObjectName(QString::fromUtf8("actionuser_grants"));
+        actionAdd_User_To_Group = new QAction(userWindow);
+        actionAdd_User_To_Group->setObjectName(QString::fromUtf8("actionAdd_User_To_Group"));
         centralwidget = new QWidget(userWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -91,6 +95,8 @@ public:
         menuUser->setObjectName(QString::fromUtf8("menuUser"));
         menuTransaction = new QMenu(menuUser);
         menuTransaction->setObjectName(QString::fromUtf8("menuTransaction"));
+        menuGroups = new QMenu(menuUser);
+        menuGroups->setObjectName(QString::fromUtf8("menuGroups"));
         userWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(userWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -103,11 +109,13 @@ public:
         menubar->addAction(menuLocation->menuAction());
         menubar->addAction(menuUser->menuAction());
         menuUser->addAction(menuTransaction->menuAction());
+        menuUser->addAction(menuGroups->menuAction());
         menuTransaction->addSeparator();
         menuTransaction->addSeparator();
         menuTransaction->addAction(create_transaction);
         menuTransaction->addAction(actionupdate_transaction);
         menuTransaction->addAction(actionuser_grants);
+        menuGroups->addAction(actionAdd_User_To_Group);
 
         retranslateUi(userWindow);
 
@@ -120,6 +128,7 @@ public:
         create_transaction->setText(QCoreApplication::translate("userWindow", "create transaction", nullptr));
         actionupdate_transaction->setText(QCoreApplication::translate("userWindow", "update transaction", nullptr));
         actionuser_grants->setText(QCoreApplication::translate("userWindow", "user grants", nullptr));
+        actionAdd_User_To_Group->setText(QCoreApplication::translate("userWindow", "Add User To Group", nullptr));
         menufile->setTitle(QCoreApplication::translate("userWindow", "File", nullptr));
         menuView->setTitle(QCoreApplication::translate("userWindow", "View", nullptr));
         menuRecord->setTitle(QCoreApplication::translate("userWindow", "Record", nullptr));
@@ -127,6 +136,7 @@ public:
         menuLocation->setTitle(QCoreApplication::translate("userWindow", "Location", nullptr));
         menuUser->setTitle(QCoreApplication::translate("userWindow", "User", nullptr));
         menuTransaction->setTitle(QCoreApplication::translate("userWindow", "Transaction", nullptr));
+        menuGroups->setTitle(QCoreApplication::translate("userWindow", "Groups", nullptr));
     } // retranslateUi
 
 };

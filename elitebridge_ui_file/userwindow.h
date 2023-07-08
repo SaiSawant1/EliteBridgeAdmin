@@ -11,7 +11,7 @@
 #include <QTableView>
 #include "ClickableLabel.h"
 #include <QLineEdit>
-
+#include "selectgroup.h"
 
 
 struct undoStruct{
@@ -50,6 +50,8 @@ private slots:
     void userSave();
     void fillUndoStruct();
     void undoFunc();
+
+    void on_actionAdd_User_To_Group_triggered();
 
 signals:
     void cellSelected(const QString& selectedValue);

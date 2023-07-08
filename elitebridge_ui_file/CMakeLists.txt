@@ -71,6 +71,11 @@ set(PROJECT_SOURCES
         updateuser.cpp
         updateuser.h
         updateuser.ui
+        selectgroup.cpp
+        selectgroup.h
+        selectgroup.ui
+
+
         ${TS_FILES}
 )
 

@@ -414,3 +414,11 @@ void userWindow::updateUser()
     updateUser->show();
 }
 
+
+void userWindow::on_actionAdd_User_To_Group_triggered()
+{
+    selectGroup* groupWindow=new selectGroup();
+    groupWindow->setValue(selectedValue);
+    groupWindow->show();
+}
+

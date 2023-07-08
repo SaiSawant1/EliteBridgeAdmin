@@ -146,11 +146,13 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QTableView \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemview.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractscrollarea.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractslider.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractspinbox.h \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/qcheckbox.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
@@ -385,5 +387,6 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.h \
   D:/ElieteBridge-git/elitebridge_ui_file/newgroupform.h \
   D:/ElieteBridge-git/elitebridge_ui_file/newjobform.h \
+  D:/ElieteBridge-git/elitebridge_ui_file/selectgroup.h \
   D:/ElieteBridge-git/elitebridge_ui_file/usergroupmainwindow.h \
   D:/ElieteBridge-git/elitebridge_ui_file/userwindow.h
