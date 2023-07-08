@@ -194,14 +194,33 @@ void userWindow:: readDb()
     dataBase.close();
 }
 
+int previousRowuser=-1;
+
 void userWindow::onCellClicked(int row, int column)
 {
+    if (previousRowuser != -1) {
+        for (int col = 0; col < ui->tableWidget->columnCount(); ++col)
+        {
+            QTableWidgetItem* item = ui->tableWidget->item(previousRowuser, col);
+            if (item)
+                item->setBackground(Qt::white); // Set the default background color
+        }
+    }
+
     QTableWidgetItem *item = ui->tableWidget->item(row, column);
     if (item != nullptr)
     {
         selectedValue = item->text();
-        emit cellSelected(selectedValue);
+
     }
+
+    for (int col = 0; col < ui->tableWidget->columnCount(); ++col)
+    {
+        QTableWidgetItem* item = ui->tableWidget->item(row, col);
+        if (item)
+            item->setBackground(Qt::yellow); // Set the desired background color
+    }
+    previousRowuser = row;
 }
 
 void userWindow::userSave()

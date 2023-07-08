@@ -135,7 +135,9 @@ public:
 
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/location.png")));
+        label_2->setMaximumSize(QSize(100, 100));
+        label_2->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/warehouse-svgrepo-com.svg")));
+        label_2->setScaledContents(true);
 
         gridLayout->addWidget(label_2, 0, 1, 1, 1);
 
@@ -291,7 +293,9 @@ public:
 
         label_38 = new QLabel(centralwidget);
         label_38->setObjectName(QString::fromUtf8("label_38"));
-        label_38->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/setup.png")));
+        label_38->setMaximumSize(QSize(100, 100));
+        label_38->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/admin-svgrepo-com.svg")));
+        label_38->setScaledContents(true);
 
         gridLayout_12->addWidget(label_38, 0, 3, 1, 1);
 
@@ -304,7 +308,7 @@ public:
         label_41 = new QLabel(centralwidget);
         label_41->setObjectName(QString::fromUtf8("label_41"));
         label_41->setMaximumSize(QSize(100, 100));
-        label_41->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/general-repair-repair-tool-svgrepo-com.svg")));
+        label_41->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/general-repair-repair-tool-svgrepo-com (1).svg")));
         label_41->setScaledContents(true);
 
         gridLayout_12->addWidget(label_41, 0, 1, 1, 1);

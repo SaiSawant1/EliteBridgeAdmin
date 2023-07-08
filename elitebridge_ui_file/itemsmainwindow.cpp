@@ -195,15 +195,32 @@ void ItemsMainWindow:: readDb()
     }
     dataBase.close();
 }
-
+int previousRow=-1;
 void ItemsMainWindow::onCellClicked(int row, int column)
 {
+    if (previousRow != -1) {
+        for (int col = 0; col < ui->tableWidget->columnCount(); ++col)
+        {
+            QTableWidgetItem* item = ui->tableWidget->item(previousRow, col);
+            if (item)
+                item->setBackground(Qt::white); // Set the default background color
+        }
+    }
+
     QTableWidgetItem *item = ui->tableWidget->item(row, column);
     if (item != nullptr)
     {
         selectedValue = item->text();
         fillLineEdits();
     }
+
+    for (int col = 0; col < ui->tableWidget->columnCount(); ++col)
+    {
+        QTableWidgetItem* item = ui->tableWidget->item(row, col);
+        if (item)
+            item->setBackground(Qt::yellow); // Set the desired background color
+    }
+    previousRow = row;
 }
 
 void ItemsMainWindow::addUserForm(){
