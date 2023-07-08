@@ -119,3 +119,6 @@ void CreateUserTransaction::setUserWindowInstance(userWindow* userWindowInstance
     m_userWindowInstance = userWindowInstance;
     connect(m_userWindowInstance, &userWindow::cellSelected, this, &CreateUserTransaction::onCellSelected);
 }
+
+
+
