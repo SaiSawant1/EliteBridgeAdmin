@@ -2,7 +2,7 @@
 #include "./ui_mainwindow.h"
 #include "userwindow.h"
 #include "itemsmainwindow.h"
-
+#include "adminsetup.h".h"
 #include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -47,5 +47,12 @@ void MainWindow::on_pushButton_36_clicked()
 {
     UserGroupMainWindow *userGroup=new UserGroupMainWindow;
     userGroup->show();
+}
+
+
+void MainWindow::on_pushButton_39_clicked()
+{
+    AdminSetup* adminWin=new AdminSetup;
+    adminWin->show();
 }
 

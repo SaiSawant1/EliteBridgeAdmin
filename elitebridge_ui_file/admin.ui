@@ -110,11 +110,20 @@ font: 300 10pt &quot;Segoe UI Light&quot;;</string>
         </item>
         <item row="2" column="0" colspan="2">
          <widget class="QLabel" name="label_6">
+          <property name="maximumSize">
+           <size>
+            <width>167</width>
+            <height>167</height>
+           </size>
+          </property>
           <property name="text">
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>C:/Users/Dell/OneDrive/Pictures/Screenshots/ide.png</pixmap>
+           <pixmap>../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/computer-check-mark-svgrepo-com.svg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -140,11 +149,20 @@ font: 300 10pt &quot;Segoe UI Light&quot;;</string>
         </item>
         <item row="4" column="0" colspan="2">
          <widget class="QLabel" name="label_10">
+          <property name="maximumSize">
+           <size>
+            <width>167</width>
+            <height>167</height>
+           </size>
+          </property>
           <property name="text">
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>C:/Users/Dell/OneDrive/Pictures/Screenshots/process.png</pixmap>
+           <pixmap>../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/imac-click-svgrepo-com.svg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -170,11 +188,20 @@ font: 300 10pt &quot;Segoe UI Light&quot;;</string>
         </item>
         <item row="3" column="0" colspan="2">
          <widget class="QLabel" name="label_9">
+          <property name="maximumSize">
+           <size>
+            <width>167</width>
+            <height>167</height>
+           </size>
+          </property>
           <property name="text">
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>C:/Users/Dell/OneDrive/Pictures/Screenshots/systemconfig.png</pixmap>
+           <pixmap>../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/cog-svgrepo-com.svg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -200,11 +227,20 @@ font: 300 10pt &quot;Segoe UI Light&quot;;</string>
         </item>
         <item row="0" column="0" colspan="2">
          <widget class="QLabel" name="label_3">
+          <property name="maximumSize">
+           <size>
+            <width>167</width>
+            <height>167</height>
+           </size>
+          </property>
           <property name="text">
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>C:/Users/Dell/OneDrive/Pictures/Screenshots/Screenshot 2023-06-10 121132.png</pixmap>
+           <pixmap>../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/report-svgrepo-com.svg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
           </property>
          </widget>
         </item>

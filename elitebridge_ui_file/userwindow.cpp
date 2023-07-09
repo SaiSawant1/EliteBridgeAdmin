@@ -1,6 +1,5 @@
 #include "userwindow.h"
 #include "ui_userwindow.h"
-#include "newuserform.h"
 #include <QMessageBox>
 #include <QObject>
 #include <QSqlDatabase>
@@ -9,7 +8,6 @@
 #include <QTableView>
 #include "createusertransaction.h"
 #include "viewgrants.h"
-#include "updateuser.h"
 
 
 userWindow::userWindow(QWidget *parent) :
@@ -123,8 +121,36 @@ userWindow::userWindow(QWidget *parent) :
 }
 
 void userWindow::addUserForm(){
-    newUserForm* newUserFormPage=new newUserForm;
-    newUserFormPage->show();
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+
+    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
+
+    if (!db.open()) {
+        qInfo()<<"db connection failed";
+    }
+
+    QSqlQuery query;
+
+    QString insertQuery = "INSERT INTO Users (UserID, Name, Alias, Password,ImageFile,CostCenter,AllowtoLogin) VALUES (?, ?, ?, ?, ?, ?, ? )";
+    query.prepare(insertQuery);
+    QString radioValue="false";
+    if(ui->allowedToLogin->isChecked()){
+        radioValue="true";
+    }
+
+    query.addBindValue(ui->user_id->text());
+    query.addBindValue( ui->user_name->text());
+    query.addBindValue( ui->user_alias->text());
+    query.addBindValue(ui->user_password->text());
+    query.addBindValue( ui->user_costCenter->text());
+    query.addBindValue( ui->user_image->text());
+    query.addBindValue( radioValue);
+    if (query.exec()) {
+        QMessageBox::information(nullptr, "Success", "Data inserted successfully!");
+    } else {
+        QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
+    }
+    db.close();
 }
 userWindow::~userWindow()
 {
@@ -211,6 +237,7 @@ void userWindow::onCellClicked(int row, int column)
     if (item != nullptr)
     {
         selectedValue = item->text();
+
 
     }
 
@@ -429,8 +456,39 @@ void userWindow::undoFunc(){
 
 void userWindow::updateUser()
 {
-    UpdateUser* updateUser=new UpdateUser;
-    updateUser->show();
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+
+    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
+
+    if (!db.open()) {
+        qInfo()<<"db connection failed";
+    }
+
+    QSqlQuery query;
+
+    QString insertQuery = "UPDATE Users SET Name = :name, Alias = :alias, Password = :password, ImageFile = :imageFile, CostCenter = :costCenter, AllowtoLogin = :allowToLogin WHERE UserID = :userID";
+    query.prepare(insertQuery);
+    QString radioValue="false";
+    if(ui->allowedToLogin->isChecked()){
+        radioValue="true";
+    }
+
+    query.bindValue(":name",ui->user_name->text());
+    query.bindValue(":alias",ui->user_alias->text() );
+    query.bindValue(":password", ui->user_password->text());
+    query.bindValue(":imageFile", ui->user_image->text());
+    query.bindValue(":costCenter",ui->user_costCenter->text());
+    query.bindValue(":allowToLogin",radioValue);
+    query.bindValue(":userID", ui->user_id->text());
+
+
+    if (query.exec()) {
+        QMessageBox::information(nullptr, "Success", "Data update successfully!");
+
+    } else {
+        QMessageBox::warning(nullptr, "Error", "Failed to update data!");
+    }
+    db.close();
 }
 
 
@@ -439,6 +497,49 @@ void userWindow::on_actionAdd_User_To_Group_triggered()
     selectGroup* groupWindow=new selectGroup();
     groupWindow->setValue(selectedValue);
     groupWindow->show();
+}
+
+void userWindow::fillLineEdit(){
+    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+    QSqlDatabase dataBase;
+    dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
+    dataBase.setDatabaseName(dbPath);
+
+    if(!dataBase.open())
+    {
+        qDebug()<<"dataBase open error";
+        return ;
+    }
+
+
+    QSqlQuery query(dataBase);
+    query.prepare("SELECT * FROM Users WHERE UserID = :userId");
+    query.bindValue(":userId", selectedValue);
+
+
+    if(!query.exec())
+    {
+        qDebug()<<"Query execution Failed";
+        return;
+    }
+
+    if(query.next()){
+        ui->user_id->setText(query.value(0).toString());
+        ui->user_name->setText(query.value(1).toString());
+        ui->user_alias->setText(query.value(2).toString());
+        ui->user_password->setText(query.value(3).toString());
+        ui->user_image->setText(query.value(4).toString());
+        ui->user_costCenter->setText(query.value(5).toString());
+        if(query.value(6).toString()=="true"){
+            ui->allowedToLogin->setChecked(true);
+        }else{
+            ui->allowedToLogin->setChecked(false);
+        }
+    }
+
+
+    dataBase.close();
+    return ;
 }
 
 

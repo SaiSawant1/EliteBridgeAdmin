@@ -42,6 +42,7 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/ElieteBridge-git/elitebridge_ui_file/*.cpp")
 set(OLD_GLOB
   "D:/ElieteBridge-git/elitebridge_ui_file/admin.cpp"
+  "D:/ElieteBridge-git/elitebridge_ui_file/adminsetup.cpp"
   "D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.cpp"
   "D:/ElieteBridge-git/elitebridge_ui_file/edi.cpp"
   "D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.cpp"
@@ -82,6 +83,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/ElieteBridge-git/elitebrid
 set(OLD_GLOB
   "D:/ElieteBridge-git/elitebridge_ui_file/ClickableLabel.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/admin.h"
+  "D:/ElieteBridge-git/elitebridge_ui_file/adminsetup.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/edi.h"
   "D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.h"
@@ -201,6 +203,7 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/ElieteBridge-git/elitebridge_ui_file/*.ui")
 set(OLD_GLOB
   "D:/ElieteBridge-git/elitebridge_ui_file/admin.ui"
+  "D:/ElieteBridge-git/elitebridge_ui_file/adminsetup.ui"
   "D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.ui"
   "D:/ElieteBridge-git/elitebridge_ui_file/edi.ui"
   "D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.ui"

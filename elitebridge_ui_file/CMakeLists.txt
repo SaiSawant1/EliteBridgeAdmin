@@ -74,6 +74,9 @@ set(PROJECT_SOURCES
         selectgroup.cpp
         selectgroup.h
         selectgroup.ui
+        adminsetup.cpp
+        adminsetup.h
+        adminsetup.ui
 
 
         ${TS_FILES}

@@ -50,7 +50,7 @@ private slots:
     void userSave();
     void fillUndoStruct();
     void undoFunc();
-
+    void fillLineEdit();
     void on_actionAdd_User_To_Group_triggered();
 
 signals:

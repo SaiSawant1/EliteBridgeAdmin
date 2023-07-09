@@ -520,6 +520,8 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/ClickableLabel.h \
   D:/ElieteBridge-git/elitebridge_ui_file/admin.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/admin.h \
+  D:/ElieteBridge-git/elitebridge_ui_file/adminsetup.cpp \
+  D:/ElieteBridge-git/elitebridge_ui_file/adminsetup.h \
   D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.h \
   D:/ElieteBridge-git/elitebridge_ui_file/edi.cpp \
@@ -558,6 +560,7 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/viewgrants.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/viewgrants.h \
   D:/ElieteBridge-git/elitebridge_ui_file/admin.ui \
+  D:/ElieteBridge-git/elitebridge_ui_file/adminsetup.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/edi.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.ui \

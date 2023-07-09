@@ -2,7 +2,10 @@
 #define SYSTEMLOGIN_H
 
 #include <QDialog>
-
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QMessageBox>
 namespace Ui {
 class SystemLogin;
 }

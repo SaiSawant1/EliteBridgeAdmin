@@ -113,7 +113,9 @@ public:
 
         label_6 = new QLabel(centralwidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setPixmap(QPixmap(QString::fromUtf8("C:/Users/Dell/OneDrive/Pictures/Screenshots/ide.png")));
+        label_6->setMaximumSize(QSize(167, 167));
+        label_6->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/computer-check-mark-svgrepo-com.svg")));
+        label_6->setScaledContents(true);
 
         _2->addWidget(label_6, 2, 0, 1, 2);
 
@@ -128,7 +130,9 @@ public:
 
         label_10 = new QLabel(centralwidget);
         label_10->setObjectName(QString::fromUtf8("label_10"));
-        label_10->setPixmap(QPixmap(QString::fromUtf8("C:/Users/Dell/OneDrive/Pictures/Screenshots/process.png")));
+        label_10->setMaximumSize(QSize(167, 167));
+        label_10->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/imac-click-svgrepo-com.svg")));
+        label_10->setScaledContents(true);
 
         _2->addWidget(label_10, 4, 0, 1, 2);
 
@@ -143,7 +147,9 @@ public:
 
         label_9 = new QLabel(centralwidget);
         label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setPixmap(QPixmap(QString::fromUtf8("C:/Users/Dell/OneDrive/Pictures/Screenshots/systemconfig.png")));
+        label_9->setMaximumSize(QSize(167, 167));
+        label_9->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/cog-svgrepo-com.svg")));
+        label_9->setScaledContents(true);
 
         _2->addWidget(label_9, 3, 0, 1, 2);
 
@@ -158,7 +164,9 @@ public:
 
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setPixmap(QPixmap(QString::fromUtf8("C:/Users/Dell/OneDrive/Pictures/Screenshots/Screenshot 2023-06-10 121132.png")));
+        label_3->setMaximumSize(QSize(167, 167));
+        label_3->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/report-svgrepo-com.svg")));
+        label_3->setScaledContents(true);
 
         _2->addWidget(label_3, 0, 0, 1, 2);
 
