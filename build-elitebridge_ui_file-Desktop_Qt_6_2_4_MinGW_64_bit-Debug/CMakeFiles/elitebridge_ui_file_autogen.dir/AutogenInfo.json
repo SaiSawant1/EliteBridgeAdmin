@@ -335,6 +335,12 @@
 			null
 		],
 		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/grouptransaction.h",
+			"MU",
+			"EWIEGA46WW/moc_grouptransaction.cpp",
+			null
+		],
+		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_itemsmainwindow.cpp",
@@ -503,6 +509,11 @@
 			null
 		],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/edi.cpp", "MU", null ],
+		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/grouptransaction.cpp",
+			"MU",
+			null
+		],
 		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.cpp",
 			"MU",

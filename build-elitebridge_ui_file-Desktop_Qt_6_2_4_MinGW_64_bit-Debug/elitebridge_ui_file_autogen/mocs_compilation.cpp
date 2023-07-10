@@ -4,6 +4,7 @@
 #include "EWIEGA46WW/moc_adminsetup.cpp"
 #include "EWIEGA46WW/moc_createusertransaction.cpp"
 #include "EWIEGA46WW/moc_edi.cpp"
+#include "EWIEGA46WW/moc_grouptransaction.cpp"
 #include "EWIEGA46WW/moc_itemsmainwindow.cpp"
 #include "EWIEGA46WW/moc_jobmainwindow.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"

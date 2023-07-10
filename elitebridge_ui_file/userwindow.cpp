@@ -237,6 +237,7 @@ void userWindow::onCellClicked(int row, int column)
     if (item != nullptr)
     {
         selectedValue = item->text();
+        fillLineEdit();
 
 
     }
@@ -266,6 +267,7 @@ void userWindow::on_create_transaction_triggered()
 {
     CreateUserTransaction* createWindow=new CreateUserTransaction();
     createWindow->setUserWindowInstance(this);
+    createWindow->onCellSelected(selectedValue);
     createWindow->show();
 
 }

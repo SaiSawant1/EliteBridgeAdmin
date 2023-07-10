@@ -13,6 +13,7 @@
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -20,7 +21,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -31,21 +31,25 @@ QT_BEGIN_NAMESPACE
 class Ui_UserGroupMainWindow
 {
 public:
+    QAction *actionGroup_Transaction;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QFrame *frame;
-    QHBoxLayout *horizontalLayout;
-    QLabel *label_7;
-    QLabel *label_6;
-    QLabel *label_5;
-    QLabel *label_4;
-    QLabel *label_2;
-    QLineEdit *lineEdit;
-    QLabel *label_3;
-    QLabel *label;
-    QLabel *label_9;
+    QFrame *frame_2;
+    QHBoxLayout *horizontalLayout_3;
     QTableWidget *tableWidget;
-    QPushButton *pushButton;
+    QFrame *frame_3;
+    QGridLayout *gridLayout_2;
+    QFrame *frame_4;
+    QVBoxLayout *verticalLayout_2;
+    QFrame *frame_5;
+    QHBoxLayout *horizontalLayout;
+    QLabel *label_2;
+    QLineEdit *groupID;
+    QFrame *frame_6;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label_3;
+    QLineEdit *name;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuView;
@@ -53,6 +57,7 @@ public:
     QMenu *menuAudit;
     QMenu *menuLocation;
     QMenu *menuUser;
+    QMenu *menuTransaction;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *UserGroupMainWindow)
@@ -60,6 +65,8 @@ public:
         if (UserGroupMainWindow->objectName().isEmpty())
             UserGroupMainWindow->setObjectName(QString::fromUtf8("UserGroupMainWindow"));
         UserGroupMainWindow->resize(730, 480);
+        actionGroup_Transaction = new QAction(UserGroupMainWindow);
+        actionGroup_Transaction->setObjectName(QString::fromUtf8("actionGroup_Transaction"));
         centralwidget = new QWidget(UserGroupMainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -68,75 +75,81 @@ public:
         frame->setObjectName(QString::fromUtf8("frame"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
-        horizontalLayout = new QHBoxLayout(frame);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        label_7 = new QLabel(frame);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/auxfiled.png")));
-
-        horizontalLayout->addWidget(label_7);
-
-        label_6 = new QLabel(frame);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/jobgroup.png")));
-
-        horizontalLayout->addWidget(label_6);
-
-        label_5 = new QLabel(frame);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/save.png")));
-
-        horizontalLayout->addWidget(label_5);
-
-        label_4 = new QLabel(frame);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/undo.png")));
-
-        horizontalLayout->addWidget(label_4);
-
-        label_2 = new QLabel(frame);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/db.png")));
-
-        horizontalLayout->addWidget(label_2);
-
-        lineEdit = new QLineEdit(frame);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-
-        horizontalLayout->addWidget(lineEdit);
-
-        label_3 = new QLabel(frame);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/search.png")));
-
-        horizontalLayout->addWidget(label_3);
-
-        label = new QLabel(frame);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/delete.png")));
-
-        horizontalLayout->addWidget(label);
-
-        label_9 = new QLabel(frame);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/exit.png")));
-
-        horizontalLayout->addWidget(label_9);
-
 
         verticalLayout->addWidget(frame);
 
-        tableWidget = new QTableWidget(centralwidget);
+        frame_2 = new QFrame(centralwidget);
+        frame_2->setObjectName(QString::fromUtf8("frame_2"));
+        frame_2->setFrameShape(QFrame::StyledPanel);
+        frame_2->setFrameShadow(QFrame::Raised);
+        horizontalLayout_3 = new QHBoxLayout(frame_2);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        tableWidget = new QTableWidget(frame_2);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
         tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
         tableWidget->setAlternatingRowColors(true);
 
-        verticalLayout->addWidget(tableWidget);
+        horizontalLayout_3->addWidget(tableWidget);
 
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        frame_3 = new QFrame(frame_2);
+        frame_3->setObjectName(QString::fromUtf8("frame_3"));
+        frame_3->setFrameShape(QFrame::StyledPanel);
+        frame_3->setFrameShadow(QFrame::Sunken);
+        frame_3->setLineWidth(1);
+        gridLayout_2 = new QGridLayout(frame_3);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        frame_4 = new QFrame(frame_3);
+        frame_4->setObjectName(QString::fromUtf8("frame_4"));
+        frame_4->setFrameShape(QFrame::StyledPanel);
+        frame_4->setFrameShadow(QFrame::Raised);
+        verticalLayout_2 = new QVBoxLayout(frame_4);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        frame_5 = new QFrame(frame_4);
+        frame_5->setObjectName(QString::fromUtf8("frame_5"));
+        frame_5->setFrameShape(QFrame::StyledPanel);
+        frame_5->setFrameShadow(QFrame::Raised);
+        horizontalLayout = new QHBoxLayout(frame_5);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        label_2 = new QLabel(frame_5);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
 
-        verticalLayout->addWidget(pushButton);
+        horizontalLayout->addWidget(label_2);
+
+        groupID = new QLineEdit(frame_5);
+        groupID->setObjectName(QString::fromUtf8("groupID"));
+
+        horizontalLayout->addWidget(groupID);
+
+
+        verticalLayout_2->addWidget(frame_5);
+
+        frame_6 = new QFrame(frame_4);
+        frame_6->setObjectName(QString::fromUtf8("frame_6"));
+        frame_6->setFrameShape(QFrame::StyledPanel);
+        frame_6->setFrameShadow(QFrame::Raised);
+        horizontalLayout_2 = new QHBoxLayout(frame_6);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        label_3 = new QLabel(frame_6);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        horizontalLayout_2->addWidget(label_3);
+
+        name = new QLineEdit(frame_6);
+        name->setObjectName(QString::fromUtf8("name"));
+
+        horizontalLayout_2->addWidget(name);
+
+
+        verticalLayout_2->addWidget(frame_6);
+
+
+        gridLayout_2->addWidget(frame_4, 0, 0, 1, 1);
+
+
+        horizontalLayout_3->addWidget(frame_3);
+
+
+        verticalLayout->addWidget(frame_2);
 
         UserGroupMainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(UserGroupMainWindow);
@@ -154,6 +167,8 @@ public:
         menuLocation->setObjectName(QString::fromUtf8("menuLocation"));
         menuUser = new QMenu(menubar);
         menuUser->setObjectName(QString::fromUtf8("menuUser"));
+        menuTransaction = new QMenu(menuUser);
+        menuTransaction->setObjectName(QString::fromUtf8("menuTransaction"));
         UserGroupMainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(UserGroupMainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -165,6 +180,8 @@ public:
         menubar->addAction(menuAudit->menuAction());
         menubar->addAction(menuLocation->menuAction());
         menubar->addAction(menuUser->menuAction());
+        menuUser->addAction(menuTransaction->menuAction());
+        menuTransaction->addAction(actionGroup_Transaction);
 
         retranslateUi(UserGroupMainWindow);
 
@@ -174,21 +191,16 @@ public:
     void retranslateUi(QMainWindow *UserGroupMainWindow)
     {
         UserGroupMainWindow->setWindowTitle(QCoreApplication::translate("UserGroupMainWindow", "MainWindow", nullptr));
-        label_7->setText(QString());
-        label_6->setText(QString());
-        label_5->setText(QString());
-        label_4->setText(QString());
-        label_2->setText(QString());
-        label_3->setText(QString());
-        label->setText(QString());
-        label_9->setText(QString());
-        pushButton->setText(QCoreApplication::translate("UserGroupMainWindow", "referesh", nullptr));
+        actionGroup_Transaction->setText(QCoreApplication::translate("UserGroupMainWindow", "Group Transaction", nullptr));
+        label_2->setText(QCoreApplication::translate("UserGroupMainWindow", "groupID     ", nullptr));
+        label_3->setText(QCoreApplication::translate("UserGroupMainWindow", "Description", nullptr));
         menuFile->setTitle(QCoreApplication::translate("UserGroupMainWindow", "File", nullptr));
         menuView->setTitle(QCoreApplication::translate("UserGroupMainWindow", "View", nullptr));
         menuRecord->setTitle(QCoreApplication::translate("UserGroupMainWindow", "Record", nullptr));
         menuAudit->setTitle(QCoreApplication::translate("UserGroupMainWindow", "Audit", nullptr));
         menuLocation->setTitle(QCoreApplication::translate("UserGroupMainWindow", "Location", nullptr));
         menuUser->setTitle(QCoreApplication::translate("UserGroupMainWindow", "User", nullptr));
+        menuTransaction->setTitle(QCoreApplication::translate("UserGroupMainWindow", "Transaction", nullptr));
     } // retranslateUi
 
 };

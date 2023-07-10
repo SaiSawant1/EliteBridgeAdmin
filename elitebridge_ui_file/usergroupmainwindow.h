@@ -11,7 +11,7 @@
 #include <QSqlError>
 #include <QTableView>
 #include "ClickableLabel.h"
-#include "newgroupform.h"
+#include "QLineEdit"
 
 
 namespace Ui {
@@ -25,11 +25,32 @@ class UserGroupMainWindow : public QMainWindow
 public:
     explicit UserGroupMainWindow(QWidget *parent = nullptr);
     ~UserGroupMainWindow();
+    void onCellClicked(int row, int column);
+    void addGroup();
+    void updateGroup();
+    void  groupSave();
+    void deleteGroup();
+    void readDb();
+    void search();
+    void fillLineEdits();
+
+private slots:
+    void on_actionTransaction_triggered();
+
+    void on_actionGroup_Transaction_triggered();
 
 private:
+    QString selectedValue;
     Ui::UserGroupMainWindow *ui;
-    ClickableLabel* addGroupLabel;
-    void addNewUserGroupForm();
+    ClickableLabel* addUserLabel;
+    ClickableLabel* addUpdateLabel;
+    ClickableLabel* addSaveLabel;
+    ClickableLabel* addUndoLabel;
+    ClickableLabel* addfindLabel;
+    ClickableLabel* addDeleteLabel;
+    ClickableLabel* addExitLabel;
+    //undoStruct* undo;
+    QLineEdit* lineEdit;
 };
 
 #endif // USERGROUPMAINWINDOW_H

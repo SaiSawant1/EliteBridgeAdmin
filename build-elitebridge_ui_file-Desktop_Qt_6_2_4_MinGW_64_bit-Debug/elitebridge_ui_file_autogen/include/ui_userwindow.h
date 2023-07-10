@@ -111,6 +111,7 @@ public:
 
         tableWidget = new QTableWidget(centralwidget);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+        tableWidget->setMaximumSize(QSize(16777215, 16777215));
         tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
         tableWidget->setAlternatingRowColors(true);
 
@@ -118,6 +119,7 @@ public:
 
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
+        scrollArea->setMaximumSize(QSize(16777215, 167));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));

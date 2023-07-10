@@ -1,6 +1,5 @@
 D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/elitebridge_ui_file_autogen/EWIEGA46WW/moc_mainwindow.cpp: D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.h \
   D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/elitebridge_ui_file_autogen/moc_predefs.h \
-  C:/Qt/6.2.4/mingw_64/include/QtCore/QDebug \
   C:/Qt/6.2.4/mingw_64/include/QtCore/QList \
   C:/Qt/6.2.4/mingw_64/include/QtCore/QObject \
   C:/Qt/6.2.4/mingw_64/include/QtCore/QRect \
@@ -385,7 +384,6 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
   D:/ElieteBridge-git/elitebridge_ui_file/ClickableLabel.h \
   D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.h \
-  D:/ElieteBridge-git/elitebridge_ui_file/newgroupform.h \
   D:/ElieteBridge-git/elitebridge_ui_file/newjobform.h \
   D:/ElieteBridge-git/elitebridge_ui_file/selectgroup.h \
   D:/ElieteBridge-git/elitebridge_ui_file/usergroupmainwindow.h \

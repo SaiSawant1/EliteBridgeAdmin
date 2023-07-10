@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>groupTransaction</class>
+ <widget class="QDialog" name="groupTransaction">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Group ID  </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="groupID"/>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>group name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="name"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>439</width>
+        <height>1500</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QCheckBox" name="change_password">
+         <property name="text">
+          <string>Change Password</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cycle_count">
+         <property name="text">
+          <string>Cycle Count</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="free_issue_withdraw">
+         <property name="text">
+          <string>Free Issue Withdraw</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="initiate_stock_transfer">
+         <property name="text">
+          <string>Initiate Stock Transfer</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="scrap">
+         <property name="text">
+          <string>Scrap</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="load_rework">
+         <property name="text">
+          <string>Load Rework</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="move_stock">
+         <property name="text">
+          <string>Move Stock</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="return_rework_to_general">
+         <property name="text">
+          <string>Return from Rework to General</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="inventory_adjusment">
+         <property name="text">
+          <string>Inventory Adjustment </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="restock_used">
+         <property name="text">
+          <string>Restock Used</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="change_privileges">
+         <property name="text">
+          <string>Change Privileges</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="restock_new">
+         <property name="text">
+          <string>Restock New</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="return_rework_new">
+         <property name="text">
+          <string>Return from Rework to New</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="retrun_rework_used">
+         <property name="text">
+          <string>Return from Rework to Used</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="capture_finger_print">
+         <property name="text">
+          <string>Capture Fingerprints</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="return_rework_scrap">
+         <property name="text">
+          <string>Return from Rework to Scrap</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="receive_stock_transfer">
+         <property name="text">
+          <string>Receive Stock Transfer</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="reserve_item">
+         <property name="text">
+          <string>Reserve Item</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="withdraw_reserved_item">
+         <property name="text">
+          <string>Withdraw Reserved Item</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="withdraw_kit">
+         <property name="text">
+          <string>Withdraw Kit</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="receiveAndRestock">
+         <property name="text">
+          <string>Receive and Restock</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="withdraw_used">
+         <property name="text">
+          <string>Withdraw Used</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="restock_general">
+         <property name="text">
+          <string>Restock General</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="withdraw_general">
+         <property name="text">
+          <string>Withdraw General</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="withdraw_new">
+         <property name="text">
+          <string>Withdraw New</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="priority_withdraw">
+         <property name="text">
+          <string>Priority Withdraw</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="withdraw_inspection">
+         <property name="text">
+          <string>Withdraw for Inspection</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="store_external_request">
+         <property name="text">
+          <string>Store External Request</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="supervisior_undo">
+         <property name="text">
+          <string>Supervisor Undo</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="return_general">
+         <property name="text">
+          <string>Return to General</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="return_key">
+         <property name="text">
+          <string>Return Key</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="withdraw_external_request">
+         <property name="text">
+          <string>Withdraw External Request</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="return_used">
+         <property name="text">
+          <string>Return to Used</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="RFID_insta_track">
+         <property name="text">
+          <string>RFID Insta-track</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="withdraw_scrap_drawer">
+         <property name="text">
+          <string>Withdraw Scrap from Drawer</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="return_new">
+         <property name="text">
+          <string>Return to New</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="return_scrap">
+         <property name="text">
+          <string>Return to Scrap</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="RFID_STATIC_CABINET_SCAN">
+         <property name="text">
+          <string>RFID-Static Cabinet Scan</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="return_serialized_item">
+         <property name="text">
+          <string>Return Serialized Item</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="user_undo">
+         <property name="text">
+          <string>User Undo</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="return_rework">
+         <property name="text">
+          <string>Return to Rework</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="weigh_item">
+         <property name="text">
+          <string>Weigh Item</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="withdraw_scrap_from_bin">
+         <property name="text">
+          <string>Withdraw Scrap from Bin</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="withdraw_rework_drawer">
+         <property name="text">
+          <string>Withdraw Rework From Drawer</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="withdraw_rework_from_bin">
+         <property name="text">
+          <string>Withdraw Rework from Bin</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="grantButton">
+     <property name="text">
+      <string>Grant Transaction Right</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

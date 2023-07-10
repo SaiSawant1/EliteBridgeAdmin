@@ -77,6 +77,9 @@ set(PROJECT_SOURCES
         adminsetup.cpp
         adminsetup.h
         adminsetup.ui
+        grouptransaction.cpp
+        grouptransaction.h
+        grouptransaction.ui
 
 
         ${TS_FILES}

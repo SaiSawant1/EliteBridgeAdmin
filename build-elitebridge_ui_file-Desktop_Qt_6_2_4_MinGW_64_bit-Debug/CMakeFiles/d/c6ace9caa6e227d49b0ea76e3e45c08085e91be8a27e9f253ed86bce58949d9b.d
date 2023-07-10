@@ -526,6 +526,8 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.h \
   D:/ElieteBridge-git/elitebridge_ui_file/edi.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/edi.h \
+  D:/ElieteBridge-git/elitebridge_ui_file/grouptransaction.cpp \
+  D:/ElieteBridge-git/elitebridge_ui_file/grouptransaction.h \
   D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.h \
   D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.cpp \
@@ -563,6 +565,7 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/adminsetup.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/edi.ui \
+  D:/ElieteBridge-git/elitebridge_ui_file/grouptransaction.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.ui \

@@ -1,6 +1,5 @@
 D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/elitebridge_ui_file_autogen/EWIEGA46WW/moc_usergroupmainwindow.cpp: D:/ElieteBridge-git/elitebridge_ui_file/usergroupmainwindow.h \
   D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/elitebridge_ui_file_autogen/moc_predefs.h \
-  C:/Qt/6.2.4/mingw_64/include/QtCore/QDebug \
   C:/Qt/6.2.4/mingw_64/include/QtCore/QList \
   C:/Qt/6.2.4/mingw_64/include/QtCore/QObject \
   C:/Qt/6.2.4/mingw_64/include/QtCore/QRect \
@@ -110,6 +109,7 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtGui/qkeysequence.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpaintdevice.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpalette.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/qpen.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpicture.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpixelformat.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpixmap.h \
@@ -119,7 +119,10 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtGui/qrgb.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qrgba64.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qscreen.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/qtextcursor.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qtextdocument.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/qtextformat.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/qtextoption.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qtgui-config.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qtguiglobal.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qtransform.h \
@@ -136,8 +139,8 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtSql/qsqlquery.h \
   C:/Qt/6.2.4/mingw_64/include/QtSql/qtsql-config.h \
   C:/Qt/6.2.4/mingw_64/include/QtSql/qtsqlglobal.h \
-  C:/Qt/6.2.4/mingw_64/include/QtWidgets/QDialog \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/QLineEdit \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QTableView \
@@ -149,6 +152,7 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlineedit.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qmainwindow.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qrubberband.h \
@@ -375,5 +379,4 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
-  D:/ElieteBridge-git/elitebridge_ui_file/ClickableLabel.h \
-  D:/ElieteBridge-git/elitebridge_ui_file/newgroupform.h
+  D:/ElieteBridge-git/elitebridge_ui_file/ClickableLabel.h
