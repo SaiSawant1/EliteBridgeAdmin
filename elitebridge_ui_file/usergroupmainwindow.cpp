@@ -55,7 +55,7 @@ UserGroupMainWindow::UserGroupMainWindow(QWidget *parent) :
     QPixmap undoImage("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/undo-svgrepo-com.svg");
     addUndoLabel->setPixmap(undoImage);
     QObject::connect(addUndoLabel, &ClickableLabel::clicked,this,[&]() {
-        //undoFunc();
+        undoFunc();
     });
     horizontalLayout->insertWidget(3,addUndoLabel);
 
@@ -246,6 +246,7 @@ void UserGroupMainWindow:: groupSave(){
     readDb();
 }
 void UserGroupMainWindow::deleteGroup(){
+    fillUndo();
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     QString path="D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
     db.setDatabaseName(path);
@@ -369,5 +370,36 @@ void UserGroupMainWindow::on_actionGroup_Transaction_triggered()
     groupTransaction* window=new groupTransaction;
     window->setSelectedValue(selectedValue);
     window->show();
+}
+void UserGroupMainWindow::fillUndo(){
+    undo=new groupUndo;
+    undo->id=ui->groupID->text();
+    undo->name=ui->name->text();
+}
+void UserGroupMainWindow::undoFunc(){
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    QString path="D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+    db.setDatabaseName(path);
+
+    if (!db.open()) {
+        qInfo()<<"db connection failed";
+    }
+
+    QSqlQuery query(db);
+
+    QString insertQuery = "INSERT INTO Groups (groupID, groupName) VALUES (?, ?)";
+    query.prepare(insertQuery);
+
+    query.addBindValue(undo->id);
+    query.addBindValue(undo->name);
+
+    if (query.exec()) {
+        QMessageBox::information(nullptr, "Success", "Data inserted successfully!");
+
+    } else {
+        QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
+    }
+    db.close();
+    groupSave();
 }
 

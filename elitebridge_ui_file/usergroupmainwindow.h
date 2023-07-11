@@ -14,6 +14,11 @@
 #include "QLineEdit"
 
 
+struct groupUndo{
+    QString id;
+    QString name;
+};
+
 namespace Ui {
 class UserGroupMainWindow;
 }
@@ -33,6 +38,8 @@ public:
     void readDb();
     void search();
     void fillLineEdits();
+    void undoFunc();
+    void fillUndo();
 
 private slots:
     void on_actionTransaction_triggered();
@@ -49,7 +56,7 @@ private:
     ClickableLabel* addfindLabel;
     ClickableLabel* addDeleteLabel;
     ClickableLabel* addExitLabel;
-    //undoStruct* undo;
+    groupUndo* undo;
     QLineEdit* lineEdit;
 };
 
