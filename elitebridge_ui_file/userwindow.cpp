@@ -545,4 +545,43 @@ void userWindow::fillLineEdit(){
 }
 
 
+void userWindow::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton && event->pos().y() > ui->scrollArea->height() - 5) {
+        resizing = true;
+        dragStartPosition = event->pos();
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
+
+void userWindow::mouseMoveEvent(QMouseEvent *event)
+{
+    if (resizing) {
+        QPoint diff = event->pos() - dragStartPosition;
+        int newHeight = ui->scrollArea->height() - diff.y();
+        ui->scrollArea->setFixedHeight(newHeight);
+        dragStartPosition = event->pos();
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
+
+void userWindow::mouseReleaseEvent(QMouseEvent *event)
+{
+    if (resizing) {
+        resizing = false;
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
+
+
+
 

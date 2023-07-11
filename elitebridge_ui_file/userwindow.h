@@ -12,7 +12,7 @@
 #include "ClickableLabel.h"
 #include <QLineEdit>
 #include "selectgroup.h"
-
+#include <QMouseEvent>
 
 struct undoStruct{
     QString id;
@@ -53,6 +53,11 @@ private slots:
     void fillLineEdit();
     void on_actionAdd_User_To_Group_triggered();
 
+
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
+
 signals:
     void cellSelected(const QString& selectedValue);
 
@@ -68,9 +73,14 @@ private:
     ClickableLabel* addExitLabel;
     undoStruct* undo;
     QLineEdit* lineEdit;
-
     void addUserForm();
     void readDb();
+
+    bool resizing;
+    QPoint dragStartPosition;
+
+
+
 };
 
 #endif // USERWINDOW_H
