@@ -23,6 +23,7 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     });
     connect(ui->tableWidget, &QTableWidget::cellClicked, this, &ItemsMainWindow::onCellClicked);
 
+
     horizontalLayout->insertWidget(0,addItemLabel);
 
 
@@ -107,7 +108,7 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
 
     ui->frame->setLayout(horizontalLayout);
     connect(ui->tableWidget, &QTableWidget::cellClicked, this, &ItemsMainWindow::onCellClicked);
-
+    ui->lineEditImage->installEventFilter(this);
     readDb();
 }
 
@@ -224,8 +225,40 @@ void ItemsMainWindow::onCellClicked(int row, int column)
 }
 
 void ItemsMainWindow::addUserForm(){
-    NewItemForm* newItemFormPage=new NewItemForm;
-    newItemFormPage->show();
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+
+    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
+
+    if (!db.open()) {
+        qInfo()<<"db connection failed";
+    }
+
+    QSqlQuery query;
+
+    QString insertQuery = "INSERT INTO Items (ItemID, Name, Alias, ItemGroup,ItemSubGroup,SupplierPartNumber,UnitCost,UsedUnitCost,PacketSize,Brand,ImageFile,New_UsedSensitive) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+    query.prepare(insertQuery);
+
+    query.addBindValue(ui->lineEditID->text());
+    query.addBindValue(ui->lineEditName->text());
+    query.addBindValue(ui->lineEditName->text());
+    query.addBindValue(ui->lineEditGroup->currentText());
+    query.addBindValue(ui->lineEditSubGroup->currentText());
+    query.addBindValue(ui->lineEditSupplier->text());
+    query.addBindValue(ui->lineEditUnitCost->text());
+    query.addBindValue(ui->lineEditUnitUsed->text());
+    query.addBindValue(ui->lineEditPacket->text());
+    query.addBindValue(ui->lineEditBrand->text());
+    query.addBindValue(ui->lineEditImage->text());
+    query.addBindValue(ui->lineEditNewUsed->currentText());
+
+    if (query.exec()) {
+        QMessageBox::information(nullptr, "Success", "Data inserted successfully!");
+
+    } else {
+        QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
+
+    }
+    db.close();
 }
 
 
@@ -308,7 +341,7 @@ void ItemsMainWindow::search(){
     ui->tableWidget->setColumnCount(12);
     QStringList labels;
 
-    labels << "ItemID" << "Name" << "Alias" << "ItemGroup" << "ItemSubGroup"<<"SupplierPartNumber"<<"UnitCost"<<"UsedUnitCost"<<"PacketSize"<<"Brand"<<"ImageFile"<<"New_UsedSensitive";
+    labels << "Item ID" << "Name" << "Alias" << "ItemGroup" << "Item Sub Group"<<"Supplier PartNumber"<<"Unit Cost"<<"Used Unit Cost"<<"PacketSize"<<"Brand"<<"ImageFile"<<"New_UsedSensitive";
     ui->tableWidget->setHorizontalHeaderLabels(labels);
 
     int rowCount=0;
@@ -468,15 +501,15 @@ void ItemsMainWindow::fillLineEdits(){
         ui->lineEditID->setText(query.value(0).toString());
         ui->lineEditName->setText(query.value(1).toString());
         ui->lineEditAlias->setText(query.value(2).toString());
-        ui->lineEditGroup->setText(query.value(3).toString());
-        ui->lineEditSubGroup->setText(query.value(4).toString());
+        ui->lineEditGroup->setCurrentText(query.value(3).toString());
+        ui->lineEditSubGroup->setCurrentText(query.value(4).toString());
         ui->lineEditSupplier->setText(query.value(5).toString());
         ui->lineEditUnitCost->setText(query.value(6).toString());
         ui->lineEditUnitUsed->setText(query.value(7).toString());
         ui->lineEditPacket->setText(query.value(8).toString());
         ui->lineEditBrand->setText(query.value(9).toString());
         ui->lineEditImage->setText(query.value(10).toString());
-        ui->lineEditNewUsed->setText(query.value(11).toString());
+        ui->lineEditNewUsed->setCurrentText(query.value(11).toString());
 
 
     }
@@ -502,15 +535,15 @@ void ItemsMainWindow::updateItem(){
 
     query.addBindValue(ui->lineEditName->text());
     query.addBindValue(ui->lineEditAlias->text());
-    query.addBindValue(ui->lineEditGroup->text());
-    query.addBindValue(ui->lineEditSubGroup->text());
+    query.addBindValue(ui->lineEditGroup->currentText());
+    query.addBindValue(ui->lineEditSubGroup->currentText());
     query.addBindValue(ui->lineEditSupplier->text());
     query.addBindValue(ui->lineEditUnitCost->text());
     query.addBindValue(ui->lineEditUnitUsed->text());
     query.addBindValue(ui->lineEditPacket->text());
     query.addBindValue(ui->lineEditBrand->text());
     query.addBindValue(ui->lineEditImage->text());
-    query.addBindValue(ui->lineEditNewUsed->text());
+    query.addBindValue(ui->lineEditNewUsed->currentText());
     query.addBindValue(ui->lineEditID->text());
 
     if (query.exec()) {
@@ -522,3 +555,28 @@ void ItemsMainWindow::updateItem(){
     }
     db.close();
 }
+
+bool ItemsMainWindow::eventFilter(QObject *obj, QEvent *event)
+{
+    if (obj == ui->lineEditImage && event->type() == QEvent::MouseButtonRelease)
+    {
+        QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
+        if (mouseEvent->button() == Qt::LeftButton)
+        {
+            QString filePath = QFileDialog::getOpenFileName(this, "Select File");
+            if (!filePath.isEmpty())
+            {
+                ui->lineEditImage->setText(filePath);
+            }
+        }
+    }
+
+    return QObject::eventFilter(obj, event);
+}
+
+void ItemsMainWindow::on_actioncreate_item_group_triggered()
+{
+    ItemGroup* groupWindow=new ItemGroup;
+    groupWindow->show();
+}
+

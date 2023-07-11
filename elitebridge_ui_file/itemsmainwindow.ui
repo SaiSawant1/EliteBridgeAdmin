@@ -37,6 +37,12 @@
     </item>
     <item>
      <widget class="QScrollArea" name="scrollArea">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>167</height>
+       </size>
+      </property>
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
@@ -44,7 +50,7 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-492</y>
+         <y>-563</y>
          <width>992</width>
          <height>723</height>
         </rect>
@@ -133,7 +139,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEditGroup"/>
+            <widget class="QComboBox" name="lineEditGroup"/>
            </item>
           </layout>
          </widget>
@@ -155,7 +161,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEditSubGroup"/>
+            <widget class="QComboBox" name="lineEditSubGroup"/>
            </item>
           </layout>
          </widget>
@@ -309,7 +315,23 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEditNewUsed"/>
+            <widget class="QComboBox" name="lineEditNewUsed">
+             <item>
+              <property name="text">
+               <string/>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>yes</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>no</string>
+              </property>
+             </item>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -358,6 +380,13 @@
     <property name="title">
      <string>Items</string>
     </property>
+    <widget class="QMenu" name="menuItems_Group">
+     <property name="title">
+      <string>Items Group</string>
+     </property>
+     <addaction name="actioncreate_item_group"/>
+    </widget>
+    <addaction name="menuItems_Group"/>
    </widget>
    <addaction name="menuFiles"/>
    <addaction name="menuView"/>
@@ -367,6 +396,11 @@
    <addaction name="menuItems"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actioncreate_item_group">
+   <property name="text">
+    <string>create item group</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

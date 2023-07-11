@@ -12,7 +12,9 @@
 #include <QTableView>
 #include "ClickableLabel.h"
 #include <QLineEdit>
-
+#include <QFileDialog>
+#include <QMouseEvent>
+#include "itemgroup.h"
 
 struct undoItemStruct{
     QString id;
@@ -51,6 +53,10 @@ private slots:
     void undoFunc();
     void onCellClicked(int row, int column);
     void fillLineEdits();
+
+    bool eventFilter(QObject *obj, QEvent *event);
+    void on_actioncreate_item_group_triggered();
+
 private:
     QString selectedValue;
     Ui::ItemsMainWindow *ui;

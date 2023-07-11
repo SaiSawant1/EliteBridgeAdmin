@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -31,6 +32,7 @@ QT_BEGIN_NAMESPACE
 class Ui_ItemsMainWindow
 {
 public:
+    QAction *actioncreate_item_group;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QFrame *frame;
@@ -53,11 +55,11 @@ public:
     QFrame *frame_11;
     QHBoxLayout *horizontalLayout_10;
     QLabel *label_10;
-    QLineEdit *lineEditGroup;
+    QComboBox *lineEditGroup;
     QFrame *frame_3;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_2;
-    QLineEdit *lineEditSubGroup;
+    QComboBox *lineEditSubGroup;
     QFrame *frame_7;
     QHBoxLayout *horizontalLayout_6;
     QLabel *label_6;
@@ -85,7 +87,7 @@ public:
     QFrame *frame_14;
     QHBoxLayout *horizontalLayout_13;
     QLabel *label_13;
-    QLineEdit *lineEditNewUsed;
+    QComboBox *lineEditNewUsed;
     QMenuBar *menubar;
     QMenu *menuFiles;
     QMenu *menuView;
@@ -93,6 +95,7 @@ public:
     QMenu *menuAudit;
     QMenu *menuLocations;
     QMenu *menuItems;
+    QMenu *menuItems_Group;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *ItemsMainWindow)
@@ -100,6 +103,8 @@ public:
         if (ItemsMainWindow->objectName().isEmpty())
             ItemsMainWindow->setObjectName(QString::fromUtf8("ItemsMainWindow"));
         ItemsMainWindow->resize(1033, 428);
+        actioncreate_item_group = new QAction(ItemsMainWindow);
+        actioncreate_item_group->setObjectName(QString::fromUtf8("actioncreate_item_group"));
         centralwidget = new QWidget(ItemsMainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -120,10 +125,11 @@ public:
 
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
+        scrollArea->setMaximumSize(QSize(16777215, 167));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, -492, 992, 723));
+        scrollAreaWidgetContents->setGeometry(QRect(0, -563, 992, 723));
         verticalLayout_2 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         frame_2 = new QFrame(scrollAreaWidgetContents);
@@ -194,7 +200,7 @@ public:
 
         horizontalLayout_10->addWidget(label_10);
 
-        lineEditGroup = new QLineEdit(frame_11);
+        lineEditGroup = new QComboBox(frame_11);
         lineEditGroup->setObjectName(QString::fromUtf8("lineEditGroup"));
 
         horizontalLayout_10->addWidget(lineEditGroup);
@@ -213,7 +219,7 @@ public:
 
         horizontalLayout_2->addWidget(label_2);
 
-        lineEditSubGroup = new QLineEdit(frame_3);
+        lineEditSubGroup = new QComboBox(frame_3);
         lineEditSubGroup->setObjectName(QString::fromUtf8("lineEditSubGroup"));
 
         horizontalLayout_2->addWidget(lineEditSubGroup);
@@ -346,7 +352,10 @@ public:
 
         horizontalLayout_13->addWidget(label_13);
 
-        lineEditNewUsed = new QLineEdit(frame_14);
+        lineEditNewUsed = new QComboBox(frame_14);
+        lineEditNewUsed->addItem(QString());
+        lineEditNewUsed->addItem(QString());
+        lineEditNewUsed->addItem(QString());
         lineEditNewUsed->setObjectName(QString::fromUtf8("lineEditNewUsed"));
 
         horizontalLayout_13->addWidget(lineEditNewUsed);
@@ -374,6 +383,8 @@ public:
         menuLocations->setObjectName(QString::fromUtf8("menuLocations"));
         menuItems = new QMenu(menubar);
         menuItems->setObjectName(QString::fromUtf8("menuItems"));
+        menuItems_Group = new QMenu(menuItems);
+        menuItems_Group->setObjectName(QString::fromUtf8("menuItems_Group"));
         ItemsMainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(ItemsMainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -385,6 +396,8 @@ public:
         menubar->addAction(menuAudit->menuAction());
         menubar->addAction(menuLocations->menuAction());
         menubar->addAction(menuItems->menuAction());
+        menuItems->addAction(menuItems_Group->menuAction());
+        menuItems_Group->addAction(actioncreate_item_group);
 
         retranslateUi(ItemsMainWindow);
 
@@ -394,6 +407,7 @@ public:
     void retranslateUi(QMainWindow *ItemsMainWindow)
     {
         ItemsMainWindow->setWindowTitle(QCoreApplication::translate("ItemsMainWindow", "MainWindow", nullptr));
+        actioncreate_item_group->setText(QCoreApplication::translate("ItemsMainWindow", "create item group", nullptr));
         label->setText(QCoreApplication::translate("ItemsMainWindow", "IItemID                        ", nullptr));
         label_8->setText(QCoreApplication::translate("ItemsMainWindow", "Name                          ", nullptr));
         label_9->setText(QCoreApplication::translate("ItemsMainWindow", "Alias                            ", nullptr));
@@ -406,12 +420,17 @@ public:
         label_7->setText(QCoreApplication::translate("ItemsMainWindow", "Brand                           ", nullptr));
         label_3->setText(QCoreApplication::translate("ItemsMainWindow", "Image File                    ", nullptr));
         label_13->setText(QCoreApplication::translate("ItemsMainWindow", "New/Used Sensitive     ", nullptr));
+        lineEditNewUsed->setItemText(0, QString());
+        lineEditNewUsed->setItemText(1, QCoreApplication::translate("ItemsMainWindow", "yes", nullptr));
+        lineEditNewUsed->setItemText(2, QCoreApplication::translate("ItemsMainWindow", "no", nullptr));
+
         menuFiles->setTitle(QCoreApplication::translate("ItemsMainWindow", "File", nullptr));
         menuView->setTitle(QCoreApplication::translate("ItemsMainWindow", "View", nullptr));
         menuRecord->setTitle(QCoreApplication::translate("ItemsMainWindow", "Record", nullptr));
         menuAudit->setTitle(QCoreApplication::translate("ItemsMainWindow", "Audit", nullptr));
         menuLocations->setTitle(QCoreApplication::translate("ItemsMainWindow", "Locations", nullptr));
         menuItems->setTitle(QCoreApplication::translate("ItemsMainWindow", "Items", nullptr));
+        menuItems_Group->setTitle(QCoreApplication::translate("ItemsMainWindow", "Items Group", nullptr));
     } // retranslateUi
 
 };

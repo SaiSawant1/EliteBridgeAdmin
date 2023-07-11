@@ -80,8 +80,9 @@ set(PROJECT_SOURCES
         grouptransaction.cpp
         grouptransaction.h
         grouptransaction.ui
-
-
+        itemgroup.cpp
+        itemgroup.h
+        itemgroup.ui
         ${TS_FILES}
 )
 

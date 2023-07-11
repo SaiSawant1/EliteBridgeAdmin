@@ -2,7 +2,7 @@
 #include "./ui_mainwindow.h"
 #include "userwindow.h"
 #include "itemsmainwindow.h"
-#include "adminsetup.h".h"
+#include "adminsetup.h"
 #include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent)

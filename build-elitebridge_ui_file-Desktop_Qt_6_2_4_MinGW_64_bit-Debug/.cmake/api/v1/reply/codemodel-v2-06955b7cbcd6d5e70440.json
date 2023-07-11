@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-e47fb171dc9338689c22.json",
+					"jsonFile" : "directory-.-Debug-623f02636061af555965.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "elitebridge_ui_file::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-elitebridge_ui_file-Debug-9696662a1336ba4209b0.json",
+					"jsonFile" : "target-elitebridge_ui_file-Debug-5dcd1d178033fd46f0b9.json",
 					"name" : "elitebridge_ui_file",
 					"projectIndex" : 0
 				},
