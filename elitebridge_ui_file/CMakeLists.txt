@@ -83,6 +83,9 @@ set(PROJECT_SOURCES
         itemgroup.cpp
         itemgroup.h
         itemgroup.ui
+        itemsubgroup.cpp
+        itemsubgroup.h
+        itemsubgroup.ui
         ${TS_FILES}
 )
 

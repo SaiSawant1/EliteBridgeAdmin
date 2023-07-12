@@ -50,7 +50,7 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-563</y>
+         <y>0</y>
          <width>992</width>
          <height>723</height>
         </rect>
@@ -385,6 +385,7 @@
       <string>Items Group</string>
      </property>
      <addaction name="actioncreate_item_group"/>
+     <addaction name="actioncreate_item_sub_group"/>
     </widget>
     <addaction name="menuItems_Group"/>
    </widget>
@@ -399,6 +400,11 @@
   <action name="actioncreate_item_group">
    <property name="text">
     <string>create item group</string>
+   </property>
+  </action>
+  <action name="actioncreate_item_sub_group">
+   <property name="text">
+    <string>create item sub group</string>
    </property>
   </action>
  </widget>

@@ -13,6 +13,7 @@
 #include <QLineEdit>
 #include "selectgroup.h"
 #include <QMouseEvent>
+#include <QFileDialog>
 
 struct undoStruct{
     QString id;
@@ -51,9 +52,8 @@ private slots:
     void fillUndoStruct();
     void undoFunc();
     void fillLineEdit();
-    void on_actionAdd_User_To_Group_triggered();
-
-
+    void on_actionAdd_User_To_Group_triggered() ;
+    bool eventFilter(QObject *obj, QEvent *event) override;
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;

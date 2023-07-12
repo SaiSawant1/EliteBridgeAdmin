@@ -109,6 +109,8 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     ui->frame->setLayout(horizontalLayout);
     connect(ui->tableWidget, &QTableWidget::cellClicked, this, &ItemsMainWindow::onCellClicked);
     ui->lineEditImage->installEventFilter(this);
+    fillGroupCombo();
+    fillSubGroupCombo();
     readDb();
 }
 
@@ -146,7 +148,7 @@ void ItemsMainWindow:: readDb()
     ui->tableWidget->setColumnCount(12);
     QStringList labels;
 
-    labels << "ItemID" << "Name" << "Alias" << "ItemGroup" << "ItemSubGroup"<<"SupplierPartNumber"<<"UnitCost"<<"UsedUnitCost"<<"PacketSize"<<"Brand"<<"ImageFile"<<"New_UsedSensitive";
+    labels << "Item ID" << "Name" << "Alias" << "Item Group" << "Item Sub Group"<<"Supplier Part Number"<<"UnitCost"<<"Used Unit Cost"<<"Packet Size"<<"Brand"<<"Image File"<<"New/Used";
     ui->tableWidget->setHorizontalHeaderLabels(labels);
 
     int rowCount=0;
@@ -163,7 +165,7 @@ void ItemsMainWindow:: readDb()
         QTableWidgetItem *UsedUnitCost = new QTableWidgetItem(query.value(7).toString());
         QTableWidgetItem *PacketSize = new QTableWidgetItem(query.value(8).toString());
         QTableWidgetItem *Brand = new QTableWidgetItem(query.value(9).toString());
-        QTableWidgetItem *ImageFile = new QTableWidgetItem(query.value(10).toString());
+        QTableWidgetItem *ImageFile = new QTableWidgetItem();
         QTableWidgetItem *New_UsedSensitive = new QTableWidgetItem(query.value(11).toString());
 
         ItemID->setText(query.value(0).toString());
@@ -176,7 +178,14 @@ void ItemsMainWindow:: readDb()
         UsedUnitCost->setText(query.value(7).toString());
         PacketSize->setText(query.value(8).toString());
         Brand->setText(query.value(9).toString());
-        ImageFile->setText(query.value(10).toString());
+
+        QPixmap pixmap(query.value(10).toString());
+        QSize newSize(130,130);
+        QPixmap scaledPixmap = pixmap.scaled(newSize, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        QIcon icon(scaledPixmap);
+        ImageFile->setIcon(icon);
+        ImageFile->setSizeHint(newSize);
+
         New_UsedSensitive->setText(query.value(11).toString());
 
         ui->tableWidget->setItem(rowCount,0,ItemID);
@@ -225,6 +234,9 @@ void ItemsMainWindow::onCellClicked(int row, int column)
 }
 
 void ItemsMainWindow::addUserForm(){
+    if(ui->lineEditID->text()=="" || ui->lineEditName->text()==""){
+        return;
+    }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
     db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
@@ -235,7 +247,7 @@ void ItemsMainWindow::addUserForm(){
 
     QSqlQuery query;
 
-    QString insertQuery = "INSERT INTO Items (ItemID, Name, Alias, ItemGroup,ItemSubGroup,SupplierPartNumber,UnitCost,UsedUnitCost,PacketSize,Brand,ImageFile,New_UsedSensitive) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+    QString insertQuery = "INSERT INTO Items (ItemID, Name, Alias, Item Group,ItemSubGroup,SupplierPartNumber,UnitCost,UsedUnitCost,PacketSize,Brand,ImageFile,New_UsedSensitive) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
     query.prepare(insertQuery);
 
     query.addBindValue(ui->lineEditID->text());
@@ -269,6 +281,8 @@ void ItemsMainWindow::itemSave()
     QStringList label;
     label<<"";
     ui->tableWidget->setHorizontalHeaderLabels(label);
+    fillGroupCombo();
+    fillSubGroupCombo();
     readDb();
 }
 void ItemsMainWindow::deleteItem()
@@ -520,6 +534,9 @@ void ItemsMainWindow::fillLineEdits(){
 }
 
 void ItemsMainWindow::updateItem(){
+    if(ui->lineEditID->text()=="" || ui->lineEditName->text()==""){
+        return;
+    }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
     db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
@@ -578,5 +595,107 @@ void ItemsMainWindow::on_actioncreate_item_group_triggered()
 {
     ItemGroup* groupWindow=new ItemGroup;
     groupWindow->show();
+}
+
+void ItemsMainWindow::fillGroupCombo(){
+
+    ui->lineEditGroup->clear();
+    ui->lineEditGroup->addItem("(none)");
+
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+
+    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
+
+    if (!db.open()) {
+        qInfo()<<"db connection failed";
+    }
+
+    QSqlQuery query;
+    query.exec("SELECT Name FROM item_group");
+
+
+    if (query.exec()) {
+        while (query.next()) {
+            QString groupName = query.value(0).toString();
+            ui->lineEditGroup->addItem(groupName);
+        }
+
+    } else {
+        QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
+
+    }
+    db.close();
+}
+void ItemsMainWindow::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton && event->pos().y() > ui->scrollArea->height() - 5) {
+        resizing = true;
+        dragStartPosition = event->pos();
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
+
+void ItemsMainWindow::mouseMoveEvent(QMouseEvent *event)
+{
+    if (resizing) {
+        QPoint diff = event->pos() - dragStartPosition;
+        int newHeight = ui->scrollArea->height() - diff.y();
+        ui->scrollArea->setFixedHeight(newHeight);
+        dragStartPosition = event->pos();
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
+
+void ItemsMainWindow::mouseReleaseEvent(QMouseEvent *event)
+{
+    if (resizing) {
+        resizing = false;
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
+
+void ItemsMainWindow::on_actioncreate_item_sub_group_triggered()
+{
+    ItemSubGroup *subGroupWindow=new ItemSubGroup;
+    subGroupWindow->show();
+}
+
+void ItemsMainWindow::fillSubGroupCombo(){
+
+    ui->lineEditSubGroup->clear();
+    ui->lineEditSubGroup->addItem("(none)");
+
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+
+    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
+
+    if (!db.open()) {
+        qInfo()<<"db connection failed";
+    }
+
+    QSqlQuery query;
+    query.exec("SELECT subGroupName FROM item_sub_group");
+
+
+    if (query.exec()) {
+        while (query.next()) {
+            QString groupName = query.value(0).toString();
+            ui->lineEditSubGroup->addItem(groupName);
+        }
+
+    } else {
+        QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
+
+    }
+    db.close();
 }
 

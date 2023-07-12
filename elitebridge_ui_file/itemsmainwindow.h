@@ -15,6 +15,7 @@
 #include <QFileDialog>
 #include <QMouseEvent>
 #include "itemgroup.h"
+#include "itemsubgroup.h"
 
 struct undoItemStruct{
     QString id;
@@ -53,9 +54,16 @@ private slots:
     void undoFunc();
     void onCellClicked(int row, int column);
     void fillLineEdits();
-
-    bool eventFilter(QObject *obj, QEvent *event);
+    void fillGroupCombo();
+    void fillSubGroupCombo();
+    bool eventFilter(QObject *obj, QEvent *event) override;
     void on_actioncreate_item_group_triggered();
+
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
+
+    void on_actioncreate_item_sub_group_triggered();
 
 private:
     QString selectedValue;
@@ -71,6 +79,9 @@ private:
     QLineEdit* lineEdit;
     void addUserForm();
     void readDb();
+
+    bool resizing;
+    QPoint dragStartPosition;
 };
 
 #endif // ITEMSMAINWINDOW_H

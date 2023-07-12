@@ -33,6 +33,7 @@ class Ui_ItemsMainWindow
 {
 public:
     QAction *actioncreate_item_group;
+    QAction *actioncreate_item_sub_group;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QFrame *frame;
@@ -105,6 +106,8 @@ public:
         ItemsMainWindow->resize(1033, 428);
         actioncreate_item_group = new QAction(ItemsMainWindow);
         actioncreate_item_group->setObjectName(QString::fromUtf8("actioncreate_item_group"));
+        actioncreate_item_sub_group = new QAction(ItemsMainWindow);
+        actioncreate_item_sub_group->setObjectName(QString::fromUtf8("actioncreate_item_sub_group"));
         centralwidget = new QWidget(ItemsMainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -129,7 +132,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, -563, 992, 723));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 992, 723));
         verticalLayout_2 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         frame_2 = new QFrame(scrollAreaWidgetContents);
@@ -398,6 +401,7 @@ public:
         menubar->addAction(menuItems->menuAction());
         menuItems->addAction(menuItems_Group->menuAction());
         menuItems_Group->addAction(actioncreate_item_group);
+        menuItems_Group->addAction(actioncreate_item_sub_group);
 
         retranslateUi(ItemsMainWindow);
 
@@ -408,6 +412,7 @@ public:
     {
         ItemsMainWindow->setWindowTitle(QCoreApplication::translate("ItemsMainWindow", "MainWindow", nullptr));
         actioncreate_item_group->setText(QCoreApplication::translate("ItemsMainWindow", "create item group", nullptr));
+        actioncreate_item_sub_group->setText(QCoreApplication::translate("ItemsMainWindow", "create item sub group", nullptr));
         label->setText(QCoreApplication::translate("ItemsMainWindow", "IItemID                        ", nullptr));
         label_8->setText(QCoreApplication::translate("ItemsMainWindow", "Name                          ", nullptr));
         label_9->setText(QCoreApplication::translate("ItemsMainWindow", "Alias                            ", nullptr));

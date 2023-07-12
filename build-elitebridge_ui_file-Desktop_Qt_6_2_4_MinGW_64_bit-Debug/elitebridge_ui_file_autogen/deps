@@ -558,6 +558,8 @@ elitebridge_ui_file_autogen/timestamp: \
 	D:/ElieteBridge-git/elitebridge_ui_file/itemgroup.h \
 	D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.cpp \
 	D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.h \
+	D:/ElieteBridge-git/elitebridge_ui_file/itemsubgroup.cpp \
+	D:/ElieteBridge-git/elitebridge_ui_file/itemsubgroup.h \
 	D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.cpp \
 	D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.h \
 	D:/ElieteBridge-git/elitebridge_ui_file/main.cpp \
@@ -596,6 +598,7 @@ elitebridge_ui_file_autogen/timestamp: \
 	D:/ElieteBridge-git/elitebridge_ui_file/grouptransaction.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/itemgroup.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.ui \
+	D:/ElieteBridge-git/elitebridge_ui_file/itemsubgroup.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.ui \
 	D:/ElieteBridge-git/elitebridge_ui_file/newgroupform.ui \

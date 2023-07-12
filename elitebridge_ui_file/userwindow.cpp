@@ -115,12 +115,15 @@ userWindow::userWindow(QWidget *parent) :
 
     ui->frame->setLayout(horizontalLayout);
     connect(ui->tableWidget, &QTableWidget::cellClicked, this, &userWindow::onCellClicked);
-
+    ui->user_image->installEventFilter(this);
     readDb();
 
 }
 
 void userWindow::addUserForm(){
+    if(ui->user_id->text()==""||ui->user_image->text()==""){
+        return;
+    }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
     db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
@@ -184,7 +187,7 @@ void userWindow:: readDb()
 
     ui->tableWidget->setColumnCount(7);
     QStringList labels;
-    labels << "UserID" << "Name" << "Alias" << "Password"<<"ImageFile" << "CostCenter" << "AllowtoLogin";
+    labels << "User ID" << "Name" << "Alias" << "Password"<<"Image File" << "Cost Center" << "Allow to Login";
     ui->tableWidget->setHorizontalHeaderLabels(labels);
 
     int rowCount=0;
@@ -458,6 +461,9 @@ void userWindow::undoFunc(){
 
 void userWindow::updateUser()
 {
+    if(ui->user_id->text()==""||ui->user_image->text()==""){
+        return;
+    }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
     db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
@@ -581,7 +587,23 @@ void userWindow::mouseReleaseEvent(QMouseEvent *event)
         event->ignore();
     }
 }
+bool userWindow::eventFilter(QObject *obj, QEvent *event)
+{
+    if (obj == ui->user_image && event->type() == QEvent::MouseButtonRelease)
+    {
+        QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
+        if (mouseEvent->button() == Qt::LeftButton)
+        {
+            QString filePath = QFileDialog::getOpenFileName(this, "Select File");
+            if (!filePath.isEmpty())
+            {
+                ui->user_image->setText(filePath);
+            }
+        }
+    }
 
+    return QObject::eventFilter(obj, event);
+}
 
 
 

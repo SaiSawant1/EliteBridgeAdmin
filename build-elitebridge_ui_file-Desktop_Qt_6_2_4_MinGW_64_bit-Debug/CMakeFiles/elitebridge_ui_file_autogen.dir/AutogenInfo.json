@@ -353,6 +353,12 @@
 			null
 		],
 		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/itemsubgroup.h",
+			"MU",
+			"EWIEGA46WW/moc_itemsubgroup.cpp",
+			null
+		],
+		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_jobmainwindow.cpp",
@@ -523,6 +529,11 @@
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/itemgroup.cpp", "MU", null ],
 		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/itemsubgroup.cpp",
 			"MU",
 			null
 		],

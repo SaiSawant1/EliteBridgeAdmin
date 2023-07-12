@@ -331,7 +331,7 @@ public:
         actionuser_grants->setText(QCoreApplication::translate("userWindow", "user grants", nullptr));
         actionAdd_User_To_Group->setText(QCoreApplication::translate("userWindow", "Add User To Group", nullptr));
         label_2->setText(QCoreApplication::translate("userWindow", "User ID           ", nullptr));
-        label_23->setText(QCoreApplication::translate("userWindow", "  Name           ", nullptr));
+        label_23->setText(QCoreApplication::translate("userWindow", "Name           ", nullptr));
         label_18->setText(QCoreApplication::translate("userWindow", "Alias               ", nullptr));
         label_20->setText(QCoreApplication::translate("userWindow", "Password         ", nullptr));
         label->setText(QCoreApplication::translate("userWindow", "Cost Center    ", nullptr));
