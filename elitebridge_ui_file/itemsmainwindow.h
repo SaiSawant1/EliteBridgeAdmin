@@ -16,6 +16,7 @@
 #include <QMouseEvent>
 #include "itemgroup.h"
 #include "itemsubgroup.h"
+#include "itemdetaildialog.h"
 
 struct undoItemStruct{
     QString id;
@@ -30,6 +31,10 @@ struct undoItemStruct{
     QString brand;
     QString image;
     QString newused;
+    QString location;
+    QString min;
+    QString max;
+    QString critical;
 
 };
 
@@ -53,12 +58,13 @@ private slots:
     void fillUndoStruct();
     void undoFunc();
     void onCellClicked(int row, int column);
+    void showDialog(int row, int column);
     void fillLineEdits();
     void fillGroupCombo();
     void fillSubGroupCombo();
+    void fillLocationCombo();
     bool eventFilter(QObject *obj, QEvent *event) override;
     void on_actioncreate_item_group_triggered();
-
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;

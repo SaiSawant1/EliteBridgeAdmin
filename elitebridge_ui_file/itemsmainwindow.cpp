@@ -108,9 +108,11 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
 
     ui->frame->setLayout(horizontalLayout);
     connect(ui->tableWidget, &QTableWidget::cellClicked, this, &ItemsMainWindow::onCellClicked);
+    connect(ui->tableWidget, &QTableWidget::cellDoubleClicked, this, &ItemsMainWindow::showDialog);
     ui->lineEditImage->installEventFilter(this);
     fillGroupCombo();
     fillSubGroupCombo();
+    fillLocationCombo();
     readDb();
 }
 
@@ -145,10 +147,10 @@ void ItemsMainWindow:: readDb()
         return;
     }
 
-    ui->tableWidget->setColumnCount(12);
+    ui->tableWidget->setColumnCount(16);
     QStringList labels;
 
-    labels << "Item ID" << "Name" << "Alias" << "Item Group" << "Item Sub Group"<<"Supplier Part Number"<<"UnitCost"<<"Used Unit Cost"<<"Packet Size"<<"Brand"<<"Image File"<<"New/Used";
+    labels << "Item ID" << "Name" << "Alias" << "Item Group" << "Item Sub Group"<<"Supplier Part Number"<<"UnitCost"<<"Used Unit Cost"<<"Packet Size"<<"Brand"<<"Image File"<<"New/Used"<<"Location"<<"Minimum"<<"Maximum"<<"Critical Point";
     ui->tableWidget->setHorizontalHeaderLabels(labels);
 
     int rowCount=0;
@@ -167,6 +169,10 @@ void ItemsMainWindow:: readDb()
         QTableWidgetItem *Brand = new QTableWidgetItem(query.value(9).toString());
         QTableWidgetItem *ImageFile = new QTableWidgetItem();
         QTableWidgetItem *New_UsedSensitive = new QTableWidgetItem(query.value(11).toString());
+        QTableWidgetItem *Location = new QTableWidgetItem(query.value(12).toString());
+        QTableWidgetItem *Minimum = new QTableWidgetItem(query.value(13).toString());
+        QTableWidgetItem *Maximum = new QTableWidgetItem(query.value(14).toString());
+        QTableWidgetItem *CriticalPoint = new QTableWidgetItem(query.value(15).toString());
 
         ItemID->setText(query.value(0).toString());
         Name->setText(query.value(1).toString());
@@ -185,8 +191,11 @@ void ItemsMainWindow:: readDb()
         QIcon icon(scaledPixmap);
         ImageFile->setIcon(icon);
         ImageFile->setSizeHint(newSize);
-
         New_UsedSensitive->setText(query.value(11).toString());
+        Location->setText(query.value(12).toString());
+        Minimum->setText(query.value(13).toString());
+        Maximum->setText(query.value(14).toString());
+        CriticalPoint->setText(query.value(15).toString());
 
         ui->tableWidget->setItem(rowCount,0,ItemID);
         ui->tableWidget->setItem(rowCount,1,Name);
@@ -200,6 +209,10 @@ void ItemsMainWindow:: readDb()
         ui->tableWidget->setItem(rowCount,9,Brand);
         ui->tableWidget->setItem(rowCount,10,ImageFile);
         ui->tableWidget->setItem(rowCount,11,New_UsedSensitive);
+        ui->tableWidget->setItem(rowCount,12,Location);
+        ui->tableWidget->setItem(rowCount,13,Minimum);
+        ui->tableWidget->setItem(rowCount,14,Maximum);
+        ui->tableWidget->setItem(rowCount,15,CriticalPoint);
 
         rowCount++;
     }
@@ -235,6 +248,12 @@ void ItemsMainWindow::onCellClicked(int row, int column)
 
 void ItemsMainWindow::addUserForm(){
     if(ui->lineEditID->text()=="" || ui->lineEditName->text()==""){
+        if(ui->lineEditID->text()==""){
+            ui->lineEditID->setStyleSheet("QLineEdit { background-color: red; }");
+        }
+        if(ui->lineEditName->text()==""){
+            ui->lineEditName->setStyleSheet("QLineEdit { background-color: red; }");
+        }
         return;
     }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
@@ -247,12 +266,12 @@ void ItemsMainWindow::addUserForm(){
 
     QSqlQuery query;
 
-    QString insertQuery = "INSERT INTO Items (ItemID, Name, Alias, Item Group,ItemSubGroup,SupplierPartNumber,UnitCost,UsedUnitCost,PacketSize,Brand,ImageFile,New_UsedSensitive) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+    QString insertQuery = "INSERT INTO Items (ItemID, Name, Alias, ItemGroup, ItemSubGroup, SupplierPartNumber, UnitCost, UsedUnitCost, PacketSize, Brand, ImageFile, New_UsedSensitive, Location, minimum, maximum, critical) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     query.prepare(insertQuery);
 
     query.addBindValue(ui->lineEditID->text());
     query.addBindValue(ui->lineEditName->text());
-    query.addBindValue(ui->lineEditName->text());
+    query.addBindValue(ui->lineEditAlias->text()); // Assuming you have an Alias line edit
     query.addBindValue(ui->lineEditGroup->currentText());
     query.addBindValue(ui->lineEditSubGroup->currentText());
     query.addBindValue(ui->lineEditSupplier->text());
@@ -262,15 +281,23 @@ void ItemsMainWindow::addUserForm(){
     query.addBindValue(ui->lineEditBrand->text());
     query.addBindValue(ui->lineEditImage->text());
     query.addBindValue(ui->lineEditNewUsed->currentText());
+    query.addBindValue(ui->lineEditLocation->currentText());
+    query.addBindValue(ui->lineEditmin->text());
+    query.addBindValue(ui->lineEditmax->text());
+    query.addBindValue(ui->lineEditcritical->text());
+
 
     if (query.exec()) {
+        ui->lineEditID->setStyleSheet("QLineEdit { background-color: white; }");
+        ui->lineEditName->setStyleSheet("QLineEdit { background-color: white; }");
         QMessageBox::information(nullptr, "Success", "Data inserted successfully!");
+
 
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
-
     }
     db.close();
+
 }
 
 
@@ -352,10 +379,10 @@ void ItemsMainWindow::search(){
         return;
     }
 
-    ui->tableWidget->setColumnCount(12);
+    ui->tableWidget->setColumnCount(16);
     QStringList labels;
 
-    labels << "Item ID" << "Name" << "Alias" << "ItemGroup" << "Item Sub Group"<<"Supplier PartNumber"<<"Unit Cost"<<"Used Unit Cost"<<"PacketSize"<<"Brand"<<"ImageFile"<<"New_UsedSensitive";
+    labels << "Item ID" << "Name" << "Alias" << "Item Group" << "Item Sub Group"<<"Supplier PartNumber"<<"Unit Cost"<<"Used Unit Cost"<<"PacketSize"<<"Brand"<<"ImageFile"<<"New_UsedSensitive"<<"Location"<<"Minimum"<<"Maximum"<<"Critical Point";
     ui->tableWidget->setHorizontalHeaderLabels(labels);
 
     int rowCount=0;
@@ -374,6 +401,10 @@ void ItemsMainWindow::search(){
         QTableWidgetItem *Brand = new QTableWidgetItem(query.value(9).toString());
         QTableWidgetItem *ImageFile = new QTableWidgetItem(query.value(10).toString());
         QTableWidgetItem *New_UsedSensitive = new QTableWidgetItem(query.value(11).toString());
+        QTableWidgetItem *Location = new QTableWidgetItem(query.value(12).toString());
+        QTableWidgetItem *Minimum = new QTableWidgetItem(query.value(13).toString());
+        QTableWidgetItem *Maximum = new QTableWidgetItem(query.value(14).toString());
+        QTableWidgetItem *CriticalPoint = new QTableWidgetItem(query.value(15).toString());
 
         ItemID->setText(query.value(0).toString());
         Name->setText(query.value(1).toString());
@@ -387,6 +418,10 @@ void ItemsMainWindow::search(){
         Brand->setText(query.value(9).toString());
         ImageFile->setText(query.value(10).toString());
         New_UsedSensitive->setText(query.value(11).toString());
+        Location->setText(query.value(12).toString());
+        Minimum->setText(query.value(13).toString());
+        Maximum->setText(query.value(14).toString());
+        CriticalPoint->setText(query.value(15).toString());
 
         ui->tableWidget->setItem(rowCount,0,ItemID);
         ui->tableWidget->setItem(rowCount,1,Name);
@@ -400,6 +435,10 @@ void ItemsMainWindow::search(){
         ui->tableWidget->setItem(rowCount,9,Brand);
         ui->tableWidget->setItem(rowCount,10,ImageFile);
         ui->tableWidget->setItem(rowCount,11,New_UsedSensitive);
+        ui->tableWidget->setItem(rowCount,12,Location);
+        ui->tableWidget->setItem(rowCount,13,Minimum);
+        ui->tableWidget->setItem(rowCount,14,Maximum);
+        ui->tableWidget->setItem(rowCount,15,CriticalPoint);
 
         rowCount++;
     }
@@ -443,6 +482,10 @@ void ItemsMainWindow::fillUndoStruct(){
         undo->brand=query.value(9).toString();
         undo->image=query.value(10).toString();
         undo->newused=query.value(11).toString();
+        undo->location=query.value(12).toString();
+        undo->min=query.value(13).toString();
+        undo->max=query.value(14).toString();
+        undo->critical=query.value(15).toString();
 
     }
 
@@ -461,7 +504,7 @@ void ItemsMainWindow::undoFunc(){
 
     QSqlQuery query;
 
-    QString insertQuery = "INSERT INTO Items (ItemID, Name, Alias, ItemGroup,ItemSubGroup,SupplierPartNumber,UnitCost,UsedUnitCost,PacketSize,Brand,ImageFile,New_UsedSensitive) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+    QString insertQuery = "INSERT INTO Items (ItemID, Name, Alias, ItemGroup,ItemSubGroup,SupplierPartNumber,UnitCost,UsedUnitCost,PacketSize,Brand,ImageFile,New_UsedSensitive,Location,minimum,maximum,critical) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,? )";
     query.prepare(insertQuery);
 
     query.addBindValue(undo->id);
@@ -476,6 +519,10 @@ void ItemsMainWindow::undoFunc(){
     query.addBindValue(undo->brand);
     query.addBindValue(undo->image);
     query.addBindValue(undo->newused);
+    query.addBindValue(undo->location);
+    query.addBindValue(undo->min);
+    query.addBindValue(undo->max);
+    query.addBindValue(undo->critical);
 
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data Reinserted ");
@@ -524,6 +571,10 @@ void ItemsMainWindow::fillLineEdits(){
         ui->lineEditBrand->setText(query.value(9).toString());
         ui->lineEditImage->setText(query.value(10).toString());
         ui->lineEditNewUsed->setCurrentText(query.value(11).toString());
+        ui->lineEditLocation->setCurrentText(query.value(12).toString());
+        ui->lineEditmin->setText(query.value(13).toString());
+        ui->lineEditmax->setText(query.value(14).toString());
+        ui->lineEditcritical->setText(query.value(15).toString());
 
 
     }
@@ -547,7 +598,7 @@ void ItemsMainWindow::updateItem(){
 
     QSqlQuery query;
 
-    QString updateQuery = "UPDATE Items SET Name = ?, Alias = ?, ItemGroup = ?, ItemSubGroup = ?, SupplierPartNumber = ?, UnitCost = ?, UsedUnitCost = ?, PacketSize = ?, Brand = ?, ImageFile = ?, New_UsedSensitive = ? WHERE ItemID = ?";
+    QString updateQuery = "UPDATE Items SET Name = ?, Alias = ?, ItemGroup = ?, ItemSubGroup = ?, SupplierPartNumber = ?, UnitCost = ?, UsedUnitCost = ?, PacketSize = ?, Brand = ?, ImageFile = ?, New_UsedSensitive = ?,Location = ? ,minimum = ? ,maximum = ? ,critical = ? WHERE ItemID = ?";
     query.prepare(updateQuery);
 
     query.addBindValue(ui->lineEditName->text());
@@ -561,6 +612,10 @@ void ItemsMainWindow::updateItem(){
     query.addBindValue(ui->lineEditBrand->text());
     query.addBindValue(ui->lineEditImage->text());
     query.addBindValue(ui->lineEditNewUsed->currentText());
+    query.addBindValue(ui->lineEditLocation->currentText());
+    query.addBindValue(ui->lineEditmin->text());
+    query.addBindValue(ui->lineEditmax->text());
+    query.addBindValue(ui->lineEditcritical->text());
     query.addBindValue(ui->lineEditID->text());
 
     if (query.exec()) {
@@ -699,3 +754,43 @@ void ItemsMainWindow::fillSubGroupCombo(){
     db.close();
 }
 
+void ItemsMainWindow::fillLocationCombo(){
+
+    ui->lineEditLocation->clear();
+    ui->lineEditLocation->addItem("(none)");
+
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+
+    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
+
+    if (!db.open()) {
+        qInfo()<<"db connection failed";
+    }
+
+    QSqlQuery query;
+    query.exec("SELECT Type FROM Location");
+
+
+    if (query.exec()) {
+        while (query.next()) {
+            QString locationName = query.value(0).toString();
+            ui->lineEditLocation->addItem(locationName);
+        }
+
+    } else {
+        QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
+
+    }
+    db.close();
+}
+void ItemsMainWindow::showDialog(int row, int column)
+{
+    QTableWidgetItem *item = ui->tableWidget->item(row, column);
+    if (item != nullptr)
+    {
+        selectedValue=item->text();
+        ItemDetailDialog *detail=new ItemDetailDialog;
+        detail->fillItem(selectedValue);
+        detail->show();
+    }
+}

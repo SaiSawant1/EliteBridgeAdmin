@@ -3,6 +3,7 @@
 #include "userwindow.h"
 #include "itemsmainwindow.h"
 #include "adminsetup.h"
+#include "newlocationwindow.h"
 #include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -54,5 +55,12 @@ void MainWindow::on_pushButton_39_clicked()
 {
     AdminSetup* adminWin=new AdminSetup;
     adminWin->show();
+}
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    NewLocationWindow *locationWindow=new NewLocationWindow;
+    locationWindow->show();
 }
 

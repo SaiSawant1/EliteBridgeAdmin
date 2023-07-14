@@ -89,6 +89,22 @@ public:
     QHBoxLayout *horizontalLayout_13;
     QLabel *label_13;
     QComboBox *lineEditNewUsed;
+    QFrame *frame_17;
+    QHBoxLayout *horizontalLayout_16;
+    QLabel *label_16;
+    QComboBox *lineEditLocation;
+    QFrame *frame_15;
+    QHBoxLayout *horizontalLayout_14;
+    QLabel *label_14;
+    QLineEdit *lineEditmax;
+    QFrame *frame_12;
+    QHBoxLayout *horizontalLayout_11;
+    QLabel *label_11;
+    QLineEdit *lineEditmin;
+    QFrame *frame_16;
+    QHBoxLayout *horizontalLayout_15;
+    QLabel *label_15;
+    QLineEdit *lineEditcritical;
     QMenuBar *menubar;
     QMenu *menuFiles;
     QMenu *menuView;
@@ -103,7 +119,7 @@ public:
     {
         if (ItemsMainWindow->objectName().isEmpty())
             ItemsMainWindow->setObjectName(QString::fromUtf8("ItemsMainWindow"));
-        ItemsMainWindow->resize(1033, 428);
+        ItemsMainWindow->resize(1033, 696);
         actioncreate_item_group = new QAction(ItemsMainWindow);
         actioncreate_item_group->setObjectName(QString::fromUtf8("actioncreate_item_group"));
         actioncreate_item_sub_group = new QAction(ItemsMainWindow);
@@ -132,7 +148,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 992, 723));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 992, 959));
         verticalLayout_2 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         frame_2 = new QFrame(scrollAreaWidgetContents);
@@ -148,6 +164,7 @@ public:
 
         lineEditID = new QLineEdit(frame_2);
         lineEditID->setObjectName(QString::fromUtf8("lineEditID"));
+        lineEditID->setStyleSheet(QString::fromUtf8(""));
 
         horizontalLayout->addWidget(lineEditID);
 
@@ -366,6 +383,82 @@ public:
 
         verticalLayout_2->addWidget(frame_14);
 
+        frame_17 = new QFrame(scrollAreaWidgetContents);
+        frame_17->setObjectName(QString::fromUtf8("frame_17"));
+        frame_17->setFrameShape(QFrame::StyledPanel);
+        frame_17->setFrameShadow(QFrame::Raised);
+        horizontalLayout_16 = new QHBoxLayout(frame_17);
+        horizontalLayout_16->setObjectName(QString::fromUtf8("horizontalLayout_16"));
+        label_16 = new QLabel(frame_17);
+        label_16->setObjectName(QString::fromUtf8("label_16"));
+
+        horizontalLayout_16->addWidget(label_16);
+
+        lineEditLocation = new QComboBox(frame_17);
+        lineEditLocation->setObjectName(QString::fromUtf8("lineEditLocation"));
+
+        horizontalLayout_16->addWidget(lineEditLocation);
+
+
+        verticalLayout_2->addWidget(frame_17);
+
+        frame_15 = new QFrame(scrollAreaWidgetContents);
+        frame_15->setObjectName(QString::fromUtf8("frame_15"));
+        frame_15->setFrameShape(QFrame::StyledPanel);
+        frame_15->setFrameShadow(QFrame::Raised);
+        horizontalLayout_14 = new QHBoxLayout(frame_15);
+        horizontalLayout_14->setObjectName(QString::fromUtf8("horizontalLayout_14"));
+        label_14 = new QLabel(frame_15);
+        label_14->setObjectName(QString::fromUtf8("label_14"));
+
+        horizontalLayout_14->addWidget(label_14);
+
+        lineEditmax = new QLineEdit(frame_15);
+        lineEditmax->setObjectName(QString::fromUtf8("lineEditmax"));
+
+        horizontalLayout_14->addWidget(lineEditmax);
+
+
+        verticalLayout_2->addWidget(frame_15);
+
+        frame_12 = new QFrame(scrollAreaWidgetContents);
+        frame_12->setObjectName(QString::fromUtf8("frame_12"));
+        frame_12->setFrameShape(QFrame::StyledPanel);
+        frame_12->setFrameShadow(QFrame::Raised);
+        horizontalLayout_11 = new QHBoxLayout(frame_12);
+        horizontalLayout_11->setObjectName(QString::fromUtf8("horizontalLayout_11"));
+        label_11 = new QLabel(frame_12);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+
+        horizontalLayout_11->addWidget(label_11);
+
+        lineEditmin = new QLineEdit(frame_12);
+        lineEditmin->setObjectName(QString::fromUtf8("lineEditmin"));
+
+        horizontalLayout_11->addWidget(lineEditmin);
+
+
+        verticalLayout_2->addWidget(frame_12);
+
+        frame_16 = new QFrame(scrollAreaWidgetContents);
+        frame_16->setObjectName(QString::fromUtf8("frame_16"));
+        frame_16->setFrameShape(QFrame::StyledPanel);
+        frame_16->setFrameShadow(QFrame::Raised);
+        horizontalLayout_15 = new QHBoxLayout(frame_16);
+        horizontalLayout_15->setObjectName(QString::fromUtf8("horizontalLayout_15"));
+        label_15 = new QLabel(frame_16);
+        label_15->setObjectName(QString::fromUtf8("label_15"));
+
+        horizontalLayout_15->addWidget(label_15);
+
+        lineEditcritical = new QLineEdit(frame_16);
+        lineEditcritical->setObjectName(QString::fromUtf8("lineEditcritical"));
+
+        horizontalLayout_15->addWidget(lineEditcritical);
+
+
+        verticalLayout_2->addWidget(frame_16);
+
         scrollArea->setWidget(scrollAreaWidgetContents);
 
         verticalLayout->addWidget(scrollArea);
@@ -413,7 +506,7 @@ public:
         ItemsMainWindow->setWindowTitle(QCoreApplication::translate("ItemsMainWindow", "MainWindow", nullptr));
         actioncreate_item_group->setText(QCoreApplication::translate("ItemsMainWindow", "create item group", nullptr));
         actioncreate_item_sub_group->setText(QCoreApplication::translate("ItemsMainWindow", "create item sub group", nullptr));
-        label->setText(QCoreApplication::translate("ItemsMainWindow", "IItemID                        ", nullptr));
+        label->setText(QCoreApplication::translate("ItemsMainWindow", "ItemID                         ", nullptr));
         label_8->setText(QCoreApplication::translate("ItemsMainWindow", "Name                          ", nullptr));
         label_9->setText(QCoreApplication::translate("ItemsMainWindow", "Alias                            ", nullptr));
         label_10->setText(QCoreApplication::translate("ItemsMainWindow", "Item Group                 ", nullptr));
@@ -429,6 +522,10 @@ public:
         lineEditNewUsed->setItemText(1, QCoreApplication::translate("ItemsMainWindow", "yes", nullptr));
         lineEditNewUsed->setItemText(2, QCoreApplication::translate("ItemsMainWindow", "no", nullptr));
 
+        label_16->setText(QCoreApplication::translate("ItemsMainWindow", "Location", nullptr));
+        label_14->setText(QCoreApplication::translate("ItemsMainWindow", "Maximum", nullptr));
+        label_11->setText(QCoreApplication::translate("ItemsMainWindow", "Minimum ", nullptr));
+        label_15->setText(QCoreApplication::translate("ItemsMainWindow", "Critical Point", nullptr));
         menuFiles->setTitle(QCoreApplication::translate("ItemsMainWindow", "File", nullptr));
         menuView->setTitle(QCoreApplication::translate("ItemsMainWindow", "View", nullptr));
         menuRecord->setTitle(QCoreApplication::translate("ItemsMainWindow", "Record", nullptr));

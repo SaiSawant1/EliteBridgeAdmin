@@ -19,15 +19,14 @@ public:
     explicit ItemGroup(QWidget *parent = nullptr);
     ~ItemGroup();
     void onCellClicked(int row, int column);
+
     void fillAdmin();
     void readDb();
     void refresh();
 
 private slots:
     void on_update_clicked();
-
     void on_add_clicked();
-
     void on_delete_2_clicked();
 
 private:

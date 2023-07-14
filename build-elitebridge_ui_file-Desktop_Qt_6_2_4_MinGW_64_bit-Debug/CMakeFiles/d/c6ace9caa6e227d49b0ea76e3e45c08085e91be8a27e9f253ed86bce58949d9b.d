@@ -554,6 +554,8 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/edi.h \
   D:/ElieteBridge-git/elitebridge_ui_file/grouptransaction.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/grouptransaction.h \
+  D:/ElieteBridge-git/elitebridge_ui_file/itemdetaildialog.cpp \
+  D:/ElieteBridge-git/elitebridge_ui_file/itemdetaildialog.h \
   D:/ElieteBridge-git/elitebridge_ui_file/itemgroup.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/itemgroup.h \
   D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.cpp \
@@ -571,6 +573,8 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/newitemform.h \
   D:/ElieteBridge-git/elitebridge_ui_file/newjobform.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/newjobform.h \
+  D:/ElieteBridge-git/elitebridge_ui_file/newlocationwindow.cpp \
+  D:/ElieteBridge-git/elitebridge_ui_file/newlocationwindow.h \
   D:/ElieteBridge-git/elitebridge_ui_file/newuserform.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/newuserform.h \
   D:/ElieteBridge-git/elitebridge_ui_file/process.cpp \
@@ -596,6 +600,7 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/edi.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/grouptransaction.ui \
+  D:/ElieteBridge-git/elitebridge_ui_file/itemdetaildialog.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/itemgroup.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/itemsubgroup.ui \
@@ -604,6 +609,7 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/newgroupform.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/newitemform.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/newjobform.ui \
+  D:/ElieteBridge-git/elitebridge_ui_file/newlocationwindow.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/newuserform.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/process.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/reporting.ui \

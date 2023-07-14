@@ -86,6 +86,10 @@ set(PROJECT_SOURCES
         itemsubgroup.cpp
         itemsubgroup.h
         itemsubgroup.ui
+        newlocationwindow.h
+        newlocationwindow.cpp
+        newlocationwindow.ui
+        itemdetaildialog.h itemdetaildialog.cpp itemdetaildialog.ui
         ${TS_FILES}
 )
 
