@@ -16,8 +16,6 @@ userWindow::userWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
-
     QHBoxLayout* horizontalLayout = new QHBoxLayout(ui->frame);
 
     addUserLabel = new ClickableLabel(this);
@@ -121,7 +119,13 @@ userWindow::userWindow(QWidget *parent) :
 }
 
 void userWindow::addUserForm(){
-    if(ui->user_id->text()==""||ui->user_image->text()==""){
+    if(ui->user_id->text()=="" || ui->user_name->text()==""){
+        if(ui->user_id->text()==""){
+            ui->user_id->setStyleSheet("QLineEdit { background-color: red; }");
+        }
+        if(ui->user_name->text()==""){
+            ui->user_name->setStyleSheet("QLineEdit { background-color: red; }");
+        }
         return;
     }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
@@ -461,7 +465,13 @@ void userWindow::undoFunc(){
 
 void userWindow::updateUser()
 {
-    if(ui->user_id->text()==""||ui->user_image->text()==""){
+    if(ui->user_id->text()=="" || ui->user_name->text()==""){
+        if(ui->user_id->text()==""){
+            ui->user_id->setStyleSheet("QLineEdit { background-color: red; }");
+        }
+        if(ui->user_name->text()==""){
+            ui->user_name->setStyleSheet("QLineEdit { background-color: red; }");
+        }
         return;
     }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");

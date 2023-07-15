@@ -7,6 +7,7 @@
 #include "EWIEGA46WW/moc_grouptransaction.cpp"
 #include "EWIEGA46WW/moc_itemdetaildialog.cpp"
 #include "EWIEGA46WW/moc_itemgroup.cpp"
+#include "EWIEGA46WW/moc_itemlocationwindow.cpp"
 #include "EWIEGA46WW/moc_itemsmainwindow.cpp"
 #include "EWIEGA46WW/moc_itemsubgroup.cpp"
 #include "EWIEGA46WW/moc_jobmainwindow.cpp"

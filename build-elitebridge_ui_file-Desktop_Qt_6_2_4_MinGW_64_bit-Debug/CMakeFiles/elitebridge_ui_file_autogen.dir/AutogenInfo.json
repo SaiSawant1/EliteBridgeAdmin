@@ -353,6 +353,12 @@
 			null
 		],
 		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/itemlocationwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_itemlocationwindow.cpp",
+			null
+		],
+		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_itemsmainwindow.cpp",
@@ -544,6 +550,11 @@
 			null
 		],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/itemgroup.cpp", "MU", null ],
+		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/itemlocationwindow.cpp",
+			"MU",
+			null
+		],
 		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.cpp",
 			"MU",
