@@ -20,7 +20,7 @@ public:
     void setSelectedvValue(QString selectedValue);
     ~ItemLocationWindow();
 private slots:
-
+    void fillLocationCombo();
     void on_addLocation_clicked();
 
 private:

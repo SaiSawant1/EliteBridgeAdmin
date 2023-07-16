@@ -6,6 +6,7 @@ ItemLocationWindow::ItemLocationWindow(QWidget *parent) :
     ui(new Ui::ItemLocationWindow)
 {
     ui->setupUi(this);
+    fillLocationCombo();
 }
 
 ItemLocationWindow::~ItemLocationWindow()
@@ -54,26 +55,26 @@ void ItemLocationWindow::on_addLocation_clicked()
                   "WHERE ItemID = :itemID");
 
     // Bind the updated values to the placeholders
-    query.bindValue(":location", newLocationValue);
-    query.bindValue(":minimum", newMinimumValue);
-    query.bindValue(":maximum", newMaximumValue);
-    query.bindValue(":critical", newCriticalValue);
-    query.bindValue(":usedMinimumQuantity", newUsedMinimumQuantityValue);
-    query.bindValue(":reworkPickupLevel", newReworkPickupLevelValue);
-    query.bindValue(":doNotOrder", newDoNotOrderValue);
-    query.bindValue(":swappable", newSwappableValue);
-    query.bindValue(":swapQuantity", newSwapQuantityValue);
-    query.bindValue(":swapByUser", newSwapByUserValue);
-    query.bindValue(":swapByJob", newSwapByJobValue);
-    query.bindValue(":swapByMachine", newSwapByMachineValue);
-    query.bindValue(":ticketable", newTicketableValue);
-    query.bindValue(":canBeReturned", newCanBeReturnValue);
-    query.bindValue(":canBeRework", newCanBeReworkValue);
-    query.bindValue(":canBeScrap", newCanBeScrapValue);
-    query.bindValue(":lifeTracked", newLifeTrackedValue);
-    query.bindValue(":intialLife", newInitialLifeValue);
-    query.bindValue(":minimumLife", newMinimumLifeValue);
-    query.bindValue(":itemID", itemIDToUpdate);
+    query.bindValue(":location", ui->Location->currentText());
+    query.bindValue(":minimum", ui->Minimum->text());
+    query.bindValue(":maximum",ui->Maximum->text());
+    query.bindValue(":critical", ui->Critical->text());
+    query.bindValue(":usedMinimumQuantity", ui->UsedMinimumQuantity->text());
+    query.bindValue(":reworkPickupLevel", ui->ReworkPickupLevel->text());
+    query.bindValue(":doNotOrder", ui->DoNotOrder->text());
+    query.bindValue(":swappable", ui->Swappable->isChecked());
+    query.bindValue(":swapQuantity", ui->SwapQuantity->text());
+    query.bindValue(":swapByUser", ui->SwapByUser_2->text());
+    query.bindValue(":swapByJob", ui->SwapByMachine->text());
+    query.bindValue(":swapByMachine", ui->SwapByMachine->text());
+    query.bindValue(":ticketable", ui->Ticketable->isChecked());
+    query.bindValue(":canBeReturned", ui->CanBeReturned->isChecked());
+    query.bindValue(":canBeRework", ui->CanBeRework->isChecked());
+    query.bindValue(":canBeScrap", ui->CanBeScrap->isChecked());
+    query.bindValue(":lifeTracked", ui->LifeTracked->isChecked());
+    query.bindValue(":intialLife", ui->InititalLife->text());
+    query.bindValue(":minimumLife", ui->MinimumLife->text());
+    query.bindValue(":itemID", value);
 
 
     if (query.exec()) {
@@ -86,34 +87,10 @@ void ItemLocationWindow::on_addLocation_clicked()
     db.close();
 }
 
-bool ItemsMainWindow::eventFilter(QObject *obj, QEvent *event)
-{
-    if (obj == ui->lineEditImage && event->type() == QEvent::MouseButtonRelease)
-    {
-        QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
-        if (mouseEvent->button() == Qt::LeftButton)
-        {
-            QString filePath = QFileDialog::getOpenFileName(this, "Select File");
-            if (!filePath.isEmpty())
-            {
-                ui->lineEditImage->setText(filePath);
-            }
-        }
-    }
+void ItemLocationWindow::fillLocationCombo(){
 
-    return QObject::eventFilter(obj, event);
-}
-
-void ItemsMainWindow::on_actioncreate_item_group_triggered()
-{
-    ItemGroup* groupWindow=new ItemGroup;
-    groupWindow->show();
-}
-
-void ItemsMainWindow::fillGroupCombo(){
-
-    ui->lineEditGroup->clear();
-    ui->lineEditGroup->addItem("(none)");
+    ui->Location->clear();
+    ui->Location->addItem("(none)");
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
@@ -124,13 +101,13 @@ void ItemsMainWindow::fillGroupCombo(){
     }
 
     QSqlQuery query;
-    query.exec("SELECT Name FROM item_group");
+    query.exec("SELECT Type FROM Location");
 
 
     if (query.exec()) {
         while (query.next()) {
-            QString groupName = query.value(0).toString();
-            ui->lineEditGroup->addItem(groupName);
+            QString locationName = query.value(0).toString();
+            ui->Location->addItem(locationName);
         }
 
     } else {
@@ -139,76 +116,3 @@ void ItemsMainWindow::fillGroupCombo(){
     }
     db.close();
 }
-void ItemsMainWindow::mousePressEvent(QMouseEvent *event)
-{
-    if (event->button() == Qt::LeftButton && event->pos().y() > ui->scrollArea->height() - 5) {
-        resizing = true;
-        dragStartPosition = event->pos();
-        event->accept();
-    }
-    else {
-        event->ignore();
-    }
-}
-
-void ItemsMainWindow::mouseMoveEvent(QMouseEvent *event)
-{
-    if (resizing) {
-        QPoint diff = event->pos() - dragStartPosition;
-        int newHeight = ui->scrollArea->height() - diff.y();
-        ui->scrollArea->setFixedHeight(newHeight);
-        dragStartPosition = event->pos();
-        event->accept();
-    }
-    else {
-        event->ignore();
-    }
-}
-
-void ItemsMainWindow::mouseReleaseEvent(QMouseEvent *event)
-{
-    if (resizing) {
-        resizing = false;
-        event->accept();
-    }
-    else {
-        event->ignore();
-    }
-}
-
-void ItemsMainWindow::on_actioncreate_item_sub_group_triggered()
-{
-    ItemSubGroup *subGroupWindow=new ItemSubGroup;
-    subGroupWindow->show();
-}
-
-void ItemsMainWindow::fillSubGroupCombo(){
-
-    ui->lineEditSubGroup->clear();
-    ui->lineEditSubGroup->addItem("(none)");
-
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
-    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
-
-    if (!db.open()) {
-        qInfo()<<"db connection failed";
-    }
-
-    QSqlQuery query;
-    query.exec("SELECT subGroupName FROM item_sub_group");
-
-
-    if (query.exec()) {
-        while (query.next()) {
-            QString groupName = query.value(0).toString();
-            ui->lineEditSubGroup->addItem(groupName);
-        }
-
-    } else {
-        QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
-
-    }
-    db.close();
-}
-

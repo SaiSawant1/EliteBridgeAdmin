@@ -1,5 +1,5 @@
 #include "itemsmainwindow.h"
-
+#include "itemlocationwindow.h"
 #include "ui_itemsmainwindow.h"
 
 ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
@@ -112,7 +112,7 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     ui->lineEditImage->installEventFilter(this);
     fillGroupCombo();
     fillSubGroupCombo();
-    fillLocationCombo();
+
     readDb();
 }
 
@@ -266,7 +266,7 @@ void ItemsMainWindow::addUserForm(){
 
     QSqlQuery query;
 
-    QString insertQuery = "INSERT INTO Items (ItemID, Name, Alias, ItemGroup, ItemSubGroup, SupplierPartNumber, UnitCost, UsedUnitCost, PacketSize, Brand, ImageFile, New_UsedSensitive, Location, minimum, maximum, critical) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    QString insertQuery = "INSERT INTO Items (ItemID, Name, Alias, ItemGroup, ItemSubGroup, SupplierPartNumber, UnitCost, UsedUnitCost, PacketSize, Brand, ImageFile, New_UsedSensitive) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     query.prepare(insertQuery);
 
     query.addBindValue(ui->lineEditID->text());
@@ -281,22 +281,19 @@ void ItemsMainWindow::addUserForm(){
     query.addBindValue(ui->lineEditBrand->text());
     query.addBindValue(ui->lineEditImage->text());
     query.addBindValue(ui->lineEditNewUsed->currentText());
-    query.addBindValue(ui->lineEditLocation->currentText());
-    query.addBindValue(ui->lineEditmin->text());
-    query.addBindValue(ui->lineEditmax->text());
-    query.addBindValue(ui->lineEditcritical->text());
+
 
 
     if (query.exec()) {
         ui->lineEditID->setStyleSheet("QLineEdit { background-color: white; }");
         ui->lineEditName->setStyleSheet("QLineEdit { background-color: white; }");
-        QMessageBox::information(nullptr, "Success", "Data inserted successfully!");
-
-
+        ItemLocationWindow* locationWindow=new ItemLocationWindow;
+        locationWindow->setSelectedvValue(selectedValue);
+        locationWindow->show();
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
     }
-    db.close();
+
 
 }
 
@@ -754,35 +751,7 @@ void ItemsMainWindow::fillSubGroupCombo(){
     db.close();
 }
 
-void ItemsMainWindow::fillLocationCombo(){
 
-    ui->lineEditLocation->clear();
-    ui->lineEditLocation->addItem("(none)");
-
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
-    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
-
-    if (!db.open()) {
-        qInfo()<<"db connection failed";
-    }
-
-    QSqlQuery query;
-    query.exec("SELECT Type FROM Location");
-
-
-    if (query.exec()) {
-        while (query.next()) {
-            QString locationName = query.value(0).toString();
-            ui->lineEditLocation->addItem(locationName);
-        }
-
-    } else {
-        QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
-
-    }
-    db.close();
-}
 void ItemsMainWindow::showDialog(int row, int column)
 {
     QTableWidgetItem *item = ui->tableWidget->item(row, column);

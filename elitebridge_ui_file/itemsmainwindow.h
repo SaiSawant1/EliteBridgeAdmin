@@ -62,7 +62,7 @@ private slots:
     void fillLineEdits();
     void fillGroupCombo();
     void fillSubGroupCombo();
-    void fillLocationCombo();
+
     bool eventFilter(QObject *obj, QEvent *event) override;
     void on_actioncreate_item_group_triggered();
     void mousePressEvent(QMouseEvent *event) override;
