@@ -412,5 +412,6 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.h \
   D:/ElieteBridge-git/elitebridge_ui_file/newjobform.h \
   D:/ElieteBridge-git/elitebridge_ui_file/selectgroup.h \
+  D:/ElieteBridge-git/elitebridge_ui_file/userdetails.h \
   D:/ElieteBridge-git/elitebridge_ui_file/usergroupmainwindow.h \
   D:/ElieteBridge-git/elitebridge_ui_file/userwindow.h

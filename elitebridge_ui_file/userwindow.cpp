@@ -113,6 +113,7 @@ userWindow::userWindow(QWidget *parent) :
 
     ui->frame->setLayout(horizontalLayout);
     connect(ui->tableWidget, &QTableWidget::cellClicked, this, &userWindow::onCellClicked);
+    connect(ui->tableWidget, &QTableWidget::cellDoubleClicked, this, &userWindow::showDialog);
     ui->user_image->installEventFilter(this);
     readDb();
 
@@ -613,6 +614,18 @@ bool userWindow::eventFilter(QObject *obj, QEvent *event)
     }
 
     return QObject::eventFilter(obj, event);
+}
+
+void userWindow::showDialog(int row, int column)
+{
+    QTableWidgetItem *item = ui->tableWidget->item(row, column);
+    if (item != nullptr)
+    {
+        selectedValue=item->text();
+        UserDetails *detail=new UserDetails;
+        detail->fillItem(selectedValue);
+        detail->show();
+    }
 }
 
 

@@ -14,6 +14,7 @@
 #include "selectgroup.h"
 #include <QMouseEvent>
 #include <QFileDialog>
+#include "userdetails.h"
 
 struct undoStruct{
     QString id;
@@ -42,6 +43,7 @@ public:
 private slots:
 
     void onCellClicked(int row, int column);
+    void showDialog(int row, int column);
     void on_create_transaction_triggered();
 
     void on_actionuser_grants_triggered();

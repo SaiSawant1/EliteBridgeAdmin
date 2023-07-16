@@ -23,6 +23,7 @@
 #include "EWIEGA46WW/moc_sysconfig.cpp"
 #include "EWIEGA46WW/moc_systemlogin.cpp"
 #include "EWIEGA46WW/moc_updateuser.cpp"
+#include "EWIEGA46WW/moc_userdetails.cpp"
 #include "EWIEGA46WW/moc_usergroupmainwindow.cpp"
 #include "EWIEGA46WW/moc_userwindow.cpp"
 #include "EWIEGA46WW/moc_viewgrants.cpp"
