@@ -81,6 +81,7 @@ private:
     ClickableLabel* addfindLabel;
     ClickableLabel* addDeleteLabel;
     ClickableLabel* addExitLabel;
+    ClickableLabel* addLocationLabel;
     undoItemStruct* undo;
     QLineEdit* lineEdit;
     void addUserForm();

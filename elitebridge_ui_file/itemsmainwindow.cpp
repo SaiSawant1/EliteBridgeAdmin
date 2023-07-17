@@ -73,12 +73,25 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     });
     horizontalLayout->insertWidget(4,addDeleteLabel);
 
+    addLocationLabel=new ClickableLabel(this);
+    addLocationLabel->setText("user delete");
+    addLocationLabel->setScaledContents(true);
+    addLocationLabel->setMaximumSize(72,72);
+    QPixmap locationImage("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/location-svgrepo-com.svg");
+    addLocationLabel->setPixmap(locationImage);
+    QObject::connect(addLocationLabel, &ClickableLabel::clicked,this,[&]() {
+        ItemLocationWindow* locationWindow=new ItemLocationWindow;
+        locationWindow->setSelectedvValue(selectedValue);
+        locationWindow->show();
+    });
+    horizontalLayout->insertWidget(5,addLocationLabel);
+
 
     lineEdit = new QLineEdit(this);
     lineEdit->setPlaceholderText("Enter text...");
 
     lineEdit->setMaxLength(10);
-    horizontalLayout->insertWidget(5,lineEdit);
+    horizontalLayout->insertWidget(6,lineEdit);
 
 
     addfindLabel=new ClickableLabel(this);
@@ -90,7 +103,7 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     QObject::connect(addfindLabel, &ClickableLabel::clicked,this,[&]() {
        search();
     });
-    horizontalLayout->insertWidget(6,addfindLabel);
+    horizontalLayout->insertWidget(7,addfindLabel);
 
     addExitLabel=new ClickableLabel(this);
     addExitLabel->setText("undo cahnges");
@@ -101,7 +114,7 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     QObject::connect(addExitLabel, &ClickableLabel::clicked,this,[&]() {
         this->close();
     });
-    horizontalLayout->insertWidget(7,addExitLabel);
+    horizontalLayout->insertWidget(8,addExitLabel);
 
 
 
