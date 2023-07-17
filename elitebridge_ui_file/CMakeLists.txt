@@ -92,6 +92,7 @@ set(PROJECT_SOURCES
         itemdetaildialog.h itemdetaildialog.cpp itemdetaildialog.ui
         itemlocationwindow.h itemlocationwindow.cpp itemlocationwindow.ui
         userdetails.h userdetails.cpp userdetails.ui
+
         ${TS_FILES}
 )
 

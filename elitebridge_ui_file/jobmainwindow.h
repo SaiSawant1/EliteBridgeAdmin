@@ -11,7 +11,22 @@
 #include <QSqlError>
 #include <QTableView>
 #include "ClickableLabel.h"
-#include "newjobform.h"
+#include <QLineEdit>
+
+struct undoStructJob{
+    QString job_2;
+    QString Description;
+    QString Alias;
+    QString ContractDate;
+    QString jobGroup;
+    QString JobEnabled;
+    QString DateCreated;
+    QString CreatedBy;
+    QString DatelastModified;
+    QString LastModifiedBy;
+};
+
+
 namespace Ui {
 class JobMainWindow;
 }
@@ -23,12 +38,28 @@ class JobMainWindow : public QMainWindow
 public:
     explicit JobMainWindow(QWidget *parent = nullptr);
     ~JobMainWindow();
-
+private slots:
+    void onCellClicked(int row, int column);
+    void addUserForm();
+    void search();
+    void deleteUser();
+    void updateUser();
+    void userSave();
+    void fillUndoStruct();
+    void undoFunc();
 private:
     Ui::JobMainWindow *ui;
-    ClickableLabel* addJobLabel;
-    void addJobForm();
+    QString selectedValue;
+    ClickableLabel* addUserLabel;
+    ClickableLabel* addUpdateLabel;
+    ClickableLabel* addSaveLabel;
+    ClickableLabel* addUndoLabel;
+    ClickableLabel* addfindLabel;
+    ClickableLabel* addDeleteLabel;
+    ClickableLabel* addExitLabel;
+    QLineEdit* lineEdit;
     void readDb();
+    undoStructJob* undo;
 };
 
 #endif // JOBMAINWINDOW_H
