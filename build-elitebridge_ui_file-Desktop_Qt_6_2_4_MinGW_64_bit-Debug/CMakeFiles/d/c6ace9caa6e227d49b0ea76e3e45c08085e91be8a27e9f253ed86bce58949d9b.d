@@ -566,6 +566,8 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/itemsubgroup.h \
   D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.h \
+  D:/ElieteBridge-git/elitebridge_ui_file/machinewindow.cpp \
+  D:/ElieteBridge-git/elitebridge_ui_file/machinewindow.h \
   D:/ElieteBridge-git/elitebridge_ui_file/main.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.h \
