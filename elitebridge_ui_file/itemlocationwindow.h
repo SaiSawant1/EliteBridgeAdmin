@@ -21,6 +21,7 @@ public:
     ~ItemLocationWindow();
 private slots:
     void fillLocationCombo();
+    void fillLineEdits();
     void on_addLocation_clicked();
 
 private:

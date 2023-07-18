@@ -35,6 +35,22 @@ struct undoItemStruct{
     QString min;
     QString max;
     QString critical;
+    QString UsedMinQuantity;
+    QString ReWorkPickUplevel;
+    QString DoNotOrder;
+    QString Swappable;
+    QString SwapQuantity;
+    QString SwapByUser;
+    QString SwapByJob;
+    QString SwapByMachine;
+    QString Ticketable;
+    QString CanBeReturned;
+    QString CanBeRework;
+    QString CanBeScrap;
+    QString LifeTracked;
+    QString initialLIfe;
+    QString MinimumLIfe;
+
 
 };
 

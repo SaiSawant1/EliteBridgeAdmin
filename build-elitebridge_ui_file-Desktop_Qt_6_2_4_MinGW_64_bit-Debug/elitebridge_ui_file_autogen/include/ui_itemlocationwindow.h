@@ -75,15 +75,15 @@ public:
     QFrame *frame_8;
     QHBoxLayout *horizontalLayout_8;
     QLabel *label_9;
-    QLineEdit *SwapByUser;
+    QCheckBox *SwapByUser;
     QFrame *frame_14;
     QHBoxLayout *horizontalLayout_14;
     QLabel *label_15;
-    QLineEdit *SwapByUser_2;
+    QCheckBox *SwapByUser_2;
     QFrame *frame_13;
     QHBoxLayout *horizontalLayout_13;
     QLabel *label_14;
-    QLineEdit *SwapByMachine;
+    QCheckBox *SwapByMachine;
     QFrame *frame_12;
     QHBoxLayout *horizontalLayout_12;
     QLabel *TicketTable;
@@ -145,7 +145,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, -515, 439, 1080));
+        scrollAreaWidgetContents->setGeometry(QRect(0, -447, 439, 1056));
         verticalLayout_2 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         frame_2 = new QFrame(scrollAreaWidgetContents);
@@ -330,7 +330,7 @@ public:
 
         horizontalLayout_8->addWidget(label_9);
 
-        SwapByUser = new QLineEdit(frame_8);
+        SwapByUser = new QCheckBox(frame_8);
         SwapByUser->setObjectName(QString::fromUtf8("SwapByUser"));
 
         horizontalLayout_8->addWidget(SwapByUser);
@@ -349,7 +349,7 @@ public:
 
         horizontalLayout_14->addWidget(label_15);
 
-        SwapByUser_2 = new QLineEdit(frame_14);
+        SwapByUser_2 = new QCheckBox(frame_14);
         SwapByUser_2->setObjectName(QString::fromUtf8("SwapByUser_2"));
 
         horizontalLayout_14->addWidget(SwapByUser_2);
@@ -368,7 +368,7 @@ public:
 
         horizontalLayout_13->addWidget(label_14);
 
-        SwapByMachine = new QLineEdit(frame_13);
+        SwapByMachine = new QCheckBox(frame_13);
         SwapByMachine->setObjectName(QString::fromUtf8("SwapByMachine"));
 
         horizontalLayout_13->addWidget(SwapByMachine);
@@ -541,8 +541,11 @@ public:
         Swappable->setText(QString());
         label_4->setText(QCoreApplication::translate("ItemLocationWindow", "Swap Quantity", nullptr));
         label_9->setText(QCoreApplication::translate("ItemLocationWindow", "Swap By User", nullptr));
+        SwapByUser->setText(QString());
         label_15->setText(QCoreApplication::translate("ItemLocationWindow", "Swap By Job", nullptr));
+        SwapByUser_2->setText(QString());
         label_14->setText(QCoreApplication::translate("ItemLocationWindow", "Swap By Machine", nullptr));
+        SwapByMachine->setText(QString());
         TicketTable->setText(QCoreApplication::translate("ItemLocationWindow", "Ticketable", nullptr));
         Ticketable->setText(QString());
         label_13->setText(QCoreApplication::translate("ItemLocationWindow", "Can Be Returned", nullptr));

@@ -49,9 +49,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-515</y>
+        <y>-447</y>
         <width>439</width>
-        <height>1080</height>
+        <height>1056</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -278,7 +278,11 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="SwapByUser"/>
+           <widget class="QCheckBox" name="SwapByUser">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -300,7 +304,11 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="SwapByUser_2"/>
+           <widget class="QCheckBox" name="SwapByUser_2">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -322,7 +330,11 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="SwapByMachine"/>
+           <widget class="QCheckBox" name="SwapByMachine">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>

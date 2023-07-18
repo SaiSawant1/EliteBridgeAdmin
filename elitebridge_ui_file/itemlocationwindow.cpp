@@ -16,6 +16,7 @@ ItemLocationWindow::~ItemLocationWindow()
 
 void ItemLocationWindow::setSelectedvValue(QString selectedValue){
     value=selectedValue;
+    fillLineEdits();
 }
 
 
@@ -61,12 +62,12 @@ void ItemLocationWindow::on_addLocation_clicked()
     query.bindValue(":critical", ui->Critical->text());
     query.bindValue(":usedMinimumQuantity", ui->UsedMinimumQuantity->text());
     query.bindValue(":reworkPickupLevel", ui->ReworkPickupLevel->text());
-    query.bindValue(":doNotOrder", ui->DoNotOrder->text());
+    query.bindValue(":doNotOrder", ui->DoNotOrder->isChecked());
     query.bindValue(":swappable", ui->Swappable->isChecked());
     query.bindValue(":swapQuantity", ui->SwapQuantity->text());
-    query.bindValue(":swapByUser", ui->SwapByUser_2->text());
-    query.bindValue(":swapByJob", ui->SwapByMachine->text());
-    query.bindValue(":swapByMachine", ui->SwapByMachine->text());
+    query.bindValue(":swapByUser", ui->SwapByUser_2->isChecked());
+    query.bindValue(":swapByJob", ui->SwapByMachine->isChecked());
+    query.bindValue(":swapByMachine", ui->SwapByMachine->isChecked());
     query.bindValue(":ticketable", ui->Ticketable->isChecked());
     query.bindValue(":canBeReturned", ui->CanBeReturned->isChecked());
     query.bindValue(":canBeRework", ui->CanBeRework->isChecked());
@@ -115,4 +116,55 @@ void ItemLocationWindow::fillLocationCombo(){
 
     }
     db.close();
+}
+
+void ItemLocationWindow::fillLineEdits(){
+    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+    QSqlDatabase dataBase;
+    dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
+    dataBase.setDatabaseName(dbPath);
+
+    if(!dataBase.open())
+    {
+        qDebug()<<"dataBase open error";
+        return ;
+    }
+
+
+    QSqlQuery query(dataBase);
+    query.prepare("SELECT * FROM Items WHERE ItemID = :itemId");
+    query.bindValue(":itemId",value);
+
+
+
+    if(!query.exec())
+    {
+        qDebug()<<"Query execution Failed";
+        return;
+    }
+
+
+
+    if(query.next()){
+
+        ui->Location->setCurrentText(query.value(12).toString());
+        ui->Minimum->setText(query.value(13).toString());
+        ui->Maximum->setText(query.value(14).toString());
+        ui->Critical->setText(query.value(15).toString());
+        ui->UsedMinimumQuantity->setText(query.value(16).toString());
+        ui->ReworkPickupLevel->setText(query.value(17).toString());
+        ui->DoNotOrder->setChecked(query.value(18).toBool());
+        ui->Swappable->setChecked(query.value(19).toBool());
+        ui->SwapQuantity->setText(query.value(20).toString());
+        ui->SwapByUser->setChecked(query.value(21).toBool());
+        ui->SwapByUser_2->setChecked(query.value(22).toBool());
+        ui->SwapByMachine->setChecked(query.value(23).toBool());
+        ui->Ticketable->setChecked(query.value(24).toBool());
+        ui->CanBeReturned->setChecked(query.value(25).toBool());
+        ui->CanBeRework->setChecked(query.value(26).toBool());
+        ui->CanBeScrap->setChecked(query.value(27).toBool());
+        ui->LifeTracked->setChecked(query.value(28).toBool());
+        ui->InititalLife->setText(query.value(29).toString());
+        ui->MinimumLife->setText(query.value(30).toString());
+    }
 }

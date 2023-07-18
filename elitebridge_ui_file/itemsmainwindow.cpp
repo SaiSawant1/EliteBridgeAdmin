@@ -301,7 +301,7 @@ void ItemsMainWindow::addUserForm(){
         ui->lineEditID->setStyleSheet("QLineEdit { background-color: white; }");
         ui->lineEditName->setStyleSheet("QLineEdit { background-color: white; }");
         ItemLocationWindow* locationWindow=new ItemLocationWindow;
-        locationWindow->setSelectedvValue(selectedValue);
+        locationWindow->setSelectedvValue(ui->lineEditID->text());
         locationWindow->show();
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
@@ -496,6 +496,21 @@ void ItemsMainWindow::fillUndoStruct(){
         undo->min=query.value(13).toString();
         undo->max=query.value(14).toString();
         undo->critical=query.value(15).toString();
+        undo->UsedMinQuantity=query.value(16).toString();
+        undo->ReWorkPickUplevel=query.value(17).toString();
+        undo->DoNotOrder=query.value(18).toString();
+        undo->Swappable=query.value(19).toString();
+        undo->SwapQuantity=query.value(20).toString();
+        undo->SwapByUser=query.value(21).toString();
+        undo->SwapByJob=query.value(22).toString();
+        undo->SwapByMachine=query.value(23).toString();
+        undo->Ticketable=query.value(24).toString();
+        undo->CanBeReturned=query.value(25).toString();
+        undo->CanBeRework=query.value(26).toString();
+        undo->CanBeScrap=query.value(27).toString();
+        undo->LifeTracked=query.value(28).toString();
+        undo->initialLIfe=query.value(29).toString();
+        undo->MinimumLIfe=query.value(30).toString();
 
     }
 
@@ -514,7 +529,7 @@ void ItemsMainWindow::undoFunc(){
 
     QSqlQuery query;
 
-    QString insertQuery = "INSERT INTO Items (ItemID, Name, Alias, ItemGroup,ItemSubGroup,SupplierPartNumber,UnitCost,UsedUnitCost,PacketSize,Brand,ImageFile,New_UsedSensitive,Location,minimum,maximum,critical) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,? )";
+    QString insertQuery = "INSERT INTO Items (ItemID, Name, Alias, ItemGroup,ItemSubGroup,SupplierPartNumber,UnitCost,UsedUnitCost,PacketSize,Brand,ImageFile,New_UsedSensitive,Location,minimum,maximum,critical,UsedMinimumQuantity,ReworkPickupLevel,DoNotOrder,Swappable,SwapQuantity,SwapByUser,SwapByJob,SwapByMachine,Ticketable,CanBeReturned,CanBeRework,CanBeScrap,LifeTracked,intialLife,MinimumLife) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     query.prepare(insertQuery);
 
     query.addBindValue(undo->id);
@@ -533,12 +548,28 @@ void ItemsMainWindow::undoFunc(){
     query.addBindValue(undo->min);
     query.addBindValue(undo->max);
     query.addBindValue(undo->critical);
+    query.addBindValue(undo->UsedMinQuantity);
+    query.addBindValue(undo->ReWorkPickUplevel);
+    query.addBindValue(undo->DoNotOrder);
+    query.addBindValue(undo->Swappable);
+    query.addBindValue(undo->SwapQuantity);
+    query.addBindValue(undo->SwapByUser);
+    query.addBindValue(undo->SwapByJob);
+    query.addBindValue(undo->SwapByMachine);
+    query.addBindValue(undo->Ticketable);
+    query.addBindValue(undo->CanBeReturned);
+    query.addBindValue(undo->CanBeRework);
+    query.addBindValue(undo->CanBeScrap);
+    query.addBindValue(undo->LifeTracked);
+    query.addBindValue(undo->initialLIfe);
+    query.addBindValue(undo->MinimumLIfe);
 
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data Reinserted ");
 
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
+        qDebug()<<query.lastError().text();
 
     }
     db.close();
@@ -581,11 +612,6 @@ void ItemsMainWindow::fillLineEdits(){
         ui->lineEditBrand->setText(query.value(9).toString());
         ui->lineEditImage->setText(query.value(10).toString());
         ui->lineEditNewUsed->setCurrentText(query.value(11).toString());
-        ui->lineEditLocation->setCurrentText(query.value(12).toString());
-        ui->lineEditmin->setText(query.value(13).toString());
-        ui->lineEditmax->setText(query.value(14).toString());
-        ui->lineEditcritical->setText(query.value(15).toString());
-
 
     }
 
@@ -608,7 +634,7 @@ void ItemsMainWindow::updateItem(){
 
     QSqlQuery query;
 
-    QString updateQuery = "UPDATE Items SET Name = ?, Alias = ?, ItemGroup = ?, ItemSubGroup = ?, SupplierPartNumber = ?, UnitCost = ?, UsedUnitCost = ?, PacketSize = ?, Brand = ?, ImageFile = ?, New_UsedSensitive = ?,Location = ? ,minimum = ? ,maximum = ? ,critical = ? WHERE ItemID = ?";
+    QString updateQuery = "UPDATE Items SET Name = ?, Alias = ?, ItemGroup = ?, ItemSubGroup = ?, SupplierPartNumber = ?, UnitCost = ?, UsedUnitCost = ?, PacketSize = ?, Brand = ?, ImageFile = ?, New_UsedSensitive = ? WHERE ItemID = ?";
     query.prepare(updateQuery);
 
     query.addBindValue(ui->lineEditName->text());
@@ -622,11 +648,7 @@ void ItemsMainWindow::updateItem(){
     query.addBindValue(ui->lineEditBrand->text());
     query.addBindValue(ui->lineEditImage->text());
     query.addBindValue(ui->lineEditNewUsed->currentText());
-    query.addBindValue(ui->lineEditLocation->currentText());
-    query.addBindValue(ui->lineEditmin->text());
-    query.addBindValue(ui->lineEditmax->text());
-    query.addBindValue(ui->lineEditcritical->text());
-    query.addBindValue(ui->lineEditID->text());
+
 
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data Reinserted ");
