@@ -25,6 +25,7 @@ private slots:
 
 private:
     void grantRights(QString User);
+    void groupRightsGrant();
     Ui::groupTransaction *ui;
     QString selectedValue;
     void fillValue();
