@@ -23,8 +23,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_userWindow_t {
-    const uint offsetsAndSize[52];
-    char stringdata0[342];
+    const uint offsetsAndSize[54];
+    char stringdata0[380];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_userWindow_t, stringdata0) + ofs), len 
@@ -55,7 +55,8 @@ QT_MOC_LITERAL(274, 5), // "event"
 QT_MOC_LITERAL(280, 15), // "mousePressEvent"
 QT_MOC_LITERAL(296, 12), // "QMouseEvent*"
 QT_MOC_LITERAL(309, 14), // "mouseMoveEvent"
-QT_MOC_LITERAL(324, 17) // "mouseReleaseEvent"
+QT_MOC_LITERAL(324, 17), // "mouseReleaseEvent"
+QT_MOC_LITERAL(342, 37) // "on_actionupdate_transaction_t..."
 
     },
     "userWindow\0cellSelected\0\0selectedValue\0"
@@ -67,7 +68,8 @@ QT_MOC_LITERAL(324, 17) // "mouseReleaseEvent"
     "on_actionAdd_User_To_Group_triggered\0"
     "eventFilter\0obj\0QEvent*\0event\0"
     "mousePressEvent\0QMouseEvent*\0"
-    "mouseMoveEvent\0mouseReleaseEvent"
+    "mouseMoveEvent\0mouseReleaseEvent\0"
+    "on_actionupdate_transaction_triggered"
 };
 #undef QT_MOC_LITERAL
 
@@ -77,7 +79,7 @@ static const uint qt_meta_data_userWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-      17,   14, // methods
+      18,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -85,25 +87,26 @@ static const uint qt_meta_data_userWindow[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,  116,    2, 0x06,    1 /* Public */,
+       1,    1,  122,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    2,  119,    2, 0x08,    3 /* Private */,
-       7,    2,  124,    2, 0x08,    6 /* Private */,
-       8,    0,  129,    2, 0x08,    9 /* Private */,
-       9,    0,  130,    2, 0x08,   10 /* Private */,
-      10,    0,  131,    2, 0x08,   11 /* Private */,
-      11,    0,  132,    2, 0x08,   12 /* Private */,
-      12,    0,  133,    2, 0x08,   13 /* Private */,
-      13,    0,  134,    2, 0x08,   14 /* Private */,
-      14,    0,  135,    2, 0x08,   15 /* Private */,
-      15,    0,  136,    2, 0x08,   16 /* Private */,
-      16,    0,  137,    2, 0x08,   17 /* Private */,
-      17,    0,  138,    2, 0x08,   18 /* Private */,
-      18,    2,  139,    2, 0x08,   19 /* Private */,
-      22,    1,  144,    2, 0x08,   22 /* Private */,
-      24,    1,  147,    2, 0x08,   24 /* Private */,
-      25,    1,  150,    2, 0x08,   26 /* Private */,
+       4,    2,  125,    2, 0x08,    3 /* Private */,
+       7,    2,  130,    2, 0x08,    6 /* Private */,
+       8,    0,  135,    2, 0x08,    9 /* Private */,
+       9,    0,  136,    2, 0x08,   10 /* Private */,
+      10,    0,  137,    2, 0x08,   11 /* Private */,
+      11,    0,  138,    2, 0x08,   12 /* Private */,
+      12,    0,  139,    2, 0x08,   13 /* Private */,
+      13,    0,  140,    2, 0x08,   14 /* Private */,
+      14,    0,  141,    2, 0x08,   15 /* Private */,
+      15,    0,  142,    2, 0x08,   16 /* Private */,
+      16,    0,  143,    2, 0x08,   17 /* Private */,
+      17,    0,  144,    2, 0x08,   18 /* Private */,
+      18,    2,  145,    2, 0x08,   19 /* Private */,
+      22,    1,  150,    2, 0x08,   22 /* Private */,
+      24,    1,  153,    2, 0x08,   24 /* Private */,
+      25,    1,  156,    2, 0x08,   26 /* Private */,
+      26,    0,  159,    2, 0x08,   28 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -125,6 +128,7 @@ static const uint qt_meta_data_userWindow[] = {
     QMetaType::Void, 0x80000000 | 23,   21,
     QMetaType::Void, 0x80000000 | 23,   21,
     QMetaType::Void, 0x80000000 | 23,   21,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -153,6 +157,7 @@ void userWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 14: _t->mousePressEvent((*reinterpret_cast< std::add_pointer_t<QMouseEvent*>>(_a[1]))); break;
         case 15: _t->mouseMoveEvent((*reinterpret_cast< std::add_pointer_t<QMouseEvent*>>(_a[1]))); break;
         case 16: _t->mouseReleaseEvent((*reinterpret_cast< std::add_pointer_t<QMouseEvent*>>(_a[1]))); break;
+        case 17: _t->on_actionupdate_transaction_triggered(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -175,7 +180,7 @@ const QMetaObject userWindow::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_userWindow_t
 , QtPrivate::TypeAndForceComplete<userWindow, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<QObject *, std::false_type>, QtPrivate::TypeAndForceComplete<QEvent *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QMouseEvent *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QMouseEvent *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QMouseEvent *, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<QObject *, std::false_type>, QtPrivate::TypeAndForceComplete<QEvent *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QMouseEvent *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QMouseEvent *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QMouseEvent *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
@@ -202,13 +207,13 @@ int userWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 17)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 17;
+        _id -= 18;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 17)
+        if (_id < 18)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 17;
+        _id -= 18;
     }
     return _id;
 }

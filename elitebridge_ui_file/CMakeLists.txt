@@ -93,6 +93,7 @@ set(PROJECT_SOURCES
         itemlocationwindow.h itemlocationwindow.cpp itemlocationwindow.ui
         userdetails.h userdetails.cpp userdetails.ui
         machinewindow.h machinewindow.cpp machinewindow.ui
+        updateusertransaction.h updateusertransaction.cpp updateusertransaction.ui
         ${TS_FILES}
 )
 

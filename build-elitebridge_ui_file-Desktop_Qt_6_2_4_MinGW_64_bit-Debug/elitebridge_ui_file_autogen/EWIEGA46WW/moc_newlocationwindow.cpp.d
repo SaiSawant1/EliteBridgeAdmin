@@ -111,8 +111,10 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtSql/qtsqlglobal.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QDialog \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qmainwindow.h \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgets-config.h \

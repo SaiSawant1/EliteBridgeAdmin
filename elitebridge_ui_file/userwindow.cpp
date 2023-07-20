@@ -8,7 +8,7 @@
 #include <QTableView>
 #include "createusertransaction.h"
 #include "viewgrants.h"
-
+#include "updateusertransaction.h"
 
 userWindow::userWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -629,4 +629,12 @@ void userWindow::showDialog(int row, int column)
 }
 
 
+
+
+void userWindow::on_actionupdate_transaction_triggered()
+{
+    UpdateUserTransaction* updateTransaction=new UpdateUserTransaction;
+    updateTransaction->setSelectedValue(selectedValue);
+    updateTransaction->show();
+}
 

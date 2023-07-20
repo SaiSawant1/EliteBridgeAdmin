@@ -70,6 +70,8 @@ void NewLocationWindow::fillAdmin(){
         ui->lineEdit_userName->setText(query.value(0).toString());
         ui->lineEdit_Type->setText(query.value(1).toString());
         ui->lineEdit_Description->setText(query.value(2).toString());
+        ui->lineEdit_Welcome_1->setText(query.value(3).toString());
+        ui->lineEdit_Welcome_2->setText(query.value(4).toString());
     }
     dataBase.close();
 }
@@ -94,9 +96,9 @@ void NewLocationWindow::readDb(){
         return;
     }
 
-    ui->tableWidget->setColumnCount(3);
+    ui->tableWidget->setColumnCount(5);
     QStringList labels;
-    labels << "Location ID"<<"Type"<<"Description";
+    labels << "Location ID"<<"Type"<<"Description"<<"Welcome Message 1"<<"Welcome Message 2";
     ui->tableWidget->setHorizontalHeaderLabels(labels);
 
     int rowCount=0;
@@ -106,16 +108,22 @@ void NewLocationWindow::readDb(){
         QTableWidgetItem *LocationID = new QTableWidgetItem(query.value(0).toString());
         QTableWidgetItem *Type = new QTableWidgetItem(query.value(1).toString());
         QTableWidgetItem *Description = new QTableWidgetItem(query.value(2).toString());
+        QTableWidgetItem *Message1 = new QTableWidgetItem(query.value(3).toString());
+        QTableWidgetItem *Message2 = new QTableWidgetItem(query.value(4).toString());
 
 
         LocationID->setText(query.value(0).toString());
         Type->setText(query.value(1).toString());
         Description->setText(query.value(2).toString());
+        Message1->setText(query.value(3).toString());
+        Message2->setText(query.value(4).toString());
 
 
         ui->tableWidget->setItem(rowCount,0,LocationID);
         ui->tableWidget->setItem(rowCount,1,Type);
         ui->tableWidget->setItem(rowCount,2,Description);
+        ui->tableWidget->setItem(rowCount,3,Message1);
+        ui->tableWidget->setItem(rowCount,4,Message2);
 
 
         rowCount++;
@@ -125,6 +133,15 @@ void NewLocationWindow::readDb(){
 
 void NewLocationWindow::on_add_clicked()
 {
+    bool conversionOk = false;
+    int integerValue = ui->lineEdit_userName->text().toInt(&conversionOk, 10);
+
+    if(conversionOk==false){
+          QMessageBox::warning(nullptr, "Invalid Input", "Please enter a valid number.");
+        return ;
+    }
+
+
     QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
@@ -132,18 +149,21 @@ void NewLocationWindow::on_add_clicked()
 
     if(!dataBase.open())
     {
-        qDebug()<<"dataBase open error";
+        QMessageBox::warning(nullptr, "Database not open", "Data base was not open please check your connection");
         return ;
     }
 
     QSqlQuery query(dataBase);
-    query.prepare("INSERT INTO Location (LocationID,Type,Description) VALUES (?,?,?)");
+    query.prepare("INSERT INTO Location (LocationID,Type,Description,welcomeMessage1,welcomeMessage2) VALUES (?,?,?,?,?)");
     query.addBindValue(ui->lineEdit_userName->text());
     query.addBindValue(ui->lineEdit_Type->text());
     query.addBindValue(ui->lineEdit_Description->text());
+    query.addBindValue(ui->lineEdit_Welcome_1->text());
+    query.addBindValue(ui->lineEdit_Welcome_2->text());
     if(!query.exec())
     {
         qDebug()<<"Query execution Failed";
+        qDebug()<<query.lastError().text();
         return;
     }
 
@@ -190,6 +210,13 @@ void NewLocationWindow::on_delete_2_clicked()
 
 void NewLocationWindow::on_update_clicked()
 {
+    bool conversionOk = false;
+    int integerValue = ui->lineEdit_userName->text().toInt(&conversionOk, 10);
+
+    if(conversionOk==false){
+        QMessageBox::warning(nullptr, "Invalid Input", "Please enter a valid number.");
+        return ;
+    }
     QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
@@ -202,9 +229,11 @@ void NewLocationWindow::on_update_clicked()
     }
 
     QSqlQuery query(dataBase);
-    query.prepare("UPDATE Location SET Type = ?,Description = ? WHERE LocationID = ?");
+    query.prepare("UPDATE Location SET Type = ?,Description = ?,welcomeMessage1 = ?, welcomeMessage2 = ? WHERE LocationID = ?");
     query.addBindValue(ui->lineEdit_Type->text());
     query.addBindValue(ui->lineEdit_Description->text());
+    query.addBindValue(ui->lineEdit_Welcome_1->text());
+    query.addBindValue(ui->lineEdit_Welcome_2->text());
     query.addBindValue(selectedValue);
     if(!query.exec())
     {

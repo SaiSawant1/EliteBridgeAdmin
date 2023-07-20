@@ -593,6 +593,8 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/systemlogin.h \
   D:/ElieteBridge-git/elitebridge_ui_file/updateuser.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/updateuser.h \
+  D:/ElieteBridge-git/elitebridge_ui_file/updateusertransaction.cpp \
+  D:/ElieteBridge-git/elitebridge_ui_file/updateusertransaction.h \
   D:/ElieteBridge-git/elitebridge_ui_file/userdetails.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/userdetails.h \
   D:/ElieteBridge-git/elitebridge_ui_file/usergroupmainwindow.cpp \
@@ -624,6 +626,7 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/sysconfig.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/systemlogin.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/updateuser.ui \
+  D:/ElieteBridge-git/elitebridge_ui_file/updateusertransaction.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/userdetails.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/usergroupmainwindow.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/userwindow.ui \

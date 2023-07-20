@@ -60,6 +60,8 @@ private slots:
     void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
 
+    void on_actionupdate_transaction_triggered();
+
 signals:
     void cellSelected(const QString& selectedValue);
 

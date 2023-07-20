@@ -54,6 +54,14 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_3;
     QLineEdit *lineEdit_Description;
+    QFrame *frame_7;
+    QHBoxLayout *horizontalLayout_5;
+    QLabel *label_4;
+    QLineEdit *lineEdit_Welcome_1;
+    QFrame *frame_8;
+    QHBoxLayout *horizontalLayout_6;
+    QLabel *label_5;
+    QLineEdit *lineEdit_Welcome_2;
 
     void setupUi(QDialog *NewLocationWindow)
     {
@@ -111,7 +119,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 969, 291));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 952, 310));
         verticalLayout_4 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         frame_2 = new QFrame(scrollAreaWidgetContents);
@@ -171,6 +179,44 @@ public:
 
         verticalLayout_4->addWidget(frame_4);
 
+        frame_7 = new QFrame(scrollAreaWidgetContents);
+        frame_7->setObjectName(QString::fromUtf8("frame_7"));
+        frame_7->setFrameShape(QFrame::StyledPanel);
+        frame_7->setFrameShadow(QFrame::Raised);
+        horizontalLayout_5 = new QHBoxLayout(frame_7);
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        label_4 = new QLabel(frame_7);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+
+        horizontalLayout_5->addWidget(label_4);
+
+        lineEdit_Welcome_1 = new QLineEdit(frame_7);
+        lineEdit_Welcome_1->setObjectName(QString::fromUtf8("lineEdit_Welcome_1"));
+
+        horizontalLayout_5->addWidget(lineEdit_Welcome_1);
+
+
+        verticalLayout_4->addWidget(frame_7);
+
+        frame_8 = new QFrame(scrollAreaWidgetContents);
+        frame_8->setObjectName(QString::fromUtf8("frame_8"));
+        frame_8->setFrameShape(QFrame::StyledPanel);
+        frame_8->setFrameShadow(QFrame::Raised);
+        horizontalLayout_6 = new QHBoxLayout(frame_8);
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        label_5 = new QLabel(frame_8);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+
+        horizontalLayout_6->addWidget(label_5);
+
+        lineEdit_Welcome_2 = new QLineEdit(frame_8);
+        lineEdit_Welcome_2->setObjectName(QString::fromUtf8("lineEdit_Welcome_2"));
+
+        horizontalLayout_6->addWidget(lineEdit_Welcome_2);
+
+
+        verticalLayout_4->addWidget(frame_8);
+
         scrollArea->setWidget(scrollAreaWidgetContents);
 
         verticalLayout_3->addWidget(scrollArea);
@@ -193,6 +239,8 @@ public:
         label->setText(QCoreApplication::translate("NewLocationWindow", "Location ID", nullptr));
         label_2->setText(QCoreApplication::translate("NewLocationWindow", "Type            ", nullptr));
         label_3->setText(QCoreApplication::translate("NewLocationWindow", "Description", nullptr));
+        label_4->setText(QCoreApplication::translate("NewLocationWindow", "Welcome Message 1", nullptr));
+        label_5->setText(QCoreApplication::translate("NewLocationWindow", "Welcome Message 2", nullptr));
     } // retranslateUi
 
 };

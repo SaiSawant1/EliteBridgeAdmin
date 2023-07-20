@@ -6,7 +6,7 @@
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
-
+#include <QMessageBox>
 namespace Ui {
 class NewLocationWindow;
 }
