@@ -15,85 +15,89 @@ ViewGrants::~ViewGrants()
 
 void ViewGrants::on_viewGrants_clicked()
 {
-    userId=ui->lineEdit->text();
+
+    QString userId = ui->lineEdit->text();
 
     QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
     QSqlDatabase dataBase;
-    dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
+    dataBase = QSqlDatabase::addDatabase("QSQLITE", "DBConnection");
     dataBase.setDatabaseName(dbPath);
 
-    if(!dataBase.open())
+    if (!dataBase.open())
     {
-        qDebug()<<"dataBase open error";
-        return ;
-    }
-
-    QSqlQuery query(dataBase);
-    query.prepare("SELECT * FROM Transaction_Rights WHERE userID = :userId");
-    query.bindValue(":userId", userId);
-
-    if(!query.exec())
-    {
-        qDebug()<<"Query execution Failed";
+        qDebug() << "dataBase open error";
         return;
     }
 
-    // Clear previous layout from the scroll area
-    QLayout* previousLayout = ui->scrollArea->layout();
-    if (previousLayout)
+    // Fetch individual user rights
+
+    QSqlQuery userQuery(dataBase);
+    userQuery.prepare("SELECT * FROM Transaction_Rights WHERE userID = :userId");
+    userQuery.bindValue(":userId", userId);
+
+    if (userQuery.exec())
     {
-        QLayoutItem* child;
-        while ((child = previousLayout->takeAt(0)) != nullptr)
+        if (userQuery.next())
         {
-            delete child->widget();
-            delete child;
+            QSqlRecord record = userQuery.record();
+            for (int i = 1; i < record.count(); ++i)
+            {
+                if (userQuery.value(i).toString() == "true")
+                {
+                    QString grantName = record.fieldName(i);
+                    userRights.insert(grantName);
+                }
+            }
         }
-        delete previousLayout;
     }
 
-    QVBoxLayout *layout = new QVBoxLayout;
 
-    ui->scrollArea->setLayout(layout);
+    //Fect groups for selected user
+    QSqlQuery groupQuery(dataBase);
+    groupQuery.prepare("SELECT groupID FROM user_group WHERE userID = :userId");
+    groupQuery.bindValue(":userId", userId);
 
-    if(query.next()){
+    if(groupQuery.exec()){
+        while (groupQuery.next()){
 
-        if(query.value(1).toString()=="true"){
-            QPushButton *button_1 = new QPushButton("ChangePassword");
-            layout->addWidget(button_1);
+            QSqlQuery groupTransactionQuery(dataBase);
+            groupTransactionQuery.prepare("SELECT * FROM group_transaction WHERE GroupID = :groupId");
+            groupTransactionQuery.bindValue(":groupId",groupQuery.value(0).toString());
+            if(groupTransactionQuery.exec()){
 
-        }
-        if(query.value(2).toString()=="true"){
-            QPushButton *button_1 = new QPushButton("CycleCount");
-            layout->addWidget(button_1);
-
-        }
-        if(query.value(3).toString()=="true"){
-            QPushButton *button_1 = new QPushButton("FreeIssueWithdraw");
-            layout->addWidget(button_1);
-
-        }
-        if(query.value(4).toString()=="true"){
-            QPushButton *button_1 = new QPushButton("InitiateStockTransfer");
-            layout->addWidget(button_1);
-
-        }
-        if(query.value(5).toString()=="true"){
-            QPushButton *button_1 = new QPushButton("Scrap");
-            layout->addWidget(button_1);
-
-        }
-        if(query.value(6).toString()=="true"){
-            QPushButton *button_1 = new QPushButton("LoadRework");
-            layout->addWidget(button_1);
-
-        }
-        if(query.value(7).toString()=="true"){
-            QPushButton *button_1 = new QPushButton("MoveStock");
-            layout->addWidget(button_1);
+                if (groupTransactionQuery.next())
+                {
+                    QSqlRecord record = groupTransactionQuery.record();
+                    for (int i = 1; i < record.count(); ++i)
+                    {
+                        if (groupTransactionQuery.value(i).toString() == "true")
+                        {
+                            QString grantName = record.fieldName(i);
+                            groupRights.insert(grantName);
+                        }
+                    }
+                }
+            }
 
         }
     }
+
+
 
     dataBase.close();
+
+    userRights.unite(groupRights);
+
+    ui->scrollArea->setLayout(new QVBoxLayout);
+    for (const QString& str : userRights)
+    {
+        QPushButton* button = new QPushButton(str);
+        // You can connect a signal-slot here if needed (e.g., to handle button clicks)
+
+        // Add the button to the layout
+        ui->scrollArea->layout()->addWidget(button);
+    }
+
+    // Set the scroll area's widget as the viewport to ensure it's scrollable
 }
 

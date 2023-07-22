@@ -1,6 +1,7 @@
 D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/elitebridge_ui_file_autogen/EWIEGA46WW/moc_selectgroup.cpp: D:/ElieteBridge-git/elitebridge_ui_file/selectgroup.h \
   D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/elitebridge_ui_file_autogen/moc_predefs.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/QList \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/QSet \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qalgorithms.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qanystringview.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qarraydata.h \

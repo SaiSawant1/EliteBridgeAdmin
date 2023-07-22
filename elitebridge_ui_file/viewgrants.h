@@ -6,6 +6,7 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
+#include <QSqlRecord>
 
 namespace Ui {
 class ViewGrants;
@@ -25,6 +26,8 @@ private slots:
 private:
     Ui::ViewGrants *ui;
     QString userId;
+    QSet<QString> userRights;
+    QSet<QString> groupRights;
 };
 
 #endif // VIEWGRANTS_H

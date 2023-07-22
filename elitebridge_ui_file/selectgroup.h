@@ -7,6 +7,7 @@
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
+#include <QSet>
 
 struct Group
 {
@@ -39,6 +40,7 @@ private:
     void fetchGroups();
     void setScrollArea();
     QList<QCheckBox*> checkboxes;
+    QSet<QString> assignedGroups;
 };
 
 #endif // SELECTGROUP_H

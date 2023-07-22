@@ -3,6 +3,7 @@ elitebridge_ui_file_autogen/timestamp: \
   C:/Qt/6.2.4/mingw_64/include/QtCore/QList \
   C:/Qt/6.2.4/mingw_64/include/QtCore/QObject \
   C:/Qt/6.2.4/mingw_64/include/QtCore/QRect \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/QSet \
   C:/Qt/6.2.4/mingw_64/include/QtCore/QSize \
   C:/Qt/6.2.4/mingw_64/include/QtCore/QSizeF \
   C:/Qt/6.2.4/mingw_64/include/QtCore/Qt \
@@ -142,9 +143,11 @@ elitebridge_ui_file_autogen/timestamp: \
   C:/Qt/6.2.4/mingw_64/include/QtSql/QSqlDatabase \
   C:/Qt/6.2.4/mingw_64/include/QtSql/QSqlError \
   C:/Qt/6.2.4/mingw_64/include/QtSql/QSqlQuery \
+  C:/Qt/6.2.4/mingw_64/include/QtSql/QSqlRecord \
   C:/Qt/6.2.4/mingw_64/include/QtSql/qsqldatabase.h \
   C:/Qt/6.2.4/mingw_64/include/QtSql/qsqlerror.h \
   C:/Qt/6.2.4/mingw_64/include/QtSql/qsqlquery.h \
+  C:/Qt/6.2.4/mingw_64/include/QtSql/qsqlrecord.h \
   C:/Qt/6.2.4/mingw_64/include/QtSql/qtsql-config.h \
   C:/Qt/6.2.4/mingw_64/include/QtSql/qtsqlglobal.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QDialog \

@@ -6,7 +6,7 @@ ItemLocationWindow::ItemLocationWindow(QWidget *parent) :
     ui(new Ui::ItemLocationWindow)
 {
     ui->setupUi(this);
-    fillLocationCombo();
+
 }
 
 ItemLocationWindow::~ItemLocationWindow()
@@ -17,6 +17,8 @@ ItemLocationWindow::~ItemLocationWindow()
 void ItemLocationWindow::setSelectedvValue(QString selectedValue){
     value=selectedValue;
     fillLineEdits();
+    fillLocationCombo();
+
 }
 
 
@@ -102,13 +104,14 @@ void ItemLocationWindow::fillLocationCombo(){
     }
 
     QSqlQuery query;
-    query.exec("SELECT Type FROM Location");
+    query.exec("SELECT * FROM Location");
 
 
     if (query.exec()) {
         while (query.next()) {
-            QString locationName = query.value(0).toString();
-            ui->Location->addItem(locationName);
+            QString locationID=query.value(0).toString();
+            QString locationName = query.value(1).toString();
+            ui->Location->addItem( locationID + "-" + locationName);
         }
 
     } else {
@@ -147,7 +150,7 @@ void ItemLocationWindow::fillLineEdits(){
 
     if(query.next()){
 
-        ui->Location->setCurrentText(query.value(12).toString());
+        ui->Location->setPlaceholderText(query.value(12).toString());
         ui->Minimum->setText(query.value(13).toString());
         ui->Maximum->setText(query.value(14).toString());
         ui->Critical->setText(query.value(15).toString());

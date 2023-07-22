@@ -7,8 +7,8 @@ selectGroup::selectGroup(QWidget *parent) :
     ui(new Ui::selectGroup)
 {
     ui->setupUi(this);
-    fetchGroups();
-    setScrollArea();
+
+
 }
 
 selectGroup::~selectGroup()
@@ -18,6 +18,8 @@ selectGroup::~selectGroup()
 void selectGroup::setValue(QString value){
     selectedUser=value;
     ui->selectedIDLabel->setText(selectedUser);
+    fetchGroups();
+    setScrollArea();
 }
 
 void selectGroup::fetchGroups(){
@@ -51,6 +53,25 @@ void selectGroup::fetchGroups(){
         qDebug() << "Error executing query:" << query.lastError().text();
     }
 
+    // Fetch the groupIDs associated with the selectedUser from the database
+    QSqlQuery assignedGroupsQuery;
+    assignedGroupsQuery.prepare("SELECT groupID FROM user_group WHERE userID = :userID");
+    assignedGroupsQuery.bindValue(":userID", selectedUser);
+    if (assignedGroupsQuery.exec())
+    {
+        while (assignedGroupsQuery.next())
+        {
+            QString groupID = assignedGroupsQuery.value(0).toString();
+            assignedGroups.insert(groupID);
+        }
+    }
+    else
+    {
+        // Handle the case when the query execution fails
+        qDebug() << "Error executing query:" << assignedGroupsQuery.lastError().text();
+    }
+
+
     db.close();
 }
 void selectGroup::setScrollArea()
@@ -63,6 +84,12 @@ void selectGroup::setScrollArea()
         checkbox->setProperty("groupId", group.groupID);
         layout->addWidget(checkbox);
          checkboxes.append(checkbox);
+
+        if (assignedGroups.contains(group.groupID))
+        {
+            checkbox->setChecked(true);
+        }
+
     }
 
     QWidget *widget = new QWidget;
