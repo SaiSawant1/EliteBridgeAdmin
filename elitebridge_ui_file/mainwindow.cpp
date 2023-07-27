@@ -4,6 +4,8 @@
 #include "itemsmainwindow.h"
 #include "adminsetup.h"
 #include "newlocationwindow.h"
+#include "auxmainwindow.h"
+#include "machine.h"
 #include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -62,5 +64,19 @@ void MainWindow::on_pushButton_2_clicked()
 {
     NewLocationWindow *locationWindow=new NewLocationWindow;
     locationWindow->show();
+}
+
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    AuxMainWindow* auxWindow=new AuxMainWindow;
+    auxWindow->show();
+}
+
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    Machine* machineWindow=new Machine;
+    machineWindow->show();
 }
 

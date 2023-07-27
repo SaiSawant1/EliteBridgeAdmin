@@ -17,7 +17,6 @@ userWindow::userWindow(QWidget *parent) :
     ui->setupUi(this);
 
     QHBoxLayout* horizontalLayout = new QHBoxLayout(ui->frame);
-
     addUserLabel = new ClickableLabel(this);
     addUserLabel->setText("Add User");
     addUserLabel->setScaledContents(true);

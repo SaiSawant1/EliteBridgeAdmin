@@ -323,6 +323,12 @@
 			null
 		],
 		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/auxmainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_auxmainwindow.cpp",
+			null
+		],
+		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.h",
 			"MU",
 			"EWIEGA46WW/moc_createusertransaction.cpp",
@@ -377,9 +383,9 @@
 			null
 		],
 		[
-			"D:/ElieteBridge-git/elitebridge_ui_file/machinewindow.h",
+			"D:/ElieteBridge-git/elitebridge_ui_file/machine.h",
 			"MU",
-			"EWIEGA46WW/moc_machinewindow.cpp",
+			"EWIEGA46WW/moc_machine.cpp",
 			null
 		],
 		[
@@ -552,6 +558,11 @@
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/admin.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/adminsetup.cpp", "MU", null ],
 		[
+			"D:/ElieteBridge-git/elitebridge_ui_file/auxmainwindow.cpp",
+			"MU",
+			null
+		],
+		[
 			"D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.cpp",
 			"MU",
 			null
@@ -588,11 +599,7 @@
 			"MU",
 			null
 		],
-		[
-			"D:/ElieteBridge-git/elitebridge_ui_file/machinewindow.cpp",
-			"MU",
-			null
-		],
+		[ "D:/ElieteBridge-git/elitebridge_ui_file/machine.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/main.cpp", "MU", null ],
 		[ "D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.cpp", "MU", null ],
 		[

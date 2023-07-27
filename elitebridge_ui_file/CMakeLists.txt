@@ -92,8 +92,11 @@ set(PROJECT_SOURCES
         itemdetaildialog.h itemdetaildialog.cpp itemdetaildialog.ui
         itemlocationwindow.h itemlocationwindow.cpp itemlocationwindow.ui
         userdetails.h userdetails.cpp userdetails.ui
-        machinewindow.h machinewindow.cpp machinewindow.ui
+        machine.h machine.cpp machine.ui
         updateusertransaction.h updateusertransaction.cpp updateusertransaction.ui
+        auxmainwindow.cpp
+        auxmainwindow.ui
+        auxmainwindow.h
         ${TS_FILES}
 )
 

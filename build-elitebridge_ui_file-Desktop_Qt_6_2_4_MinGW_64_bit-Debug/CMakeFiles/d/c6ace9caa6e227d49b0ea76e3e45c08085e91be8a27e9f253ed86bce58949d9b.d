@@ -152,6 +152,7 @@ elitebridge_ui_file_autogen/timestamp: \
   C:/Qt/6.2.4/mingw_64/include/QtSql/qtsqlglobal.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QDialog \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QFileDialog \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/QHBoxLayout \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QLineEdit \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow \
@@ -164,11 +165,15 @@ elitebridge_ui_file_autogen/timestamp: \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractscrollarea.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractslider.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractspinbox.h \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/qboxlayout.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qcheckbox.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qfiledialog.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/qgridlayout.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlayout.h \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlayoutitem.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlineedit.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qmainwindow.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
@@ -551,6 +556,8 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/admin.h \
   D:/ElieteBridge-git/elitebridge_ui_file/adminsetup.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/adminsetup.h \
+  D:/ElieteBridge-git/elitebridge_ui_file/auxmainwindow.cpp \
+  D:/ElieteBridge-git/elitebridge_ui_file/auxmainwindow.h \
   D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.h \
   D:/ElieteBridge-git/elitebridge_ui_file/edi.cpp \
@@ -569,8 +576,8 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/itemsubgroup.h \
   D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.h \
-  D:/ElieteBridge-git/elitebridge_ui_file/machinewindow.cpp \
-  D:/ElieteBridge-git/elitebridge_ui_file/machinewindow.h \
+  D:/ElieteBridge-git/elitebridge_ui_file/machine.cpp \
+  D:/ElieteBridge-git/elitebridge_ui_file/machine.h \
   D:/ElieteBridge-git/elitebridge_ui_file/main.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.cpp \
   D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.h \
@@ -608,6 +615,7 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/viewgrants.h \
   D:/ElieteBridge-git/elitebridge_ui_file/admin.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/adminsetup.ui \
+  D:/ElieteBridge-git/elitebridge_ui_file/auxmainwindow.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/createusertransaction.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/edi.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/grouptransaction.ui \
@@ -617,6 +625,7 @@ elitebridge_ui_file_autogen/timestamp: \
   D:/ElieteBridge-git/elitebridge_ui_file/itemsmainwindow.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/itemsubgroup.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/jobmainwindow.ui \
+  D:/ElieteBridge-git/elitebridge_ui_file/machine.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/mainwindow.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/newgroupform.ui \
   D:/ElieteBridge-git/elitebridge_ui_file/newitemform.ui \

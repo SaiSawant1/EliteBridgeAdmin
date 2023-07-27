@@ -90,7 +90,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(779, 601);
+        MainWindow->resize(800, 601);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout_16 = new QGridLayout(centralwidget);
@@ -374,7 +374,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 779, 25));
+        menubar->setGeometry(QRect(0, 0, 800, 25));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuView = new QMenu(menubar);
@@ -420,7 +420,7 @@ public:
         pushButton_4->setText(QCoreApplication::translate("MainWindow", "Clean Active ", nullptr));
         pushButton_5->setText(QCoreApplication::translate("MainWindow", " Language", nullptr));
         pushButton_6->setText(QCoreApplication::translate("MainWindow", "Purge", nullptr));
-        pushButton_7->setText(QCoreApplication::translate("MainWindow", "Aux2", nullptr));
+        pushButton_7->setText(QCoreApplication::translate("MainWindow", "Aux", nullptr));
         label_43->setText(QString());
         label_44->setText(QString());
         label_45->setText(QString());
