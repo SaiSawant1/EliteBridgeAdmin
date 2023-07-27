@@ -133,7 +133,7 @@
           <item row="1" column="3">
            <widget class="QPushButton" name="pushButton_4">
             <property name="text">
-             <string>Clean Active </string>
+             <string>machine</string>
             </property>
            </widget>
           </item>
