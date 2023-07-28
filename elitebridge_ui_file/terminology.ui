@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Terminology</class>
+ <widget class="QMainWindow" name="Terminology">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <widget class="QWidget" name="centralwidget_2" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="styleSheet">
+          <string notr="true">font: 15pt &quot;Segoe UI Variable Display&quot;;
+color:black;</string>
+         </property>
+         <property name="text">
+          <string>Terminology</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="styleSheet">
+             <string notr="true">font: 300 11pt &quot;Segoe UI Variable Display Light&quot;;
+color:black;</string>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Replaced By Select From&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="styleSheet">
+             <string notr="true">font: 300 11pt &quot;Segoe UI Variable Display Light&quot;;
+color:black;</string>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Field To Replace&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="styleSheet">
+             <string notr="true">font: 300 11pt &quot;Segoe UI Variable Display Light&quot;;
+color:black;</string>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Write Value &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="1">
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QComboBox" name="comboBox">
+               <item>
+                <property name="text">
+                 <string>Aux 1</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Aux 2</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Aux 3</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_2">
+               <item>
+                <property name="text">
+                 <string>Aux2</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Aux3</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_3">
+               <item>
+                <property name="text">
+                 <string>Users</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_4">
+               <item>
+                <property name="text">
+                 <string>Jobs</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Work</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Task</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_5"/>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_6"/>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_8"/>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_7"/>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="2">
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QLineEdit" name="Aux_lineEdit"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="Aux2_lineEdit"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="User_lineEdit"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="job_lineEdit"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="item_lineEdit"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="machine_lineEdit"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="rework_lineEdit"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="scrap_lineEdit"/>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="0">
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <widget class="QLabel" name="Aux_label">
+               <property name="styleSheet">
+                <string notr="true">font: 300 11pt &quot;Segoe UI Variable Display Light&quot;;
+color:black;</string>
+               </property>
+               <property name="text">
+                <string>Aux</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="Aux2">
+               <property name="styleSheet">
+                <string notr="true">font: 300 11pt &quot;Segoe UI Variable Display Light&quot;;
+color:black;</string>
+               </property>
+               <property name="text">
+                <string>Aux 2</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="User">
+               <property name="styleSheet">
+                <string notr="true">font: 300 11pt &quot;Segoe UI Variable Display Light&quot;;
+color:black;</string>
+               </property>
+               <property name="text">
+                <string>User</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="Job">
+               <property name="styleSheet">
+                <string notr="true">font: 300 11pt &quot;Segoe UI Variable Display Light&quot;;
+color:black;</string>
+               </property>
+               <property name="text">
+                <string>Job</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="Item">
+               <property name="styleSheet">
+                <string notr="true">font: 300 11pt &quot;Segoe UI Variable Display Light&quot;;
+color:black;</string>
+               </property>
+               <property name="text">
+                <string>Item</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="Machine">
+               <property name="styleSheet">
+                <string notr="true">font: 300 11pt &quot;Segoe UI Variable Display Light&quot;;
+color:black;</string>
+               </property>
+               <property name="text">
+                <string>Machine</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="Rework">
+               <property name="styleSheet">
+                <string notr="true">font: 300 11pt &quot;Segoe UI Variable Display Light&quot;;
+color:black;</string>
+               </property>
+               <property name="text">
+                <string>Rework</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="Scrap">
+               <property name="styleSheet">
+                <string notr="true">font: 300 11pt &quot;Segoe UI Variable Display Light&quot;;
+color:black;</string>
+               </property>
+               <property name="text">
+                <string>Scrap</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="label_13">
+             <property name="styleSheet">
+              <string notr="true">font: 300 11pt &quot;Segoe UI Variable Display Light&quot;;
+color:black;</string>
+             </property>
+             <property name="text">
+              <string>Any other</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit1"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="secondLineEdit"/>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Apply">
+         <property name="styleSheet">
+          <string notr="true">font: 300 11pt &quot;Segoe UI Variable Display Light&quot;;
+color:black;</string>
+         </property>
+         <property name="text">
+          <string>Apply Change</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>480</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

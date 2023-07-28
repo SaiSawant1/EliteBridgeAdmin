@@ -6,6 +6,7 @@
 #include "newlocationwindow.h"
 #include "auxmainwindow.h"
 #include "machine.h"
+#include "terminology.h"
 #include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -78,5 +79,12 @@ void MainWindow::on_pushButton_4_clicked()
 {
     Machine* machineWindow=new Machine;
     machineWindow->show();
+}
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    Terminology* terminologyWindow=new Terminology;
+    terminologyWindow->show();
 }
 

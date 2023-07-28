@@ -97,6 +97,7 @@ set(PROJECT_SOURCES
         auxmainwindow.cpp
         auxmainwindow.ui
         auxmainwindow.h
+        terminology.h terminology.cpp terminology.ui
         ${TS_FILES}
 )
 

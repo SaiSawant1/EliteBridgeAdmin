@@ -417,7 +417,7 @@ public:
         users->setText(QCoreApplication::translate("MainWindow", "Users", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "Location", nullptr));
         pushButton_3->setText(QCoreApplication::translate("MainWindow", "Terminology", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWindow", "Clean Active ", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("MainWindow", "machine", nullptr));
         pushButton_5->setText(QCoreApplication::translate("MainWindow", " Language", nullptr));
         pushButton_6->setText(QCoreApplication::translate("MainWindow", "Purge", nullptr));
         pushButton_7->setText(QCoreApplication::translate("MainWindow", "Aux", nullptr));
