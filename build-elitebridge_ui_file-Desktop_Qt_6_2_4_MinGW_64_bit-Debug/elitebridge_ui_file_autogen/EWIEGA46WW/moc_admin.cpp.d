@@ -1,5 +1,10 @@
 D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/elitebridge_ui_file_autogen/EWIEGA46WW/moc_admin.cpp: D:/ElieteBridge-git/elitebridge_ui_file/admin.h \
   D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/elitebridge_ui_file_autogen/moc_predefs.h \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/QList \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/QObject \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/QRect \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/QSize \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/QSizeF \
   C:/Qt/6.2.4/mingw_64/include/QtCore/Qt \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qalgorithms.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qanystringview.h \
@@ -14,6 +19,7 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtCore/qbytearrayalgorithms.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qbytearraylist.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qbytearrayview.h \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/qcalendar.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qchar.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qcompare.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qcompilerdetection.h \
@@ -22,8 +28,14 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtCore/qcontainerinfo.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qcontainertools_impl.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qcontiguouscache.h \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/qcoreevent.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qdatastream.h \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/qdatetime.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qdebug.h \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/qdir.h \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/qfile.h \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/qfiledevice.h \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/qfileinfo.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qflags.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qgenericatomic.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qglobal.h \
@@ -36,6 +48,7 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtCore/qiterator.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qline.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qlist.h \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/qlocale.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qlogging.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qmap.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qmargins.h \
@@ -43,6 +56,7 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtCore/qmetacontainer.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qmetatype.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qnamespace.h \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/qnativeinterface.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qnumeric.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qobject.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qobject_impl.h \
@@ -50,6 +64,7 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtCore/qobjectdefs_impl.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qpair.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qpoint.h \
+  C:/Qt/6.2.4/mingw_64/include/QtCore/qpointer.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qprocessordetection.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qrect.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qrefcount.h \
@@ -81,34 +96,46 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/6.2.4/mingw_64/include/QtCore/qvariant.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qvarlengtharray.h \
   C:/Qt/6.2.4/mingw_64/include/QtCore/qversiontagging.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/QMouseEvent \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/QTransform \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qbitmap.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qbrush.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qcolor.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qcursor.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/qevent.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/qeventpoint.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qfont.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qfontinfo.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qfontmetrics.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qicon.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qimage.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/qinputdevice.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qkeysequence.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpaintdevice.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpalette.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpicture.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpixelformat.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpixmap.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/qpointingdevice.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qpolygon.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qregion.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qrgb.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qrgba64.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/qscreen.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qtextdocument.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qtgui-config.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qtguiglobal.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qtransform.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/qvector2d.h \
+  C:/Qt/6.2.4/mingw_64/include/QtGui/qvectornd.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/QFileDialog \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/QWidget \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
+  C:/Qt/6.2.4/mingw_64/include/QtWidgets/qfiledialog.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qmainwindow.h \
@@ -140,6 +167,7 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/c++0x_warning.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/char_traits.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/charconv.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/codecvt.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/concept_check.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/cpp_type_traits.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/cxxabi_forced.h \
@@ -149,6 +177,10 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/exception.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/exception_defines.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/exception_ptr.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_dir.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_fwd.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_ops.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_path.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/functexcept.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/functional_hash.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/hash_bytes.h \
@@ -158,8 +190,11 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/list.tcc \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.tcc \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_conv.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.tcc \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets_nonio.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets_nonio.tcc \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/localefwd.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/max_size_type.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/memoryfwd.h \
@@ -172,6 +207,7 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/postypes.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/predefined_ops.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ptr_traits.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/quoted_string.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/range_access.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ranges_algo.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ranges_algobase.h \
@@ -218,14 +254,17 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/uses_allocator_args.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/vector.tcc \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cctype \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/chrono \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/clocale \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cmath \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/codecvt \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/compare \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/concepts \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstddef \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstdint \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstdlib \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstring \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ctime \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cwchar \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cwctype \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/debug/assertions.h \
@@ -239,13 +278,16 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/numeric_traits.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/string_conversions.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/type_traits.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/filesystem \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/functional \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/initializer_list \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iomanip \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iosfwd \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iterator \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/limits \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/list \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/locale \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/map \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/memory \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/new \
@@ -262,6 +304,7 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/streambuf \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/string \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/string_view \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/system_error \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/bessel_function.tcc \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/beta_function.tcc \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/ell_integral.tcc \
@@ -290,7 +333,9 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/gthr.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
+  C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/time_members.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdarg.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdint.h \
@@ -329,4 +374,5 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
-  C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h
+  C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
+  D:/ElieteBridge-git/elitebridge_ui_file/shareddata.h

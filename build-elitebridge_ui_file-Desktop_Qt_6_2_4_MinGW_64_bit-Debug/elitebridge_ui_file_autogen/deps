@@ -597,6 +597,8 @@ elitebridge_ui_file_autogen/timestamp: \
 	D:/ElieteBridge-git/elitebridge_ui_file/reporting.h \
 	D:/ElieteBridge-git/elitebridge_ui_file/selectgroup.cpp \
 	D:/ElieteBridge-git/elitebridge_ui_file/selectgroup.h \
+	D:/ElieteBridge-git/elitebridge_ui_file/shareddata.cpp \
+	D:/ElieteBridge-git/elitebridge_ui_file/shareddata.h \
 	D:/ElieteBridge-git/elitebridge_ui_file/sysconfig.cpp \
 	D:/ElieteBridge-git/elitebridge_ui_file/sysconfig.h \
 	D:/ElieteBridge-git/elitebridge_ui_file/systemlogin.cpp \

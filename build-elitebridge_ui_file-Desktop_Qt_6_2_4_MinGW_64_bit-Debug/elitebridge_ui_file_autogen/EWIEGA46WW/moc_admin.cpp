@@ -23,8 +23,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Admin_t {
-    const uint offsetsAndSize[14];
-    char stringdata0[107];
+    const uint offsetsAndSize[22];
+    char stringdata0[137];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_Admin_t, stringdata0) + ofs), len 
@@ -36,12 +36,17 @@ QT_MOC_LITERAL(14, 0), // ""
 QT_MOC_LITERAL(15, 24), // "on_btn_reporting_clicked"
 QT_MOC_LITERAL(40, 18), // "on_btn_EDI_clicked"
 QT_MOC_LITERAL(59, 24), // "on_btn_sysConfig_clicked"
-QT_MOC_LITERAL(84, 22) // "on_btn_process_clicked"
+QT_MOC_LITERAL(84, 22), // "on_btn_process_clicked"
+QT_MOC_LITERAL(107, 11), // "eventFilter"
+QT_MOC_LITERAL(119, 3), // "obj"
+QT_MOC_LITERAL(123, 7), // "QEvent*"
+QT_MOC_LITERAL(131, 5) // "event"
 
     },
     "Admin\0clicked\0\0on_btn_reporting_clicked\0"
     "on_btn_EDI_clicked\0on_btn_sysConfig_clicked\0"
-    "on_btn_process_clicked"
+    "on_btn_process_clicked\0eventFilter\0"
+    "obj\0QEvent*\0event"
 };
 #undef QT_MOC_LITERAL
 
@@ -51,7 +56,7 @@ static const uint qt_meta_data_Admin[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -59,13 +64,14 @@ static const uint qt_meta_data_Admin[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   44,    2, 0x06,    1 /* Public */,
+       1,    0,   50,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       3,    0,   45,    2, 0x08,    2 /* Private */,
-       4,    0,   46,    2, 0x08,    3 /* Private */,
-       5,    0,   47,    2, 0x08,    4 /* Private */,
-       6,    0,   48,    2, 0x08,    5 /* Private */,
+       3,    0,   51,    2, 0x08,    2 /* Private */,
+       4,    0,   52,    2, 0x08,    3 /* Private */,
+       5,    0,   53,    2, 0x08,    4 /* Private */,
+       6,    0,   54,    2, 0x08,    5 /* Private */,
+       7,    2,   55,    2, 0x08,    6 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -75,6 +81,7 @@ static const uint qt_meta_data_Admin[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Bool, QMetaType::QObjectStar, 0x80000000 | 9,    8,   10,
 
        0        // eod
 };
@@ -90,6 +97,8 @@ void Admin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         case 2: _t->on_btn_EDI_clicked(); break;
         case 3: _t->on_btn_sysConfig_clicked(); break;
         case 4: _t->on_btn_process_clicked(); break;
+        case 5: { bool _r = _t->eventFilter((*reinterpret_cast< std::add_pointer_t<QObject*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QEvent*>>(_a[2])));
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -102,7 +111,6 @@ void Admin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
             }
         }
     }
-    (void)_a;
 }
 
 const QMetaObject Admin::staticMetaObject = { {
@@ -113,7 +121,7 @@ const QMetaObject Admin::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_Admin_t
 , QtPrivate::TypeAndForceComplete<Admin, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<QObject *, std::false_type>, QtPrivate::TypeAndForceComplete<QEvent *, std::false_type>
 
 
 >,
@@ -140,13 +148,13 @@ int Admin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 6)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }

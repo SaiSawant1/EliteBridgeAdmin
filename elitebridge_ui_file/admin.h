@@ -5,6 +5,9 @@
 #include <QLabel>
 #include <QWidget>
 #include <Qt>
+#include <QMouseEvent>
+#include <QFileDialog>
+#include "shareddata.h"
 namespace Ui {
 class Admin;
 }
@@ -30,6 +33,8 @@ private slots:
     void on_btn_sysConfig_clicked();
 
     void on_btn_process_clicked();
+
+    bool eventFilter(QObject *obj, QEvent *event) override;
 
 private:
     Ui::Admin *ui;

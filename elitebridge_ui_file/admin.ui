@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>905</width>
-    <height>704</height>
+    <height>874</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -70,17 +70,7 @@ font: 300 10pt &quot;Segoe UI Light&quot;;</string>
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="comboBox">
-        <property name="font">
-         <font>
-          <pointsize>16</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border: 2px solid black;</string>
-        </property>
-       </widget>
+       <widget class="QLineEdit" name="databasePath"/>
       </item>
      </layout>
     </item>

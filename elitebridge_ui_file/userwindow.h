@@ -15,7 +15,7 @@
 #include <QMouseEvent>
 #include <QFileDialog>
 #include "userdetails.h"
-
+#include "shareddata.h"
 struct undoStruct{
     QString id;
     QString name;

@@ -11,9 +11,9 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -32,7 +32,7 @@ public:
     QVBoxLayout *verticalLayout;
     QLabel *label;
     QLabel *label_2;
-    QComboBox *comboBox;
+    QLineEdit *databasePath;
     QGridLayout *gridLayout;
     QGridLayout *_2;
     QPushButton *btn_EDI;
@@ -51,7 +51,7 @@ public:
     {
         if (Admin->objectName().isEmpty())
             Admin->setObjectName(QString::fromUtf8("Admin"));
-        Admin->resize(905, 704);
+        Admin->resize(905, 874);
         Admin->setStyleSheet(QString::fromUtf8("background-color:rgb(255, 255, 255)"));
         centralwidget = new QWidget(Admin);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
@@ -85,15 +85,10 @@ public:
 
         verticalLayout->addWidget(label_2);
 
-        comboBox = new QComboBox(centralwidget);
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        QFont font1;
-        font1.setPointSize(16);
-        font1.setBold(true);
-        comboBox->setFont(font1);
-        comboBox->setStyleSheet(QString::fromUtf8("border: 2px solid black;"));
+        databasePath = new QLineEdit(centralwidget);
+        databasePath->setObjectName(QString::fromUtf8("databasePath"));
 
-        verticalLayout->addWidget(comboBox);
+        verticalLayout->addWidget(databasePath);
 
 
         verticalLayout_2->addLayout(verticalLayout);

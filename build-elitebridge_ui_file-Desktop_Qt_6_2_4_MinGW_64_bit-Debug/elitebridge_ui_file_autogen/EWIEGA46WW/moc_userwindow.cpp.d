@@ -411,4 +411,5 @@ D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_2_4_MinGW_64_bit-Debu
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
   D:/ElieteBridge-git/elitebridge_ui_file/ClickableLabel.h \
   D:/ElieteBridge-git/elitebridge_ui_file/selectgroup.h \
+  D:/ElieteBridge-git/elitebridge_ui_file/shareddata.h \
   D:/ElieteBridge-git/elitebridge_ui_file/userdetails.h

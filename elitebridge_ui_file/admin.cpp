@@ -11,7 +11,7 @@ Admin::Admin(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
+    ui->databasePath->installEventFilter(this);
 }
 void Admin::addReporting(){
     this->close();
@@ -62,4 +62,21 @@ void Admin::on_btn_process_clicked()
     ui->tabWidget->clear();
     ui->tabWidget->addTab(Process_tab,"Process");
 }
+bool Admin::eventFilter(QObject *obj, QEvent *event)
+{
+    if (obj == ui->databasePath && event->type() == QEvent::MouseButtonRelease)
+    {
+        QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
+        if (mouseEvent->button() == Qt::LeftButton)
+        {
+            QString filePath = QFileDialog::getOpenFileName(this, "Select File");
+            if (!filePath.isEmpty())
+            {
+                ui->databasePath->setText(filePath);
+                SharedData::getInstance()->setValue(filePath);
+            }
+        }
+    }
 
+    return QObject::eventFilter(obj, event);
+}
