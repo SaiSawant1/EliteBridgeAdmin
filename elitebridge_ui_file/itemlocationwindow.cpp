@@ -1,6 +1,6 @@
 #include "itemlocationwindow.h"
 #include "ui_itemlocationwindow.h"
-
+#include "shareddata.h"
 ItemLocationWindow::ItemLocationWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ItemLocationWindow)
@@ -27,8 +27,8 @@ void ItemLocationWindow::on_addLocation_clicked()
 {
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
-    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
+    QString path=SharedData::getInstance()->getValue();
+    db.setDatabaseName(path);
 
     if (!db.open()) {
         qInfo()<<"db connection failed";

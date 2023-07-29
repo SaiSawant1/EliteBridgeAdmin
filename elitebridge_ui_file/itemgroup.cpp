@@ -1,6 +1,6 @@
 #include "itemgroup.h"
 #include "ui_itemgroup.h"
-
+#include "shareddata.h"
 ItemGroup::ItemGroup(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ItemGroup)
@@ -43,10 +43,10 @@ void ItemGroup::onCellClicked(int row, int column)
     previousRowItemGroup = row;
 }
 void ItemGroup::fillAdmin(){
-    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+    QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {
@@ -75,10 +75,10 @@ void ItemGroup::fillAdmin(){
 }
 
 void ItemGroup::readDb(){
-    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+    QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {
@@ -122,10 +122,10 @@ void ItemGroup::readDb(){
 
 void ItemGroup::on_add_clicked()
 {
-    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+    QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {
@@ -159,10 +159,10 @@ void ItemGroup::refresh(){
 
 void ItemGroup::on_delete_2_clicked()
 {
-    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+   QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {
@@ -186,10 +186,10 @@ void ItemGroup::on_delete_2_clicked()
 
 void ItemGroup::on_update_clicked()
 {
-    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+    QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {

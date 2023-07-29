@@ -1,6 +1,6 @@
 #include "updateusertransaction.h"
 #include "ui_updateusertransaction.h"
-
+#include "shareddata.h"
 UpdateUserTransaction::UpdateUserTransaction(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::UpdateUserTransaction)
@@ -26,8 +26,8 @@ void UpdateUserTransaction::setCheckMarks(){
     }
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
-    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
+    QString path=SharedData::getInstance()->getValue();
+    db.setDatabaseName(path);
 
     if (!db.open()) {
         qInfo()<<"db connection failed";
@@ -97,8 +97,8 @@ void UpdateUserTransaction::on_pushButton_clicked()
     }
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
-    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
+     QString path=SharedData::getInstance()->getValue();
+    db.setDatabaseName(path);
 
     if (!db.open()) {
         qInfo()<<"db connection failed";

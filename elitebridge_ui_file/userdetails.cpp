@@ -1,6 +1,6 @@
 #include "userdetails.h"
 #include "ui_userdetails.h"
-
+#include "shareddata.h"
 UserDetails::UserDetails(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::UserDetails)
@@ -17,10 +17,10 @@ void UserDetails::fillItem(QString selectedValue){
     fillLineEdits();
 }
 void UserDetails::fillLineEdits(){
-    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+     QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {

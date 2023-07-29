@@ -1,6 +1,6 @@
 #include "itemdetaildialog.h"
 #include "ui_itemdetaildialog.h"
-
+#include "shareddata.h"
 ItemDetailDialog::ItemDetailDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ItemDetailDialog)
@@ -21,10 +21,10 @@ void ItemDetailDialog::fillItem(QString selectedValue){
     fillLineEdits();
 }
 void ItemDetailDialog::fillLineEdits(){
-    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+     QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {

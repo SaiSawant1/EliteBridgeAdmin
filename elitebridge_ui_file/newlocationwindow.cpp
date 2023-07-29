@@ -1,5 +1,6 @@
 #include "newlocationwindow.h"
 #include "ui_newlocationwindow.h"
+#include "shareddata.h"
 
 NewLocationWindow::NewLocationWindow(QWidget *parent) :
     QDialog(parent),
@@ -42,10 +43,11 @@ void NewLocationWindow::onCellClicked(int row, int column)
     previousRowLocation = row;
 }
 void NewLocationWindow::fillAdmin(){
-    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+    QString path=SharedData::getInstance()->getValue();
+
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {
@@ -77,10 +79,11 @@ void NewLocationWindow::fillAdmin(){
 }
 
 void NewLocationWindow::readDb(){
-    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+
+     QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {
@@ -142,10 +145,10 @@ void NewLocationWindow::on_add_clicked()
     }
 
 
-    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+     QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {
@@ -183,10 +186,10 @@ void NewLocationWindow::refresh(){
 
 void NewLocationWindow::on_delete_2_clicked()
 {
-    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+    QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {
@@ -217,10 +220,10 @@ void NewLocationWindow::on_update_clicked()
         QMessageBox::warning(nullptr, "Invalid Input", "Please enter a valid number.");
         return ;
     }
-    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+     QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {

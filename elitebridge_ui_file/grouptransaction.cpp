@@ -1,6 +1,6 @@
 #include "grouptransaction.h"
 #include "ui_grouptransaction.h"
-
+#include "shareddata.h"
 groupTransaction::groupTransaction(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::groupTransaction)
@@ -369,8 +369,8 @@ groupTransaction::~groupTransaction()
 void groupTransaction::on_grantButton_clicked()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
-    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
+     QString path=SharedData::getInstance()->getValue();
+    db.setDatabaseName(path);
 
     if (!db.open()) {
         qInfo()<<"db connection failed";
@@ -396,8 +396,8 @@ void groupTransaction::on_grantButton_clicked()
 }
 void groupTransaction::fillValue(){
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
-    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
+        QString path=SharedData::getInstance()->getValue();
+    db.setDatabaseName(path);
 
     if (!db.open()) {
         qInfo()<<"db connection failed";
