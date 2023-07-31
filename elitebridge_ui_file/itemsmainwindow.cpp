@@ -1,7 +1,7 @@
 #include "itemsmainwindow.h"
 #include "itemlocationwindow.h"
 #include "ui_itemsmainwindow.h"
-
+#include "shareddata.h"
 ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::ItemsMainWindow)
@@ -9,14 +9,14 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     ui->setupUi(this);
 
 
-
+    QString appDirPath =QApplication::applicationDirPath();
     QHBoxLayout* horizontalLayout = new QHBoxLayout(ui->frame);
 
     addItemLabel = new ClickableLabel(this);
     addItemLabel->setText("Add User");
     addItemLabel->setScaledContents(true);
     addItemLabel->setMaximumSize(72,72);
-    addItemLabel->setPixmap(QPixmap("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/file-new-svgrepo-com.svg"));
+    addItemLabel->setPixmap(QPixmap(appDirPath+"/img/file-new-svgrepo-com.svg"));
 
     QObject::connect(addItemLabel, &ClickableLabel::clicked,this,[&]() {
         addUserForm();
@@ -31,7 +31,7 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     addUpdateLabel->setText("Update User");
     addUpdateLabel->setScaledContents(true);
     addUpdateLabel->setMaximumSize(72,72);
-    QPixmap svgImage("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/edit-report-svgrepo-com.svg");
+    QPixmap svgImage(appDirPath+"/img/edit-report-svgrepo-com.svg");
     addUpdateLabel->setPixmap(svgImage);
     QObject::connect(addUpdateLabel, &ClickableLabel::clicked,this,[&]() {
         updateItem();
@@ -43,7 +43,7 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     addSaveLabel->setText("save User");
     addSaveLabel->setScaledContents(true);
     addSaveLabel->setMaximumSize(72,72);
-    QPixmap saveImage("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/save-svgrepo-com.svg");
+    QPixmap saveImage(appDirPath+"/img/save-svgrepo-com.svg");
     addSaveLabel->setPixmap(saveImage);
     QObject::connect(addSaveLabel, &ClickableLabel::clicked,this,[&]() {
         itemSave();
@@ -55,7 +55,7 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     addUndoLabel->setText("undo cahnges");
     addUndoLabel->setScaledContents(true);
     addUndoLabel->setMaximumSize(72,72);
-    QPixmap undoImage("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/undo-svgrepo-com.svg");
+    QPixmap undoImage(appDirPath+"/img/undo-svgrepo-com.svg");
     addUndoLabel->setPixmap(undoImage);
     QObject::connect(addUndoLabel, &ClickableLabel::clicked,this,[&]() {
         undoFunc();
@@ -66,7 +66,7 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     addDeleteLabel->setText("user delete");
     addDeleteLabel->setScaledContents(true);
     addDeleteLabel->setMaximumSize(72,72);
-    QPixmap deleteImage("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/delete-alt-svgrepo-com.svg");
+    QPixmap deleteImage(appDirPath+"/img/delete-alt-svgrepo-com.svg");
     addDeleteLabel->setPixmap(deleteImage);
     QObject::connect(addDeleteLabel, &ClickableLabel::clicked,this,[&]() {
         deleteItem();
@@ -77,7 +77,7 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     addLocationLabel->setText("user delete");
     addLocationLabel->setScaledContents(true);
     addLocationLabel->setMaximumSize(72,72);
-    QPixmap locationImage("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/location-svgrepo-com.svg");
+    QPixmap locationImage(appDirPath+"/img/location-svgrepo-com.svg");
     addLocationLabel->setPixmap(locationImage);
     QObject::connect(addLocationLabel, &ClickableLabel::clicked,this,[&]() {
         ItemLocationWindow* locationWindow=new ItemLocationWindow;
@@ -98,7 +98,7 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     addfindLabel->setText("undo cahnges");
     addfindLabel->setScaledContents(true);
     addfindLabel->setMaximumSize(72,72);
-    QPixmap findImage("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/search-alt-3-svgrepo-com.svg");
+    QPixmap findImage(appDirPath+"/img/search-alt-3-svgrepo-com.svg");
     addfindLabel->setPixmap(findImage);
     QObject::connect(addfindLabel, &ClickableLabel::clicked,this,[&]() {
        search();
@@ -109,7 +109,7 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     addExitLabel->setText("undo cahnges");
     addExitLabel->setScaledContents(true);
     addExitLabel->setMaximumSize(72,72);
-    QPixmap exitImage("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/exit-svgrepo-com (1).svg");
+    QPixmap exitImage(appDirPath+"/img/exit-svgrepo-com (1).svg");
     addExitLabel->setPixmap(exitImage);
     QObject::connect(addExitLabel, &ClickableLabel::clicked,this,[&]() {
         this->close();
@@ -141,10 +141,10 @@ void ItemsMainWindow:: readDb()
 
     //    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
 
-    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+    QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {
@@ -270,8 +270,8 @@ void ItemsMainWindow::addUserForm(){
         return;
     }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
-    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
+    QString path=SharedData::getInstance()->getValue();
+    db.setDatabaseName(path);
 
     if (!db.open()) {
         qInfo()<<"db connection failed";

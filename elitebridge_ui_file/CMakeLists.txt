@@ -99,6 +99,7 @@ set(PROJECT_SOURCES
         auxmainwindow.h
         terminology.h terminology.cpp terminology.ui
         shareddata.h shareddata.cpp
+        img
         ${TS_FILES}
 )
 

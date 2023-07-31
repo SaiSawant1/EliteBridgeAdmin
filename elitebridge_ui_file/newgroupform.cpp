@@ -1,5 +1,6 @@
 #include "newgroupform.h"
 #include "ui_newgroupform.h"
+#include "shareddata.h"
 
 NewGroupForm::NewGroupForm(QWidget *parent) :
     QDialog(parent),
@@ -16,7 +17,7 @@ NewGroupForm::~NewGroupForm()
 void NewGroupForm::on_createNewGroup_clicked()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    QString path="D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+    QString path=SharedData::getInstance()->getValue();
     db.setDatabaseName(path);
 
     if (!db.open()) {

@@ -68,7 +68,7 @@ public:
         label_2 = new QLabel(frame);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setMaximumSize(QSize(322, 319));
-        label_2->setPixmap(QPixmap(QString::fromUtf8("../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/lock-svgrepo-com.svg")));
+        label_2->setPixmap(QPixmap(QString::fromUtf8("img/lock-svgrepo-com.svg")));
         label_2->setScaledContents(true);
 
         horizontalLayout->addWidget(label_2);

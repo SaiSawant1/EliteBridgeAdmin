@@ -1,18 +1,18 @@
 #include "machine.h"
 #include "ui_machine.h"
-
+#include "shareddata.h"
 Machine::Machine(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Machine)
 {
     ui->setupUi(this);
     QHBoxLayout* horizontalLayout = new QHBoxLayout(ui->frame);
-
+    QString appDirPath =QApplication::applicationDirPath();
     addUserLabel = new ClickableLabel(this);
     addUserLabel->setText("Add User");
     addUserLabel->setScaledContents(true);
     addUserLabel->setMaximumSize(72,72);
-    addUserLabel->setPixmap(QPixmap("D:/MachineSetup/img/file-new-svgrepo-com.svg"));
+    addUserLabel->setPixmap(QPixmap(appDirPath+"/img/file-new-svgrepo-com.svg"));
 
     QObject::connect(addUserLabel, &ClickableLabel::clicked,this,[&]() {
         addUserForm();
@@ -26,7 +26,7 @@ Machine::Machine(QWidget *parent) :
     addUpdateLabel->setText("Update User");
     addUpdateLabel->setScaledContents(true);
     addUpdateLabel->setMaximumSize(72,72);
-    QPixmap svgImage("D:/MachineSetup/img/edit-report-svgrepo-com.svg");
+    QPixmap svgImage(appDirPath+"/img/edit-report-svgrepo-com.svg");
     addUpdateLabel->setPixmap(svgImage);
     QObject::connect(addUpdateLabel, &ClickableLabel::clicked,this,[&]() {
         updateUser();
@@ -38,7 +38,7 @@ Machine::Machine(QWidget *parent) :
     addSaveLabel->setText("save User");
     addSaveLabel->setScaledContents(true);
     addSaveLabel->setMaximumSize(72,72);
-    QPixmap saveImage("D:/MachineSetup/img/save-svgrepo-com.svg");
+    QPixmap saveImage(appDirPath+"/img/save-svgrepo-com.svg");
     addSaveLabel->setPixmap(saveImage);
     QObject::connect(addSaveLabel, &ClickableLabel::clicked,this,[&]() {
         userSave();
@@ -50,7 +50,7 @@ Machine::Machine(QWidget *parent) :
     addUndoLabel->setText("undo cahnges");
     addUndoLabel->setScaledContents(true);
     addUndoLabel->setMaximumSize(72,72);
-    QPixmap undoImage("D:/MachineSetup/img/undo-svgrepo-com.svg");
+    QPixmap undoImage(appDirPath+"/img/undo-svgrepo-com.svg");
     addUndoLabel->setPixmap(undoImage);
     QObject::connect(addUndoLabel, &ClickableLabel::clicked,this,[&]() {
         undoFunc();
@@ -61,7 +61,7 @@ Machine::Machine(QWidget *parent) :
     addDeleteLabel->setText("user delete");
     addDeleteLabel->setScaledContents(true);
     addDeleteLabel->setMaximumSize(72,72);
-    QPixmap deleteImage("D:/MachineSetup/img/delete-alt-svgrepo-com.svg");
+    QPixmap deleteImage(appDirPath+"/img/delete-alt-svgrepo-com.svg");
     addDeleteLabel->setPixmap(deleteImage);
     QObject::connect(addDeleteLabel, &ClickableLabel::clicked,this,[&]() {
         deleteUser();
@@ -80,7 +80,7 @@ Machine::Machine(QWidget *parent) :
     addfindLabel->setText("undo cahnges");
     addfindLabel->setScaledContents(true);
     addfindLabel->setMaximumSize(72,72);
-    QPixmap findImage("D:/MachineSetup/img/search-alt-3-svgrepo-com.svg");
+    QPixmap findImage(appDirPath+"/img/search-alt-3-svgrepo-com.svg");
     addfindLabel->setPixmap(findImage);
     QObject::connect(addfindLabel, &ClickableLabel::clicked,this,[&]() {
         search();
@@ -91,7 +91,7 @@ Machine::Machine(QWidget *parent) :
     addExitLabel->setText("undo cahnges");
     addExitLabel->setScaledContents(true);
     addExitLabel->setMaximumSize(72,72);
-    QPixmap exitImage("D:/MachineSetup/img/exit-svgrepo-com (1).svg");
+    QPixmap exitImage(appDirPath+"/img/exit-svgrepo-com (1).svg");
     addExitLabel->setPixmap(exitImage);
     QObject::connect(addExitLabel, &ClickableLabel::clicked,this,[&]() {
         this->close();
@@ -116,10 +116,10 @@ Machine::~Machine()
 void Machine:: readDb()
 {
 
-    QString dbPath = "D:/MachineSetup/MachineDB";
+    QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {
@@ -200,10 +200,10 @@ void Machine::search(){
     QStringList label;
     label<<"";
 
-    QString dbPath = "D:/MachineSetup/MachineDB";
+    QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {
@@ -268,8 +268,8 @@ void Machine::search(){
 
 void Machine::addUserForm(){
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
-    db.setDatabaseName("D:/MachineSetup/MachineDB");
+    QString path=SharedData::getInstance()->getValue();
+    db.setDatabaseName(path);
 
     if (!db.open()) {
         qInfo()<<"db connection failed";
@@ -306,8 +306,8 @@ void Machine::addUserForm(){
 void Machine::updateUser()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
-    db.setDatabaseName("D:/MachineSetup/MachineDB");
+    QString path=SharedData::getInstance()->getValue();
+    db.setDatabaseName(path);
 
     if (!db.open()) {
         qInfo()<<"db connection failed";
@@ -378,10 +378,10 @@ void Machine::deleteUser()
 
     fillUndoStruct();
     if (confirmation == QMessageBox::Yes) {
-        QString dbPath = "D:/MachineSetup/MachineDB";
+        QString path=SharedData::getInstance()->getValue();
         QSqlDatabase dataBase;
         dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-        dataBase.setDatabaseName(dbPath);
+        dataBase.setDatabaseName(path);
 
         if(!dataBase.open())
         {
@@ -411,10 +411,10 @@ void Machine::deleteUser()
 
 //undo function -
 void Machine::fillUndoStruct(){
-    QString dbPath = "D:/MachineSetup/MachineDB";
+    QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {
@@ -456,8 +456,8 @@ void Machine::fillUndoStruct(){
 }
 void Machine::undoFunc(){
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
-    db.setDatabaseName("D:/MachineSetup/MachineDB");
+    QString path=SharedData::getInstance()->getValue();
+    db.setDatabaseName(path);
 
     if (!db.open()) {
         qInfo()<<"db connection failed";

@@ -25,7 +25,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/elitebridgelogollp.png</pixmap>
+      <pixmap>C:/Users/Dell/OneDrive/Desktop/executable/img/elitebridgelogollp.png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -56,7 +56,7 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/img/lock-svgrepo-com.svg</pixmap>
+         <pixmap>img/lock-svgrepo-com.svg</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
