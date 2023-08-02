@@ -1,5 +1,6 @@
 #include "viewgrants.h"
 #include "ui_viewgrants.h"
+#include "shareddata.h"
 
 ViewGrants::ViewGrants(QWidget *parent) :
     QDialog(parent),
@@ -18,7 +19,7 @@ void ViewGrants::on_viewGrants_clicked()
 
     QString userId = ui->lineEdit->text();
 
-    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+    QString dbPath = SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE", "DBConnection");
     dataBase.setDatabaseName(dbPath);

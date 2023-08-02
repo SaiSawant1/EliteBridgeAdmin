@@ -3,6 +3,7 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QMessageBox>
+#include "shareddata.h"
 newUserForm::newUserForm(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::newUserForm)
@@ -19,7 +20,7 @@ void newUserForm::on_pushButton_clicked()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
-    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
+    db.setDatabaseName(SharedData::getInstance()->getValue());
 
     if (!db.open()) {
         qInfo()<<"db connection failed";
