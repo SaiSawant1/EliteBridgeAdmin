@@ -22,6 +22,7 @@ public:
 
 private slots:
     void on_viewGrants_clicked();
+    void clearLayout(QLayout* layout);
 
 private:
     Ui::ViewGrants *ui;

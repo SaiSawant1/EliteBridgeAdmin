@@ -102,6 +102,7 @@ set(PROJECT_SOURCES
         img
         auxmainwindow2.h auxmainwindow2.cpp auxmainwindow2.ui
         updategrouptransaction.h updategrouptransaction.cpp updategrouptransaction.ui
+        updateusergroup.h updateusergroup.cpp updateusergroup.ui
         ${TS_FILES}
 )
 

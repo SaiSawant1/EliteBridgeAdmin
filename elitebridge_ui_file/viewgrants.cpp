@@ -89,6 +89,8 @@ void ViewGrants::on_viewGrants_clicked()
 
     userRights.unite(groupRights);
 
+    clearLayout(ui->scrollArea->layout());
+
     ui->scrollArea->setLayout(new QVBoxLayout);
     for (const QString& str : userRights)
     {
@@ -99,6 +101,21 @@ void ViewGrants::on_viewGrants_clicked()
         ui->scrollArea->layout()->addWidget(button);
     }
 
+    userRights.clear();
+    groupRights.clear();
     // Set the scroll area's widget as the viewport to ensure it's scrollable
 }
 
+void ViewGrants::clearLayout(QLayout* layout) {
+    if (!layout)
+        return;
+
+    while (QLayoutItem* item = layout->takeAt(0)) {
+        if (QWidget* widget = item->widget()) {
+            widget->deleteLater();
+        }
+        delete item;
+    }
+
+    delete layout;
+}

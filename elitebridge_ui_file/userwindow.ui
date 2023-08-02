@@ -365,6 +365,7 @@
       <string>Groups</string>
      </property>
      <addaction name="actionAdd_User_To_Group"/>
+     <addaction name="actionUpdate_User_Group"/>
     </widget>
     <addaction name="menuTransaction"/>
     <addaction name="menuGroups"/>
@@ -395,6 +396,11 @@
   <action name="actionAdd_User_To_Group">
    <property name="text">
     <string>Add User To Group</string>
+   </property>
+  </action>
+  <action name="actionUpdate_User_Group">
+   <property name="text">
+    <string>Update User Group</string>
    </property>
   </action>
  </widget>

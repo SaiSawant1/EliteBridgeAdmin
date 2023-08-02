@@ -1,30 +1,31 @@
-#include "selectgroup.h"
+#include "updateusergroup.h"
+#include "ui_updateusergroup.h"
 #include "qcheckbox.h"
-#include "ui_selectgroup.h"
 #include "shareddata.h"
-selectGroup::selectGroup(QWidget *parent) :
+
+UpdateUserGroup::UpdateUserGroup(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::selectGroup)
+    ui(new Ui::UpdateUserGroup)
 {
     ui->setupUi(this);
-
-
 }
 
-selectGroup::~selectGroup()
+UpdateUserGroup::~UpdateUserGroup()
 {
     delete ui;
 }
-void selectGroup::setValue(QString value){
+
+
+void UpdateUserGroup::setValue(QString value){
     selectedUser=value;
     ui->selectedIDLabel->setText(selectedUser);
     fetchGroups();
     setScrollArea();
 }
 
-void selectGroup::fetchGroups(){
+void UpdateUserGroup::fetchGroups(){
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-     QString path=SharedData::getInstance()->getValue();
+    QString path=SharedData::getInstance()->getValue();
     db.setDatabaseName(path);
 
     if (!db.open()) {
@@ -41,7 +42,7 @@ void selectGroup::fetchGroups(){
 
         while (query.next())
         {
-            Group group;
+            GroupUpdate group;
             group.groupID = query.value(0).toString();
             group.name = query.value(1).toString();
             groups.append(group);
@@ -74,16 +75,16 @@ void selectGroup::fetchGroups(){
 
     db.close();
 }
-void selectGroup::setScrollArea()
+void UpdateUserGroup::setScrollArea()
 {
     QVBoxLayout *layout = new QVBoxLayout;
 
-    for(const Group& group : groups)
+    for(const GroupUpdate& group : groups)
     {
         QCheckBox *checkbox = new QCheckBox(group.name);
         checkbox->setProperty("groupId", group.groupID);
         layout->addWidget(checkbox);
-         checkboxes.append(checkbox);
+        checkboxes.append(checkbox);
 
         if (assignedGroups.contains(group.groupID))
         {
@@ -97,8 +98,11 @@ void selectGroup::setScrollArea()
     ui->scrollArea->setWidget(widget);
 }
 
-void selectGroup::on_addToGroup_clicked()
+
+
+void UpdateUserGroup::on_addToGroup_clicked()
 {
+
     QList<QString> checkedGroupIDs; // QList to store the checked group IDs
 
     // Iterate over the checkbox widgets
@@ -125,7 +129,8 @@ void selectGroup::on_addToGroup_clicked()
     }
     QSqlQuery query;
 
-    query.prepare("INSERT INTO user_group (userID, groupID) VALUES (:userID, :groupID)");
+    QString deleteQuery = "DELETE FROM user_group WHERE userID = :userID AND groupID = :groupID";
+    query.prepare(deleteQuery);
 
     for (const QString& groupID : checkedGroupIDs)
     {

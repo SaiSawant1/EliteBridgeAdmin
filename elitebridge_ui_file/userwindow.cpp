@@ -8,6 +8,7 @@
 #include <QTableView>
 #include "createusertransaction.h"
 #include "viewgrants.h"
+#include "updateusergroup.h"
 #include "updateusertransaction.h"
 
 userWindow::userWindow(QWidget *parent) :
@@ -644,5 +645,14 @@ void userWindow::on_actionupdate_transaction_triggered()
     UpdateUserTransaction* updateTransaction=new UpdateUserTransaction;
     updateTransaction->setSelectedValue(selectedValue);
     updateTransaction->show();
+}
+
+
+void userWindow::on_actionUpdate_User_Group_triggered()
+{
+    UpdateUserGroup* updateGroup=new UpdateUserGroup;
+    updateGroup->setValue(selectedValue);
+    updateGroup->show();
+
 }
 

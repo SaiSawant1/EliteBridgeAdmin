@@ -62,6 +62,8 @@ private slots:
 
     void on_actionupdate_transaction_triggered();
 
+    void on_actionUpdate_User_Group_triggered();
+
 signals:
     void cellSelected(const QString& selectedValue);
 
