@@ -56,6 +56,7 @@ UserGroupMainWindow::UserGroupMainWindow(QWidget *parent) :
     addUndoLabel->setText("undo cahnges");
     addUndoLabel->setScaledContents(true);
     addUndoLabel->setMaximumSize(72,72);
+    addUndoLabel->setDisabled(true);
     QPixmap undoImage(appDirPath+"/img/undo-svgrepo-com.svg");
     addUndoLabel->setPixmap(undoImage);
     QObject::connect(addUndoLabel, &ClickableLabel::clicked,this,[&]() {
@@ -272,6 +273,7 @@ void UserGroupMainWindow::deleteGroup(){
     }
     db.close();
     groupSave();
+    addUndoLabel->setDisabled(false);
 
 }
 void UserGroupMainWindow::search(){
@@ -405,6 +407,7 @@ void UserGroupMainWindow::undoFunc(){
     }
     db.close();
     groupSave();
+    addUndoLabel->setDisabled(true);
 }
 
 

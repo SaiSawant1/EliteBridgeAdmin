@@ -63,6 +63,7 @@ userWindow::userWindow(QWidget *parent) :
     addUndoLabel->setMaximumSize(72,72);
     QPixmap undoImage(appDirPath+"/img/undo-svgrepo-com.svg");
     addUndoLabel->setPixmap(undoImage);
+    addUndoLabel->setDisabled(true);
     QObject::connect(addUndoLabel, &ClickableLabel::clicked,this,[&]() {
         undoFunc();
     });
@@ -324,6 +325,7 @@ void userWindow::deleteUser()
         }
 
         dataBase.close();
+        addUndoLabel->setDisabled(false);
     }
     else{
         return;
@@ -393,7 +395,9 @@ void userWindow::search(){
 
         rowCount++;
     }
+
     dataBase.close();
+
 }
 
 void userWindow::fillUndoStruct(){
@@ -465,6 +469,7 @@ void userWindow::undoFunc(){
 
     }
     db.close();
+    addUndoLabel->setDisabled(true);
 }
 
 void userWindow::updateUser()

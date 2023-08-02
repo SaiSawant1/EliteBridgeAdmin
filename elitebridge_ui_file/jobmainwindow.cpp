@@ -55,6 +55,7 @@ JobMainWindow::JobMainWindow(QWidget *parent) :
     addUndoLabel->setText("undo cahnges");
     addUndoLabel->setScaledContents(true);
     addUndoLabel->setMaximumSize(72,72);
+    addUndoLabel->setDisabled(true);
     QPixmap undoImage(appDirPath+"/img/undo-svgrepo-com.svg");
     addUndoLabel->setPixmap(undoImage);
     QObject::connect(addUndoLabel, &ClickableLabel::clicked,this,[&]() {
@@ -368,6 +369,7 @@ void JobMainWindow::deleteUser()
         }
 
         dataBase.close();
+        addUndoLabel->setDisabled(false);
     }
     else{
         return;
@@ -456,6 +458,7 @@ void JobMainWindow::undoFunc(){
 
     }
     db.close();
+    addUndoLabel->setDisabled(true);
 }
 
 //update user - add on

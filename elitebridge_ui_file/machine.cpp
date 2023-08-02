@@ -50,6 +50,7 @@ Machine::Machine(QWidget *parent) :
     addUndoLabel->setText("undo cahnges");
     addUndoLabel->setScaledContents(true);
     addUndoLabel->setMaximumSize(72,72);
+    addUndoLabel->setDisabled(true);
     QPixmap undoImage(appDirPath+"/img/undo-svgrepo-com.svg");
     addUndoLabel->setPixmap(undoImage);
     QObject::connect(addUndoLabel, &ClickableLabel::clicked,this,[&]() {
@@ -407,6 +408,7 @@ void Machine::deleteUser()
     else{
         return;
     }
+    addUndoLabel->setDisabled(false);
 }
 
 //undo function -
@@ -490,4 +492,5 @@ void Machine::undoFunc(){
 
     }
     db.close();
+    addUndoLabel->setDisabled(true);
 }
