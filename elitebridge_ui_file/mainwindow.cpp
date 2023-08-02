@@ -7,6 +7,7 @@
 #include "auxmainwindow.h"
 #include "machine.h"
 #include "terminology.h"
+#include "auxmainwindow2.h"
 #include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -88,6 +89,9 @@ void MainWindow::on_pushButton_3_clicked()
     terminologyWindow->show();
 }
 
-
-
+void MainWindow::on_pushButton_clicked()
+{
+    AuxMainwindow2* aux2Window=new AuxMainwindow2;
+    aux2Window->show();
+}
 

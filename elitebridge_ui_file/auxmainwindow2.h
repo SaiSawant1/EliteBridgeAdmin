@@ -1,25 +1,20 @@
-#ifndef JOBMAINWINDOW_H
-#define JOBMAINWINDOW_H
+#ifndef AUXMAINWINDOW2_H
+#define AUXMAINWINDOW2_H
 
+#include <QDialog>
 #include <QMainWindow>
-#include <QObject>
-#include <QMainWindow>
-#include <QMessageBox>
-#include <QObject>
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QTableView>
 #include "ClickableLabel.h"
 #include <QLineEdit>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QMessageBox>
 
-struct undoStructJob{
-    QString job_2;
-    QString Description;
-    QString Alias;
-    QString ContractDate;
-    QString jobGroup;
-    QString JobEnabled;
+struct undoStructAux2{
+    QString Aux;
+    QString Auxiliary;
+    QString AuxiliaryAlias;
+    QString AuxEnable;
     QString DateCreated;
     QString CreatedBy;
     QString DatelastModified;
@@ -28,16 +23,16 @@ struct undoStructJob{
 
 
 namespace Ui {
-class JobMainWindow;
+class AuxMainwindow2;
 }
 
-class JobMainWindow : public QMainWindow
+class AuxMainwindow2 : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit JobMainWindow(QWidget *parent = nullptr);
-    ~JobMainWindow();
+    explicit AuxMainwindow2(QWidget *parent = nullptr);
+    ~AuxMainwindow2();
 private slots:
     void onCellClicked(int row, int column);
     void addUserForm();
@@ -46,10 +41,9 @@ private slots:
     void updateUser();
     void userSave();
     void fillUndoStruct();
-    void fillLineEdits();
     void undoFunc();
 private:
-    Ui::JobMainWindow *ui;
+    Ui::AuxMainwindow2 *ui;
     QString selectedValue;
     ClickableLabel* addUserLabel;
     ClickableLabel* addUpdateLabel;
@@ -60,7 +54,7 @@ private:
     ClickableLabel* addExitLabel;
     QLineEdit* lineEdit;
     void readDb();
-    undoStructJob* undo;
+    undoStructAux2* undo;
 };
 
-#endif // JOBMAINWINDOW_H
+#endif // AUXMAINWINDOW2_H

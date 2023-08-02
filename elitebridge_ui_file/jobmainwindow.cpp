@@ -324,8 +324,7 @@ void JobMainWindow::onCellClicked(int row, int column)
     if (item != nullptr)
     {
         selectedValue = item->text();
-
-
+        fillLineEdits();
     }
 
     for (int col = 0; col < ui->tableWidget->columnCount(); ++col)
@@ -391,7 +390,7 @@ void JobMainWindow::fillUndoStruct(){
 
 
     QSqlQuery query(dataBase);
-    query.prepare("SELECT * FROM Jobs WHERE job = :job");
+    query.prepare("SELECT * FROM Jobs WHERE jobID = :job");
     query.bindValue(":job", selectedValue);
 
 
@@ -497,5 +496,44 @@ void JobMainWindow::updateUser()
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to update data!");
     }
+    db.close();
+}
+void JobMainWindow::fillLineEdits(){
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    QString path=SharedData::getInstance()->getValue();
+    db.setDatabaseName(path);
+
+    if (!db.open()) {
+        qInfo()<<"db connection failed";
+    }
+
+    QSqlQuery query(db);
+
+
+    query.prepare("SELECT * FROM Jobs WHERE jobID = :itemId");
+    query.bindValue(":itemId", selectedValue);
+
+    if(!query.exec())
+    {
+        qDebug()<<"Query execution Failed";
+        return;
+    }
+
+    if(query.next()){
+        ui->Job_2->setText(query.value(0).toString());
+        ui->Description->setText(query.value(1).toString());
+        ui->Alias->setText(query.value(2).toString());
+        ui->contractDate->setText(query.value(3).toString());
+        ui->JobGroup->setText(query.value(4).toString());
+        ui->JobEnable->setText(query.value(5).toString());
+        ui->DateCreated->setText(query.value(6).toString());
+        ui->CreatedBy->setText(query.value(7).toString());
+        ui->DatelastModified->setText(query.value(8).toString());
+        ui->LastModifiedBy->setText(query.value(9).toString());
+
+    }
+
+
+
     db.close();
 }

@@ -15,9 +15,6 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
-    <widget class="QStatusBar" name="statusbar"/>
-   </item>
-   <item>
     <widget class="QMenuBar" name="menubar"/>
    </item>
    <item>

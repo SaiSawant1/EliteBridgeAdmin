@@ -153,8 +153,8 @@ void userWindow::addUserForm(){
     query.addBindValue( ui->user_name->text());
     query.addBindValue( ui->user_alias->text());
     query.addBindValue(ui->user_password->text());
-    query.addBindValue( ui->user_costCenter->text());
     query.addBindValue( ui->user_image->text());
+    query.addBindValue( ui->user_costCenter->text());
     query.addBindValue( radioValue);
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data inserted successfully!");

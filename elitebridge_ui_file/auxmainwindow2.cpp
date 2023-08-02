@@ -1,10 +1,10 @@
-#include "auxmainwindow.h"
-#include "ui_auxmainwindow.h"
+#include "auxmainwindow2.h"
+#include "ui_auxmainwindow2.h"
 #include "shareddata.h"
 
-AuxMainWindow::AuxMainWindow(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::AuxMainWindow)
+AuxMainwindow2::AuxMainwindow2(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::AuxMainwindow2)
 {
     ui->setupUi(this);
 
@@ -19,7 +19,7 @@ AuxMainWindow::AuxMainWindow(QWidget *parent) :
     QObject::connect(addUserLabel, &ClickableLabel::clicked,this,[&]() {
         addUserForm();
     });
-    connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AuxMainWindow::onCellClicked);
+    connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AuxMainwindow2::onCellClicked);
 
     horizontalLayout->insertWidget(0,addUserLabel);
 
@@ -104,14 +104,17 @@ AuxMainWindow::AuxMainWindow(QWidget *parent) :
 
 
     ui->frame->setLayout(horizontalLayout);
-    connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AuxMainWindow::onCellClicked);
+    connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AuxMainwindow2::onCellClicked);
 
     readDb();
-
 }
 
+AuxMainwindow2::~AuxMainwindow2()
+{
+    delete ui;
 
-void AuxMainWindow:: readDb()
+}
+void AuxMainwindow2:: readDb()
 {
     QString path = SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
@@ -125,7 +128,7 @@ void AuxMainWindow:: readDb()
     }
 
     QSqlQuery query(dataBase);
-    QString str = "SELECT * from Aux";
+    QString str = "SELECT * from Aux2";
     if(!query.exec(str))
     {
         qDebug()<<"Query execution Failed";
@@ -136,7 +139,7 @@ void AuxMainWindow:: readDb()
     QStringList labels;
 
 
-    labels << "Aux" << "Auxiliary" << "AuxiliaryAlias" << "AuxEnable"<< "DateCreated" <<"CreatedBy" << "DatelastModified" << "LastModifiedBy";
+    labels << "Aux2" << "Auxiliary" << "AuxiliaryAlias" << "AuxEnable"<< "DateCreated" <<"CreatedBy" << "DatelastModified" << "LastModifiedBy";
     ui->tableWidget->setHorizontalHeaderLabels(labels);
 
     int rowCount=0;
@@ -176,9 +179,9 @@ void AuxMainWindow:: readDb()
     dataBase.close();
 }
 
-void AuxMainWindow::addUserForm() {
+void AuxMainwindow2::addUserForm() {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-     QString path = SharedData::getInstance()->getValue();
+    QString path = SharedData::getInstance()->getValue();
     db.setDatabaseName(path);
 
     if (!db.open()) {
@@ -187,7 +190,7 @@ void AuxMainWindow::addUserForm() {
     }
 
     QSqlQuery query(db);
-    QString insertQuery = "INSERT INTO Aux (Aux, Auxiliary, AuxiliaryAlias, AuxEnable, DateCreated, CreatedBy, DatelastModified, LastModifiedBy) "
+    QString insertQuery = "INSERT INTO Aux2 (Aux, Auxiliary, AuxiliaryAlias, AuxEnable, DateCreated, CreatedBy, DatelastModified, LastModifiedBy) "
                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     query.prepare(insertQuery);
 
@@ -209,7 +212,7 @@ void AuxMainWindow::addUserForm() {
     db.close();
 }
 
-void AuxMainWindow::userSave()
+void AuxMainwindow2::userSave()
 {
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);
@@ -220,11 +223,11 @@ void AuxMainWindow::userSave()
 
 }
 
-void AuxMainWindow::search() {
+void AuxMainwindow2::search() {
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);
     QStringList labels;
-    labels << "Aux" << "Auxiliary" << "AuxiliaryAlias" << "AuxEnable" << "DateCreated" << "CreatedBy" << "DatelastModified" << "LastModifiedBy";
+    labels << "Aux2" << "Auxiliary" << "AuxiliaryAlias" << "AuxEnable" << "DateCreated" << "CreatedBy" << "DatelastModified" << "LastModifiedBy";
     ui->tableWidget->setColumnCount(labels.size());
     ui->tableWidget->setHorizontalHeaderLabels(labels);
 
@@ -239,7 +242,7 @@ void AuxMainWindow::search() {
 
     QSqlQuery query(dataBase);
     QString searchValue = lineEdit->text() + "%";
-    QString str = "SELECT * FROM Aux WHERE Aux LIKE ?";
+    QString str = "SELECT * FROM Aux2 WHERE Aux LIKE ?";
     query.prepare(str);
     query.addBindValue(searchValue);
 
@@ -262,10 +265,10 @@ void AuxMainWindow::search() {
     dataBase.close();
 }
 
-void AuxMainWindow::updateUser()
+void AuxMainwindow2::updateUser()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-     QString path = SharedData::getInstance()->getValue();
+    QString path = SharedData::getInstance()->getValue();
     db.setDatabaseName(path);
 
     if (!db.open()) {
@@ -274,7 +277,7 @@ void AuxMainWindow::updateUser()
 
     QSqlQuery query;
 
-    QString updateQuery = "UPDATE Aux SET Aux = :aux, Auxiliary = :auxiliary, AuxiliaryAlias = :auxiliaryAlias, AuxEnable = :auxEnable, DateCreated = :dateCreated, CreatedBy = :createdBy, DatelastModified = :datelastModified, LastModifiedBy = :lastModifiedBy WHERE Aux = :aux";
+    QString updateQuery = "UPDATE Aux2 SET Aux = :aux, Auxiliary = :auxiliary, AuxiliaryAlias = :auxiliaryAlias, AuxEnable = :auxEnable, DateCreated = :dateCreated, CreatedBy = :createdBy, DatelastModified = :datelastModified, LastModifiedBy = :lastModifiedBy WHERE Aux = :aux";
     query.prepare(updateQuery);
 
     query.bindValue(":aux", ui->Aux->text());
@@ -295,14 +298,14 @@ void AuxMainWindow::updateUser()
     db.close();
 }
 
-int previousRowAux = -1;
+int previousRowAux2 = -1;
 
-void AuxMainWindow::onCellClicked(int row, int column)
+void AuxMainwindow2::onCellClicked(int row, int column)
 {
-    if (previousRowAux != -1) {
+    if (previousRowAux2 != -1) {
         for (int col = 0; col < ui->tableWidget->columnCount(); ++col)
         {
-            QTableWidgetItem* item = ui->tableWidget->item(previousRowAux, col);
+            QTableWidgetItem* item = ui->tableWidget->item(previousRowAux2, col);
             if (item)
                 item->setBackground(Qt::white); // Set the default background color
         }
@@ -320,17 +323,17 @@ void AuxMainWindow::onCellClicked(int row, int column)
         if (item)
             item->setBackground(Qt::yellow); // Set the desired background color
     }
-    previousRowAux = row;
+    previousRowAux2 = row;
 }
 
-void AuxMainWindow::deleteUser()
+void AuxMainwindow2::deleteUser()
 {
     QMessageBox::StandardButton confirmation;
     confirmation = QMessageBox::question(this, "Confirmation", "Are you sure you want to delete this record?", QMessageBox::Yes | QMessageBox::No);
 
     fillUndoStruct();
     if (confirmation == QMessageBox::Yes) {
-         QString path = SharedData::getInstance()->getValue();
+        QString path = SharedData::getInstance()->getValue();
         QSqlDatabase dataBase;
         dataBase = QSqlDatabase::addDatabase("QSQLITE", "DBConnection");
         dataBase.setDatabaseName(path);
@@ -342,7 +345,7 @@ void AuxMainWindow::deleteUser()
         }
 
         QSqlQuery query(dataBase);
-        query.prepare("DELETE FROM Aux WHERE Aux = :rowId");
+        query.prepare("DELETE FROM Aux2 WHERE Aux = :rowId");
         query.bindValue(":rowId", selectedValue);
 
         if (query.exec()) {
@@ -359,9 +362,9 @@ void AuxMainWindow::deleteUser()
     }
 }
 
-void AuxMainWindow::fillUndoStruct()
+void AuxMainwindow2::fillUndoStruct()
 {
-     QString path = SharedData::getInstance()->getValue();
+    QString path = SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE", "DBConnection");
     dataBase.setDatabaseName(path);
@@ -382,7 +385,7 @@ void AuxMainWindow::fillUndoStruct()
         return;
     }
 
-    undo = new undoStructAux;
+    undo = new undoStructAux2;
     if (query.next()) {
         undo->Aux = query.value(0).toString();
         undo->Auxiliary = query.value(1).toString();
@@ -397,10 +400,10 @@ void AuxMainWindow::fillUndoStruct()
     dataBase.close();
 }
 
-void AuxMainWindow::undoFunc()
+void AuxMainwindow2::undoFunc()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-     QString path = SharedData::getInstance()->getValue();
+    QString path = SharedData::getInstance()->getValue();
     db.setDatabaseName(path);
 
     if (!db.open()) {
@@ -409,7 +412,7 @@ void AuxMainWindow::undoFunc()
 
     QSqlQuery query;
 
-    QString insertQuery = "INSERT INTO Aux (Aux, Auxiliary, AuxiliaryAlias, AuxEnable, DateCreated, CreatedBy, DatelastModified, LastModifiedBy) "
+    QString insertQuery = "INSERT INTO Aux2 (Aux, Auxiliary, AuxiliaryAlias, AuxEnable, DateCreated, CreatedBy, DatelastModified, LastModifiedBy) "
                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     query.prepare(insertQuery);
 
@@ -431,7 +434,5 @@ void AuxMainWindow::undoFunc()
     db.close();
 }
 
-AuxMainWindow::~AuxMainWindow()
-{
-    delete ui;
-}
+
+

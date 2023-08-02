@@ -100,6 +100,8 @@ set(PROJECT_SOURCES
         terminology.h terminology.cpp terminology.ui
         shareddata.h shareddata.cpp
         img
+        auxmainwindow2.h auxmainwindow2.cpp auxmainwindow2.ui
+        updategrouptransaction.h updategrouptransaction.cpp updategrouptransaction.ui
         ${TS_FILES}
 )
 

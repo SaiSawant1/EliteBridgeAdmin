@@ -163,6 +163,7 @@
       <string>Transaction</string>
      </property>
      <addaction name="actionGroup_Transaction"/>
+     <addaction name="actionUpdate_Group_Transaction"/>
     </widget>
     <addaction name="menuTransaction"/>
    </widget>
@@ -177,6 +178,11 @@
   <action name="actionGroup_Transaction">
    <property name="text">
     <string>Group Transaction</string>
+   </property>
+  </action>
+  <action name="actionUpdate_Group_Transaction">
+   <property name="text">
+    <string>Update Group Transaction</string>
    </property>
   </action>
  </widget>

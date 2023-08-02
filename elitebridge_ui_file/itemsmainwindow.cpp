@@ -160,10 +160,10 @@ void ItemsMainWindow:: readDb()
         return;
     }
 
-    ui->tableWidget->setColumnCount(16);
+    ui->tableWidget->setColumnCount(31);
     QStringList labels;
 
-    labels << "Item ID" << "Name" << "Alias" << "Item Group" << "Item Sub Group"<<"Supplier Part Number"<<"UnitCost"<<"Used Unit Cost"<<"Packet Size"<<"Brand"<<"Image File"<<"New/Used"<<"Location"<<"Minimum"<<"Maximum"<<"Critical Point";
+    labels << "Item ID" << "Name" << "Alias" << "Item Group" << "Item Sub Group"<<"Supplier Part Number"<<"UnitCost"<<"Used Unit Cost"<<"Packet Size"<<"Brand"<<"Image File"<<"New/Used"<<"Location"<<"Minimum"<<"Maximum"<<"Critical Point"<<"Used Minimum Quantity"<<"Rework Pick Level"<<"Do Not Order"<<"Swapabile"<<"SwapQuantity"<<"Swap By User"<<"Swap By Job"<<"Swap By Machine"<<"Ticketable"<<"Can Be Returned"<<"Can Be Rework"<<"Can Be Scrap"<<"Life Tracked"<<"intial Life"<<"Minimum Life";
     ui->tableWidget->setHorizontalHeaderLabels(labels);
 
     int rowCount=0;
@@ -186,6 +186,22 @@ void ItemsMainWindow:: readDb()
         QTableWidgetItem *Minimum = new QTableWidgetItem(query.value(13).toString());
         QTableWidgetItem *Maximum = new QTableWidgetItem(query.value(14).toString());
         QTableWidgetItem *CriticalPoint = new QTableWidgetItem(query.value(15).toString());
+        QTableWidgetItem *UsedMinimumQuantity = new QTableWidgetItem(query.value(16).toString());
+        QTableWidgetItem *ReworkPickupLevel = new QTableWidgetItem(query.value(17).toString());
+        QTableWidgetItem *DoNotOrder = new QTableWidgetItem(query.value(18).toString());
+        QTableWidgetItem *Swappable = new QTableWidgetItem(query.value(19).toString());
+        QTableWidgetItem *SwapQuantity = new QTableWidgetItem(query.value(20).toString());
+        QTableWidgetItem *SwapByUser = new QTableWidgetItem(query.value(21).toString());
+        QTableWidgetItem *SwapByJob = new QTableWidgetItem(query.value(22).toString());
+        QTableWidgetItem *SwapByMachine = new QTableWidgetItem(query.value(23).toString());
+        QTableWidgetItem *Ticketable = new QTableWidgetItem(query.value(24).toString());
+        QTableWidgetItem *CanBeReturned = new QTableWidgetItem(query.value(25).toString());
+        QTableWidgetItem *CanBeRework = new QTableWidgetItem(query.value(26).toString());
+        QTableWidgetItem *CanBeScrap = new QTableWidgetItem(query.value(27).toString());
+        QTableWidgetItem *LifeTracked = new QTableWidgetItem(query.value(28).toString());
+        QTableWidgetItem *intialLife = new QTableWidgetItem(query.value(29).toString());
+        QTableWidgetItem *MinimumLife = new QTableWidgetItem(query.value(30).toString());
+
 
         ItemID->setText(query.value(0).toString());
         Name->setText(query.value(1).toString());
@@ -209,6 +225,21 @@ void ItemsMainWindow:: readDb()
         Minimum->setText(query.value(13).toString());
         Maximum->setText(query.value(14).toString());
         CriticalPoint->setText(query.value(15).toString());
+        UsedMinimumQuantity->setText(query.value(16).toString());
+        ReworkPickupLevel->setText(query.value(17).toString());
+        DoNotOrder->setText(query.value(18).toString());
+        Swappable->setText(query.value(19).toString());
+        SwapQuantity->setText(query.value(20).toString());
+        SwapByUser->setText(query.value(21).toString());
+        SwapByJob->setText(query.value(22).toString());
+        SwapByMachine->setText(query.value(23).toString());
+        Ticketable->setText(query.value(24).toString());
+        CanBeReturned->setText(query.value(25).toString());
+        CanBeRework->setText(query.value(26).toString());
+        CanBeScrap->setText(query.value(27).toString());
+        LifeTracked->setText(query.value(28).toString());
+        intialLife->setText(query.value(29).toString());
+        MinimumLife->setText(query.value(30).toString());
 
         ui->tableWidget->setItem(rowCount,0,ItemID);
         ui->tableWidget->setItem(rowCount,1,Name);
@@ -226,6 +257,22 @@ void ItemsMainWindow:: readDb()
         ui->tableWidget->setItem(rowCount,13,Minimum);
         ui->tableWidget->setItem(rowCount,14,Maximum);
         ui->tableWidget->setItem(rowCount,15,CriticalPoint);
+        ui->tableWidget->setItem(rowCount,16,UsedMinimumQuantity);
+        ui->tableWidget->setItem(rowCount,17,ReworkPickupLevel);
+        ui->tableWidget->setItem(rowCount,18,DoNotOrder);
+        ui->tableWidget->setItem(rowCount,19,Swappable);
+        ui->tableWidget->setItem(rowCount,20,SwapQuantity);
+        ui->tableWidget->setItem(rowCount,21,SwapByUser);
+        ui->tableWidget->setItem(rowCount,22,SwapByJob);
+        ui->tableWidget->setItem(rowCount,23,SwapByMachine);
+        ui->tableWidget->setItem(rowCount,24,Ticketable);
+        ui->tableWidget->setItem(rowCount,25,CanBeReturned);
+        ui->tableWidget->setItem(rowCount,26,CanBeRework);
+        ui->tableWidget->setItem(rowCount,27,CanBeScrap);
+        ui->tableWidget->setItem(rowCount,28,LifeTracked);
+        ui->tableWidget->setItem(rowCount,29,intialLife);
+        ui->tableWidget->setItem(rowCount,30,MinimumLife);
+
 
         rowCount++;
     }
@@ -389,10 +436,10 @@ void ItemsMainWindow::search(){
         return;
     }
 
-    ui->tableWidget->setColumnCount(16);
+    ui->tableWidget->setColumnCount(31);
     QStringList labels;
 
-    labels << "Item ID" << "Name" << "Alias" << "Item Group" << "Item Sub Group"<<"Supplier PartNumber"<<"Unit Cost"<<"Used Unit Cost"<<"PacketSize"<<"Brand"<<"ImageFile"<<"New_UsedSensitive"<<"Location"<<"Minimum"<<"Maximum"<<"Critical Point";
+    labels << "Item ID" << "Name" << "Alias" << "Item Group" << "Item Sub Group"<<"Supplier Part Number"<<"UnitCost"<<"Used Unit Cost"<<"Packet Size"<<"Brand"<<"Image File"<<"New/Used"<<"Location"<<"Minimum"<<"Maximum"<<"Critical Point"<<"Used Minimum Quantity"<<"Rework Pick Level"<<"Do Not Order"<<"Swapabile"<<"SwapQuantity"<<"Swap By User"<<"Swap By Job"<<"Swap By Machine"<<"Ticketable"<<"Can Be Returned"<<"Can Be Rework"<<"Can Be Scrap"<<"Life Tracked"<<"intial Life"<<"Minimum Life";
     ui->tableWidget->setHorizontalHeaderLabels(labels);
 
     int rowCount=0;
@@ -409,12 +456,28 @@ void ItemsMainWindow::search(){
         QTableWidgetItem *UsedUnitCost = new QTableWidgetItem(query.value(7).toString());
         QTableWidgetItem *PacketSize = new QTableWidgetItem(query.value(8).toString());
         QTableWidgetItem *Brand = new QTableWidgetItem(query.value(9).toString());
-        QTableWidgetItem *ImageFile = new QTableWidgetItem(query.value(10).toString());
+        QTableWidgetItem *ImageFile = new QTableWidgetItem();
         QTableWidgetItem *New_UsedSensitive = new QTableWidgetItem(query.value(11).toString());
         QTableWidgetItem *Location = new QTableWidgetItem(query.value(12).toString());
         QTableWidgetItem *Minimum = new QTableWidgetItem(query.value(13).toString());
         QTableWidgetItem *Maximum = new QTableWidgetItem(query.value(14).toString());
         QTableWidgetItem *CriticalPoint = new QTableWidgetItem(query.value(15).toString());
+        QTableWidgetItem *UsedMinimumQuantity = new QTableWidgetItem(query.value(16).toString());
+        QTableWidgetItem *ReworkPickupLevel = new QTableWidgetItem(query.value(17).toString());
+        QTableWidgetItem *DoNotOrder = new QTableWidgetItem(query.value(18).toString());
+        QTableWidgetItem *Swappable = new QTableWidgetItem(query.value(19).toString());
+        QTableWidgetItem *SwapQuantity = new QTableWidgetItem(query.value(20).toString());
+        QTableWidgetItem *SwapByUser = new QTableWidgetItem(query.value(21).toString());
+        QTableWidgetItem *SwapByJob = new QTableWidgetItem(query.value(22).toString());
+        QTableWidgetItem *SwapByMachine = new QTableWidgetItem(query.value(23).toString());
+        QTableWidgetItem *Ticketable = new QTableWidgetItem(query.value(24).toString());
+        QTableWidgetItem *CanBeReturned = new QTableWidgetItem(query.value(25).toString());
+        QTableWidgetItem *CanBeRework = new QTableWidgetItem(query.value(26).toString());
+        QTableWidgetItem *CanBeScrap = new QTableWidgetItem(query.value(27).toString());
+        QTableWidgetItem *LifeTracked = new QTableWidgetItem(query.value(28).toString());
+        QTableWidgetItem *intialLife = new QTableWidgetItem(query.value(29).toString());
+        QTableWidgetItem *MinimumLife = new QTableWidgetItem(query.value(30).toString());
+
 
         ItemID->setText(query.value(0).toString());
         Name->setText(query.value(1).toString());
@@ -426,12 +489,33 @@ void ItemsMainWindow::search(){
         UsedUnitCost->setText(query.value(7).toString());
         PacketSize->setText(query.value(8).toString());
         Brand->setText(query.value(9).toString());
-        ImageFile->setText(query.value(10).toString());
+
+        QPixmap pixmap(query.value(10).toString());
+        QSize newSize(130,130);
+        QPixmap scaledPixmap = pixmap.scaled(newSize, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        QIcon icon(scaledPixmap);
+        ImageFile->setIcon(icon);
+        ImageFile->setSizeHint(newSize);
         New_UsedSensitive->setText(query.value(11).toString());
         Location->setText(query.value(12).toString());
         Minimum->setText(query.value(13).toString());
         Maximum->setText(query.value(14).toString());
         CriticalPoint->setText(query.value(15).toString());
+        UsedMinimumQuantity->setText(query.value(16).toString());
+        ReworkPickupLevel->setText(query.value(17).toString());
+        DoNotOrder->setText(query.value(18).toString());
+        Swappable->setText(query.value(19).toString());
+        SwapQuantity->setText(query.value(20).toString());
+        SwapByUser->setText(query.value(21).toString());
+        SwapByJob->setText(query.value(22).toString());
+        SwapByMachine->setText(query.value(23).toString());
+        Ticketable->setText(query.value(24).toString());
+        CanBeReturned->setText(query.value(25).toString());
+        CanBeRework->setText(query.value(26).toString());
+        CanBeScrap->setText(query.value(27).toString());
+        LifeTracked->setText(query.value(28).toString());
+        intialLife->setText(query.value(29).toString());
+        MinimumLife->setText(query.value(30).toString());
 
         ui->tableWidget->setItem(rowCount,0,ItemID);
         ui->tableWidget->setItem(rowCount,1,Name);
@@ -449,6 +533,22 @@ void ItemsMainWindow::search(){
         ui->tableWidget->setItem(rowCount,13,Minimum);
         ui->tableWidget->setItem(rowCount,14,Maximum);
         ui->tableWidget->setItem(rowCount,15,CriticalPoint);
+        ui->tableWidget->setItem(rowCount,16,UsedMinimumQuantity);
+        ui->tableWidget->setItem(rowCount,17,ReworkPickupLevel);
+        ui->tableWidget->setItem(rowCount,18,DoNotOrder);
+        ui->tableWidget->setItem(rowCount,19,Swappable);
+        ui->tableWidget->setItem(rowCount,20,SwapQuantity);
+        ui->tableWidget->setItem(rowCount,21,SwapByUser);
+        ui->tableWidget->setItem(rowCount,22,SwapByJob);
+        ui->tableWidget->setItem(rowCount,23,SwapByMachine);
+        ui->tableWidget->setItem(rowCount,24,Ticketable);
+        ui->tableWidget->setItem(rowCount,25,CanBeReturned);
+        ui->tableWidget->setItem(rowCount,26,CanBeRework);
+        ui->tableWidget->setItem(rowCount,27,CanBeScrap);
+        ui->tableWidget->setItem(rowCount,28,LifeTracked);
+        ui->tableWidget->setItem(rowCount,29,intialLife);
+        ui->tableWidget->setItem(rowCount,30,MinimumLife);
+
 
         rowCount++;
     }
@@ -576,10 +676,10 @@ void ItemsMainWindow::undoFunc(){
 }
 
 void ItemsMainWindow::fillLineEdits(){
-    QString dbPath = "D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB";
+    QString path = SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
-    dataBase.setDatabaseName(dbPath);
+    dataBase.setDatabaseName(path);
 
     if(!dataBase.open())
     {
@@ -648,6 +748,7 @@ void ItemsMainWindow::updateItem(){
     query.addBindValue(ui->lineEditBrand->text());
     query.addBindValue(ui->lineEditImage->text());
     query.addBindValue(ui->lineEditNewUsed->currentText());
+    query.addBindValue(selectedValue);
 
 
     if (query.exec()) {

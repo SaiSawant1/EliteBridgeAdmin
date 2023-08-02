@@ -110,7 +110,7 @@ font: 300 10pt &quot;Segoe UI Light&quot;;</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>C:/Users/Dell/OneDrive/Desktop/executable/img/computer-check-mark-svgrepo-com.svg</pixmap>
+           <pixmap>img/computer-check-mark-svgrepo-com.svg</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -149,7 +149,7 @@ font: 300 10pt &quot;Segoe UI Light&quot;;</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>C:/Users/Dell/OneDrive/Desktop/executable/img/imac-click-svgrepo-com.svg</pixmap>
+           <pixmap>img/imac-click-svgrepo-com.svg</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -188,7 +188,7 @@ font: 300 10pt &quot;Segoe UI Light&quot;;</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>C:/Users/Dell/OneDrive/Desktop/executable/img/cog-svgrepo-com.svg</pixmap>
+           <pixmap>img/cog-svgrepo-com.svg</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -227,7 +227,7 @@ font: 300 10pt &quot;Segoe UI Light&quot;;</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>C:/Users/Dell/OneDrive/Desktop/executable/img/report-svgrepo-com.svg</pixmap>
+           <pixmap>img/report-svgrepo-com.svg</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>

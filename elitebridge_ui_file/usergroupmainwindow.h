@@ -46,6 +46,8 @@ private slots:
 
     void on_actionGroup_Transaction_triggered();
 
+    void on_actionUpdate_Group_Transaction_triggered();
+
 private:
     QString selectedValue;
     Ui::UserGroupMainWindow *ui;
