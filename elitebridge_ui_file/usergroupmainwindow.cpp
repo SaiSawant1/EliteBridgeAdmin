@@ -9,6 +9,7 @@ UserGroupMainWindow::UserGroupMainWindow(QWidget *parent) :
     ui(new Ui::UserGroupMainWindow)
 {
     ui->setupUi(this);
+    setWindowTitle("User Group Main Window");
 
      QString appDirPath =QApplication::applicationDirPath();
 
@@ -127,7 +128,7 @@ void UserGroupMainWindow::onCellClicked(int row, int column)
         }
     }
 
-    QTableWidgetItem *item = ui->tableWidget->item(row, column);
+    QTableWidgetItem *item = ui->tableWidget->item(row, 0);
     if (item != nullptr)
     {
         selectedValue = item->text();
@@ -165,7 +166,7 @@ void UserGroupMainWindow::readDb(){
 
     ui->tableWidget->setColumnCount(2);
     QStringList labels;
-    labels << "GroupID" << "groupName";
+    labels << "Group ID" << "Group Name";
     ui->tableWidget->setHorizontalHeaderLabels(labels);
 
     int rowCount=0;
@@ -302,7 +303,7 @@ void UserGroupMainWindow::search(){
     }
     ui->tableWidget->setColumnCount(2);
     QStringList labels;
-    labels << "GroupID" << "groupName";
+    labels << "Group ID" << "Group Name";
     ui->tableWidget->setHorizontalHeaderLabels(labels);
 
     int rowCount=0;

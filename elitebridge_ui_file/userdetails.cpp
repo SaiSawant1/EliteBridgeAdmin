@@ -6,6 +6,7 @@ UserDetails::UserDetails(QWidget *parent) :
     ui(new Ui::UserDetails)
 {
     ui->setupUi(this);
+    setWindowTitle("User Detail");
 }
 
 UserDetails::~UserDetails()

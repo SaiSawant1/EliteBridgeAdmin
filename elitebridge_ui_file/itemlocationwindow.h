@@ -2,6 +2,7 @@
 #define ITEMLOCATIONWINDOW_H
 
 #include <QDialog>
+#include <QMainWindow>
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>

@@ -7,8 +7,7 @@ CreateUserTransaction::CreateUserTransaction(QWidget *parent) :
     m_userWindowInstance(nullptr)
 {
     ui->setupUi(this);
-
-
+    setWindowTitle("Creat User Transaction");
 }
 
 CreateUserTransaction::~CreateUserTransaction()

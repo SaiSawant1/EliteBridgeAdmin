@@ -3,11 +3,11 @@
 #include "shareddata.h"
 
 AuxMainWindow::AuxMainWindow(QWidget *parent) :
-    QDialog(parent),
+    QMainWindow(parent),
     ui(new Ui::AuxMainWindow)
 {
     ui->setupUi(this);
-
+    setWindowTitle("Aux Main Window");
     QHBoxLayout* horizontalLayout = new QHBoxLayout(ui->frame);
     QString appDirPath =QApplication::applicationDirPath();
     addUserLabel = new ClickableLabel(this);
@@ -179,7 +179,7 @@ void AuxMainWindow:: readDb()
 
 void AuxMainWindow::addUserForm() {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-     QString path = SharedData::getInstance()->getValue();
+    QString path = SharedData::getInstance()->getValue();
     db.setDatabaseName(path);
 
     if (!db.open()) {
@@ -266,7 +266,7 @@ void AuxMainWindow::search() {
 void AuxMainWindow::updateUser()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-     QString path = SharedData::getInstance()->getValue();
+    QString path = SharedData::getInstance()->getValue();
     db.setDatabaseName(path);
 
     if (!db.open()) {
@@ -331,7 +331,7 @@ void AuxMainWindow::deleteUser()
 
     fillUndoStruct();
     if (confirmation == QMessageBox::Yes) {
-         QString path = SharedData::getInstance()->getValue();
+        QString path = SharedData::getInstance()->getValue();
         QSqlDatabase dataBase;
         dataBase = QSqlDatabase::addDatabase("QSQLITE", "DBConnection");
         dataBase.setDatabaseName(path);
@@ -363,7 +363,7 @@ void AuxMainWindow::deleteUser()
 
 void AuxMainWindow::fillUndoStruct()
 {
-     QString path = SharedData::getInstance()->getValue();
+    QString path = SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE", "DBConnection");
     dataBase.setDatabaseName(path);
@@ -402,7 +402,7 @@ void AuxMainWindow::fillUndoStruct()
 void AuxMainWindow::undoFunc()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-     QString path = SharedData::getInstance()->getValue();
+    QString path = SharedData::getInstance()->getValue();
     db.setDatabaseName(path);
 
     if (!db.open()) {
@@ -438,3 +438,4 @@ AuxMainWindow::~AuxMainWindow()
 {
     delete ui;
 }
+

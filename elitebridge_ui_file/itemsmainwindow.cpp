@@ -7,7 +7,7 @@ ItemsMainWindow::ItemsMainWindow(QWidget *parent) :
     ui(new Ui::ItemsMainWindow)
 {
     ui->setupUi(this);
-
+    setWindowTitle("Items Main Window");
 
     QString appDirPath =QApplication::applicationDirPath();
     QHBoxLayout* horizontalLayout = new QHBoxLayout(ui->frame);
@@ -291,7 +291,7 @@ void ItemsMainWindow::onCellClicked(int row, int column)
         }
     }
 
-    QTableWidgetItem *item = ui->tableWidget->item(row, column);
+    QTableWidgetItem *item = ui->tableWidget->item(row, 0);
     if (item != nullptr)
     {
         selectedValue = item->text();
@@ -351,6 +351,7 @@ void ItemsMainWindow::addUserForm(){
         ItemLocationWindow* locationWindow=new ItemLocationWindow;
         locationWindow->setSelectedvValue(ui->lineEditID->text());
         locationWindow->show();
+        clearLineEdits();
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
     }
@@ -752,7 +753,8 @@ void ItemsMainWindow::updateItem(){
 
 
     if (query.exec()) {
-        QMessageBox::information(nullptr, "Success", "Data Reinserted ");
+        QMessageBox::information(nullptr, "Success", "Data Updated ");
+        clearLineEdits();
 
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
@@ -890,7 +892,7 @@ void ItemsMainWindow::fillSubGroupCombo(){
 
 void ItemsMainWindow::showDialog(int row, int column)
 {
-    QTableWidgetItem *item = ui->tableWidget->item(row, column);
+    QTableWidgetItem *item = ui->tableWidget->item(row,0);
     if (item != nullptr)
     {
         selectedValue=item->text();
@@ -898,4 +900,17 @@ void ItemsMainWindow::showDialog(int row, int column)
         detail->fillItem(selectedValue);
         detail->show();
     }
+}
+
+void ItemsMainWindow::clearLineEdits(){
+    ui->lineEditID->clear();
+    ui->lineEditName->clear();
+    ui->lineEditAlias->clear();
+    ui->lineEditSupplier->clear();
+    ui->lineEditUnitCost->clear();
+    ui->lineEditUnitUsed->clear();
+    ui->lineEditPacket->clear();
+    ui->lineEditBrand->clear();
+    ui->lineEditImage->clear();
+
 }

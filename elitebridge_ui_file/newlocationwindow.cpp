@@ -3,10 +3,11 @@
 #include "shareddata.h"
 
 NewLocationWindow::NewLocationWindow(QWidget *parent) :
-    QDialog(parent),
+    QMainWindow(parent),
     ui(new Ui::NewLocationWindow)
 {
     ui->setupUi(this);
+    setWindowTitle("Location Main Window");
     connect(ui->tableWidget, &QTableWidget::cellClicked, this, &NewLocationWindow::onCellClicked);
     readDb();
 }
@@ -80,7 +81,7 @@ void NewLocationWindow::fillAdmin(){
 
 void NewLocationWindow::readDb(){
 
-     QString path=SharedData::getInstance()->getValue();
+    QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
     dataBase.setDatabaseName(path);
@@ -140,12 +141,12 @@ void NewLocationWindow::on_add_clicked()
     int integerValue = ui->lineEdit_userName->text().toInt(&conversionOk, 10);
 
     if(conversionOk==false){
-          QMessageBox::warning(nullptr, "Invalid Input", "Please enter a valid number.");
+        QMessageBox::warning(nullptr, "Invalid Input", "Please enter a valid number.");
         return ;
     }
 
 
-     QString path=SharedData::getInstance()->getValue();
+    QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
     dataBase.setDatabaseName(path);
@@ -220,7 +221,7 @@ void NewLocationWindow::on_update_clicked()
         QMessageBox::warning(nullptr, "Invalid Input", "Please enter a valid number.");
         return ;
     }
-     QString path=SharedData::getInstance()->getValue();
+    QString path=SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
     dataBase.setDatabaseName(path);

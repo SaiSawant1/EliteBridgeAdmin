@@ -6,6 +6,7 @@ UpdateUser::UpdateUser(QWidget *parent) :
     ui(new Ui::UpdateUser)
 {
     ui->setupUi(this);
+    setWindowTitle("Update User");
 }
 
 UpdateUser::~UpdateUser()

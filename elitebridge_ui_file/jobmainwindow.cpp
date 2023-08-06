@@ -7,6 +7,7 @@ JobMainWindow::JobMainWindow(QWidget *parent) :
     ui(new Ui::JobMainWindow)
 {
     ui->setupUi(this);
+    setWindowTitle("Job Main Window");
 
     QString appDirPath =QApplication::applicationDirPath();
 

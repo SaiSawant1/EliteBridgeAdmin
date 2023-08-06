@@ -8,6 +8,7 @@ SysConfig::SysConfig(QWidget *parent) :
     ui(new Ui::SysConfig)
 {
     ui->setupUi(this);
+    setWindowTitle("System Configuration");
 }
 
 SysConfig::~SysConfig()
@@ -19,8 +20,5 @@ void SysConfig::on_pushButton_3_clicked()
 {
     SystemLogin* login=new SystemLogin;
     login->show();
-
-
-
 }
 

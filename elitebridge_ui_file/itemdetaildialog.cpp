@@ -6,6 +6,7 @@ ItemDetailDialog::ItemDetailDialog(QWidget *parent) :
     ui(new Ui::ItemDetailDialog)
 {
     ui->setupUi(this);
+    setWindowTitle("Item Detail Page");
     fillLineEdits();
 
 }

@@ -7,6 +7,7 @@ ViewGrants::ViewGrants(QWidget *parent) :
     ui(new Ui::ViewGrants)
 {
     ui->setupUi(this);
+    setWindowTitle("View Grants");
 }
 
 ViewGrants::~ViewGrants()

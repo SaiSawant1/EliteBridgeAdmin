@@ -6,7 +6,7 @@ ItemLocationWindow::ItemLocationWindow(QWidget *parent) :
     ui(new Ui::ItemLocationWindow)
 {
     ui->setupUi(this);
-
+    setWindowTitle("Item Location");
 }
 
 ItemLocationWindow::~ItemLocationWindow()

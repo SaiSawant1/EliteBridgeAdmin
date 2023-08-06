@@ -17,6 +17,7 @@ userWindow::userWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    setWindowTitle("User Main Window");
     QHBoxLayout* horizontalLayout = new QHBoxLayout(ui->frame);
     addUserLabel = new ClickableLabel(this);
     addUserLabel->setText("Add User");
@@ -160,6 +161,7 @@ void userWindow::addUserForm(){
     query.addBindValue( radioValue);
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data inserted successfully!");
+        clearLineEdits();
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
     }
@@ -246,7 +248,7 @@ void userWindow::onCellClicked(int row, int column)
         }
     }
 
-    QTableWidgetItem *item = ui->tableWidget->item(row, column);
+    QTableWidgetItem *item = ui->tableWidget->item(row, 0);
     if (item != nullptr)
     {
         selectedValue = item->text();
@@ -512,6 +514,7 @@ void userWindow::updateUser()
 
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data update successfully!");
+        clearLineEdits();
 
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to update data!");
@@ -627,7 +630,7 @@ bool userWindow::eventFilter(QObject *obj, QEvent *event)
 
 void userWindow::showDialog(int row, int column)
 {
-    QTableWidgetItem *item = ui->tableWidget->item(row, column);
+    QTableWidgetItem *item = ui->tableWidget->item(row, 0);
     if (item != nullptr)
     {
         selectedValue=item->text();
@@ -655,4 +658,12 @@ void userWindow::on_actionUpdate_User_Group_triggered()
     updateGroup->show();
 
 }
-
+void userWindow::clearLineEdits(){
+    ui->user_id->clear();
+    ui->user_name->clear();
+    ui->user_alias->clear();
+    ui->user_password->clear();
+    ui->user_image->clear();
+    ui->user_costCenter->clear();
+    ui->allowedToLogin->setChecked(false);
+}

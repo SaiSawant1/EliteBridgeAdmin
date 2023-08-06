@@ -11,7 +11,7 @@ namespace Ui {
 class NewLocationWindow;
 }
 
-class NewLocationWindow : public QDialog
+class NewLocationWindow : public QMainWindow
 {
     Q_OBJECT
 
@@ -32,7 +32,10 @@ private slots:
     void on_update_clicked();
 private:
     Ui::NewLocationWindow *ui;
-     QString selectedValue;
+    QString selectedValue;
 };
 
 #endif // NEWLOCATIONWINDOW_H
+
+
+

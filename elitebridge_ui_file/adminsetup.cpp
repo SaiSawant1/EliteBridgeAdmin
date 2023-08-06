@@ -7,6 +7,7 @@ AdminSetup::AdminSetup(QWidget *parent) :
     ui(new Ui::AdminSetup)
 {
     ui->setupUi(this);
+    setWindowTitle("Admin Setup");
     connect(ui->tableWidget, &QTableWidget::cellClicked, this, &AdminSetup::onCellClicked);
     readDb();
 }

@@ -86,23 +86,20 @@ set(PROJECT_SOURCES
         itemsubgroup.cpp
         itemsubgroup.h
         itemsubgroup.ui
-        newlocationwindow.h
-        newlocationwindow.cpp
-        newlocationwindow.ui
         itemdetaildialog.h itemdetaildialog.cpp itemdetaildialog.ui
         itemlocationwindow.h itemlocationwindow.cpp itemlocationwindow.ui
         userdetails.h userdetails.cpp userdetails.ui
         machine.h machine.cpp machine.ui
         updateusertransaction.h updateusertransaction.cpp updateusertransaction.ui
-        auxmainwindow.cpp
-        auxmainwindow.ui
-        auxmainwindow.h
+
         terminology.h terminology.cpp terminology.ui
         shareddata.h shareddata.cpp
         img
         auxmainwindow2.h auxmainwindow2.cpp auxmainwindow2.ui
         updategrouptransaction.h updategrouptransaction.cpp updategrouptransaction.ui
         updateusergroup.h updateusergroup.cpp updateusergroup.ui
+        newlocationwindow.h newlocationwindow.cpp newlocationwindow.ui
+        auxmainwindow.h auxmainwindow.cpp auxmainwindow.ui
         ${TS_FILES}
 )
 

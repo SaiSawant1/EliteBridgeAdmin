@@ -6,6 +6,7 @@ ItemGroup::ItemGroup(QWidget *parent) :
     ui(new Ui::ItemGroup)
 {
     ui->setupUi(this);
+    setWindowTitle("Item Group");
     connect(ui->tableWidget, &QTableWidget::cellClicked, this, &ItemGroup::onCellClicked);
     readDb();
 }

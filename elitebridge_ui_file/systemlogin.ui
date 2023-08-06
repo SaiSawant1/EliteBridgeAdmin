@@ -25,7 +25,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>C:/Users/Dell/OneDrive/Desktop/executable/img/elitebridgelogollp.png</pixmap>
+      <pixmap>img/elitebridgelogollp.png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

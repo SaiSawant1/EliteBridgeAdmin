@@ -8,6 +8,7 @@ UpdateUserGroup::UpdateUserGroup(QWidget *parent) :
     ui(new Ui::UpdateUserGroup)
 {
     ui->setupUi(this);
+    setWindowTitle("Update User Group");
 }
 
 UpdateUserGroup::~UpdateUserGroup()

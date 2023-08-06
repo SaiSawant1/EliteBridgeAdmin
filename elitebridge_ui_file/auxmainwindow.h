@@ -2,6 +2,7 @@
 #define AUXMAINWINDOW_H
 
 #include <QDialog>
+#include <QMainWindow>
 #include "ClickableLabel.h"
 #include <QLineEdit>
 #include <QSqlDatabase>
@@ -24,7 +25,7 @@ namespace Ui {
 class AuxMainWindow;
 }
 
-class AuxMainWindow : public QDialog
+class AuxMainWindow : public QMainWindow
 {
     Q_OBJECT
 
@@ -56,3 +57,6 @@ private:
 };
 
 #endif // AUXMAINWINDOW_H
+
+
+

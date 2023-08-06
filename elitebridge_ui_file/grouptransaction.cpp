@@ -6,6 +6,7 @@ groupTransaction::groupTransaction(QWidget *parent) :
     ui(new Ui::groupTransaction)
 {
     ui->setupUi(this);
+    setWindowTitle("Group Transaction");
 }
 void groupTransaction::setSelectedValue(QString value){
     selectedValue=value;

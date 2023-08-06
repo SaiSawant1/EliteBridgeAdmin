@@ -10,7 +10,7 @@ Admin::Admin(QWidget *parent) :
     ui(new Ui::Admin)
 {
     ui->setupUi(this);
-
+    setWindowTitle("Admin");
     ui->databasePath->installEventFilter(this);
 }
 void Admin::addReporting(){

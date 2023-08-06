@@ -6,6 +6,8 @@ Machine::Machine(QWidget *parent) :
     ui(new Ui::Machine)
 {
     ui->setupUi(this);
+    setWindowTitle("Machine Main Window");
+
     QHBoxLayout* horizontalLayout = new QHBoxLayout(ui->frame);
     QString appDirPath =QApplication::applicationDirPath();
     addUserLabel = new ClickableLabel(this);

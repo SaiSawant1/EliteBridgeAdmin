@@ -8,6 +8,7 @@ SystemLogin::SystemLogin(QWidget *parent) :
     ui(new Ui::SystemLogin)
 {
     ui->setupUi(this);
+    setWindowTitle("System Login");
 }
 
 SystemLogin::~SystemLogin()

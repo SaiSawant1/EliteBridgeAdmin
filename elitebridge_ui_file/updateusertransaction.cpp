@@ -6,6 +6,7 @@ UpdateUserTransaction::UpdateUserTransaction(QWidget *parent) :
     ui(new Ui::UpdateUserTransaction)
 {
     ui->setupUi(this);
+    setWindowTitle("Update User Transaction");
 }
 
 UpdateUserTransaction::~UpdateUserTransaction()

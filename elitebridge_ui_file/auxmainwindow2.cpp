@@ -7,7 +7,7 @@ AuxMainwindow2::AuxMainwindow2(QWidget *parent) :
     ui(new Ui::AuxMainwindow2)
 {
     ui->setupUi(this);
-
+    setWindowTitle("Aux Main Window 2");
     QHBoxLayout* horizontalLayout = new QHBoxLayout(ui->frame);
     QString appDirPath =QApplication::applicationDirPath();
     addUserLabel = new ClickableLabel(this);

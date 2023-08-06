@@ -7,6 +7,7 @@ UpdateGroupTransaction::UpdateGroupTransaction(QWidget *parent) :
     ui(new Ui::UpdateGroupTransaction)
 {
     ui->setupUi(this);
+    setWindowTitle("Update Group Transaction");
 }
 
 UpdateGroupTransaction::~UpdateGroupTransaction()

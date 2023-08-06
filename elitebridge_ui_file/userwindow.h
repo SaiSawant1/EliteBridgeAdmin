@@ -54,6 +54,7 @@ private slots:
     void fillUndoStruct();
     void undoFunc();
     void fillLineEdit();
+    void clearLineEdits();
     void on_actionAdd_User_To_Group_triggered() ;
     bool eventFilter(QObject *obj, QEvent *event) override;
     void mousePressEvent(QMouseEvent *event) override;
