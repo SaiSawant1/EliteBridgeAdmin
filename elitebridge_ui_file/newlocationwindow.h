@@ -30,9 +30,17 @@ private slots:
     void on_delete_2_clicked();
 
     void on_update_clicked();
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
+
+    void clearLineEdits();
 private:
     Ui::NewLocationWindow *ui;
     QString selectedValue;
+    bool resizing;
+    QPoint dragStartPosition;
+
 };
 
 #endif // NEWLOCATIONWINDOW_H

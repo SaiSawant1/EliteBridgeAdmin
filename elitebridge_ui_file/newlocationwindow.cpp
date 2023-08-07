@@ -1,7 +1,7 @@
 #include "newlocationwindow.h"
 #include "ui_newlocationwindow.h"
 #include "shareddata.h"
-
+#include<QMouseEvent>
 NewLocationWindow::NewLocationWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::NewLocationWindow)
@@ -28,7 +28,7 @@ void NewLocationWindow::onCellClicked(int row, int column)
         }
     }
 
-    QTableWidgetItem *item = ui->tableWidget->item(row, column);
+    QTableWidgetItem *item = ui->tableWidget->item(row, 0);
     if (item != nullptr)
     {
         selectedValue = item->text();
@@ -137,6 +137,10 @@ void NewLocationWindow::readDb(){
 
 void NewLocationWindow::on_add_clicked()
 {
+    if(ui->lineEdit_userName->text()==""){
+        ui->lineEdit_userName->setStyleSheet("QLineEdit { background-color: red; }");
+        return;
+    }
     bool conversionOk = false;
     int integerValue = ui->lineEdit_userName->text().toInt(&conversionOk, 10);
 
@@ -169,6 +173,9 @@ void NewLocationWindow::on_add_clicked()
         qDebug()<<"Query execution Failed";
         qDebug()<<query.lastError().text();
         return;
+    }else{
+        ui->lineEdit_userName->setStyleSheet("QLineEdit { background-color: white; }");\
+        clearLineEdits();
     }
 
     dataBase.close();
@@ -205,6 +212,8 @@ void NewLocationWindow::on_delete_2_clicked()
     {
         qDebug()<<"Query execution Failed";
         return;
+    }else{
+        clearLineEdits();
     }
 
     dataBase.close();
@@ -214,6 +223,10 @@ void NewLocationWindow::on_delete_2_clicked()
 
 void NewLocationWindow::on_update_clicked()
 {
+    if(ui->lineEdit_userName->text()==""){
+        ui->lineEdit_userName->setStyleSheet("QLineEdit { background-color: red; }");
+        return;
+    }
     bool conversionOk = false;
     int integerValue = ui->lineEdit_userName->text().toInt(&conversionOk, 10);
 
@@ -243,9 +256,58 @@ void NewLocationWindow::on_update_clicked()
     {
         qDebug()<<"Query execution Failed";
         return;
+    }else{
+        clearLineEdits();
+        ui->lineEdit_userName->setStyleSheet("QLineEdit { background-color: white; }");
     }
 
     dataBase.close();
     refresh();
 }
+
+void NewLocationWindow::clearLineEdits(){
+    ui->lineEdit_userName->clear();
+    ui->lineEdit_Type->clear();
+    ui->lineEdit_Description->clear();
+    ui->lineEdit_Welcome_1->clear();
+    ui->lineEdit_Welcome_2->clear();
+}
+
+void NewLocationWindow::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton && event->pos().y() > ui->scrollArea->height() - 5) {
+        resizing = true;
+        dragStartPosition = event->pos();
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
+
+void NewLocationWindow::mouseMoveEvent(QMouseEvent *event)
+{
+    if (resizing) {
+        QPoint diff = event->pos() - dragStartPosition;
+        int newHeight = ui->scrollArea->height() - diff.y();
+        ui->scrollArea->setFixedHeight(newHeight);
+        dragStartPosition = event->pos();
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
+
+void NewLocationWindow::mouseReleaseEvent(QMouseEvent *event)
+{
+    if (resizing) {
+        resizing = false;
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
+
 
