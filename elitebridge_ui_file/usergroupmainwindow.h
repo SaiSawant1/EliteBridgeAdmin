@@ -40,6 +40,7 @@ public:
     void fillLineEdits();
     void undoFunc();
     void fillUndo();
+    void clearLineEdits();
 
 private slots:
     void on_actionTransaction_triggered();

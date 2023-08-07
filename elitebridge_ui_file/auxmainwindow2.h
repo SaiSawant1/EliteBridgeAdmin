@@ -9,6 +9,7 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QMessageBox>
+#include <QMouseEvent>
 
 struct undoStructAux2{
     QString Aux;
@@ -41,7 +42,12 @@ private slots:
     void updateUser();
     void userSave();
     void fillUndoStruct();
+    void fillLineEdits();
+    void clearLineEdits();
     void undoFunc();
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 private:
     Ui::AuxMainwindow2 *ui;
     QString selectedValue;
@@ -55,6 +61,8 @@ private:
     QLineEdit* lineEdit;
     void readDb();
     undoStructAux2* undo;
+    bool resizing;
+    QPoint dragStartPosition;
 };
 
 #endif // AUXMAINWINDOW2_H

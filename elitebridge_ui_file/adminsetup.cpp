@@ -28,7 +28,7 @@ void AdminSetup::onCellClicked(int row, int column)
         }
     }
 
-    QTableWidgetItem *item = ui->tableWidget->item(row, column);
+    QTableWidgetItem *item = ui->tableWidget->item(row, 0);
     if (item != nullptr)
     {
         selectedValue = item->text();
@@ -123,6 +123,14 @@ void AdminSetup::readDb(){
 
 void AdminSetup::on_add_clicked()
 {
+    if(ui->lineEdit_userName->text()==""){
+        ui->lineEdit_userName->setStyleSheet("QLineEdit { background-color: red; }");
+        return ;
+    }
+    if(ui->lineEdit_password->text()==""){
+        ui->lineEdit_password->setStyleSheet("QLineEdit { background-color: red; }");
+        return ;
+    }
     QString path = SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
@@ -142,9 +150,13 @@ void AdminSetup::on_add_clicked()
     {
         qDebug()<<"Query execution Failed";
         return;
+    }else{
+        ui->lineEdit_userName->setStyleSheet("QLineEdit { background-color: white; }");
+        ui->lineEdit_password->setStyleSheet("QLineEdit { background-color: white; }");
     }
 
     dataBase.close();
+    clearLineEdits();
     refresh();
 
 }
@@ -182,11 +194,18 @@ void AdminSetup::on_delete_2_clicked()
 
     dataBase.close();
     refresh();
+    clearLineEdits();
 }
 
 
 void AdminSetup::on_update_clicked()
 {
+    if(ui->lineEdit_userName->text()==""){
+        ui->lineEdit_userName->setStyleSheet("QLineEdit { background-color: red; }");
+    }
+    if(ui->lineEdit_password->text()==""){
+        ui->lineEdit_password->setStyleSheet("QLineEdit { background-color: red; }");
+    }
     QString path = SharedData::getInstance()->getValue();
     QSqlDatabase dataBase;
     dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
@@ -206,9 +225,16 @@ void AdminSetup::on_update_clicked()
     {
         qDebug()<<"Query execution Failed";
         return;
+    }else{
+        ui->lineEdit_userName->setStyleSheet("QLineEdit { background-color: white; }");
+        ui->lineEdit_password->setStyleSheet("QLineEdit { background-color: white; }");
     }
 
     dataBase.close();
+    clearLineEdits();
     refresh();
 }
-
+void AdminSetup::clearLineEdits(){
+    ui->lineEdit_userName->clear();
+    ui->lineEdit_password->clear();
+}

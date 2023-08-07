@@ -329,6 +329,7 @@ void userWindow::deleteUser()
 
         dataBase.close();
         addUndoLabel->setDisabled(false);
+        clearLineEdits();
     }
     else{
         return;
@@ -515,6 +516,8 @@ void userWindow::updateUser()
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data update successfully!");
         clearLineEdits();
+        ui->user_id->setStyleSheet("QLineEdit { background-color: white; }");
+        ui->user_name->setStyleSheet("QLineEdit { background-color: white; }");
 
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to update data!");

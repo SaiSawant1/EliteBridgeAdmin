@@ -49,7 +49,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-447</y>
+        <y>-527</y>
         <width>439</width>
         <height>1056</height>
        </rect>
@@ -89,7 +89,7 @@
           <item>
            <widget class="QLabel" name="label_12">
             <property name="text">
-             <string>Minmum Quantity</string>
+             <string>Minmum Quantity               </string>
             </property>
            </widget>
           </item>
@@ -111,7 +111,7 @@
           <item>
            <widget class="QLabel" name="label_11">
             <property name="text">
-             <string>Maximum Quantity</string>
+             <string>Maximum Quantity             </string>
             </property>
            </widget>
           </item>
@@ -133,7 +133,7 @@
           <item>
            <widget class="QLabel" name="label_10">
             <property name="text">
-             <string>Critical level</string>
+             <string>Critical level                        </string>
             </property>
            </widget>
           </item>
@@ -155,7 +155,7 @@
           <item>
            <widget class="QLabel" name="label_8">
             <property name="text">
-             <string>Used Minimum Quantity</string>
+             <string>Used Minimum Quantity     </string>
             </property>
            </widget>
           </item>
@@ -177,7 +177,7 @@
           <item>
            <widget class="QLabel" name="label_7">
             <property name="text">
-             <string>Rework Pickup Level</string>
+             <string>Rework Pickup Level           </string>
             </property>
            </widget>
           </item>
@@ -251,7 +251,7 @@
           <item>
            <widget class="QLabel" name="label_4">
             <property name="text">
-             <string>Swap Quantity</string>
+             <string>Swap Quantity                     </string>
             </property>
            </widget>
           </item>
@@ -481,7 +481,7 @@
           <item>
            <widget class="QLabel" name="label_21">
             <property name="text">
-             <string>Initial Life</string>
+             <string>Initial Life                            </string>
             </property>
            </widget>
           </item>
@@ -503,7 +503,7 @@
           <item>
            <widget class="QLabel" name="label_22">
             <property name="text">
-             <string>Minimum Life</string>
+             <string>Minimum Life                     </string>
             </property>
            </widget>
           </item>

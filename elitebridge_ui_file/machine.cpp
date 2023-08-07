@@ -270,6 +270,10 @@ void Machine::search(){
 }
 
 void Machine::addUserForm(){
+    if(ui->Machine_2->text()==""){
+        ui->Machine_2->setStyleSheet("QLineEdit { background-color: red; }");
+        return;
+    }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     QString path=SharedData::getInstance()->getValue();
     db.setDatabaseName(path);
@@ -297,6 +301,8 @@ void Machine::addUserForm(){
 
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data inserted successfully!");
+        ui->Machine_2->setStyleSheet("QLineEdit { background-color: white; }");
+        clearLineEdits();
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
     }
@@ -308,6 +314,10 @@ void Machine::addUserForm(){
 
 void Machine::updateUser()
 {
+    if(ui->Machine_2->text()==""){
+        ui->Machine_2->setStyleSheet("QLineEdit { background-color: red; }");
+        return;
+    }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     QString path=SharedData::getInstance()->getValue();
     db.setDatabaseName(path);
@@ -338,6 +348,8 @@ void Machine::updateUser()
 
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data update successfully!");
+        ui->Machine_2->setStyleSheet("QLineEdit { background-color: white; }");
+        clearLineEdits();
 
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to update data!");
@@ -357,10 +369,11 @@ void Machine::onCellClicked(int row, int column)
         }
     }
 
-    QTableWidgetItem *item = ui->tableWidget->item(row, column);
+    QTableWidgetItem *item = ui->tableWidget->item(row, 0);
     if (item != nullptr)
     {
         selectedValue = item->text();
+        fillLineEdits();
 
 
     }
@@ -406,6 +419,7 @@ void Machine::deleteUser()
         }
 
         dataBase.close();
+        clearLineEdits();
     }
     else{
         return;
@@ -495,4 +509,94 @@ void Machine::undoFunc(){
     }
     db.close();
     addUndoLabel->setDisabled(true);
+}
+
+void Machine::fillLineEdits(){
+    QString path=SharedData::getInstance()->getValue();
+    QSqlDatabase dataBase;
+    dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
+    dataBase.setDatabaseName(path);
+
+    if(!dataBase.open())
+    {
+        qDebug()<<"dataBase open error";
+        return ;
+    }
+
+
+    QSqlQuery query(dataBase);
+    query.prepare("SELECT * FROM MachineDB WHERE Machine = :userId");
+    query.bindValue(":userId", selectedValue);
+
+
+    if(!query.exec())
+    {
+        qDebug()<<"Query execution Failed";
+        return;
+    }
+
+    if(query.next()){
+        ui->Machine_2->setText(query.value(0).toString());
+        ui->Description->setText(query.value(1).toString());
+        ui->Alias->setText(query.value(2).toString());
+        ui->purchaseDate->setText(query.value(3).toString());
+        ui->MachineGroup->setText(query.value(4).toString());
+        ui->MachineEnable->setText(query.value(5).toString());
+        ui->DateCreated->setText(query.value(6).toString());
+        ui->CreatedBy->setText(query.value(7).toString());
+        ui->DatelastModified->setText(query.value(8).toString());
+        ui->LastModifiedBy->setText(query.value(9).toString());
+    }
+
+
+    dataBase.close();
+    return ;
+}
+void Machine::clearLineEdits(){
+    ui->Machine_2->clear();
+    ui->Description->clear();
+    ui->Alias->clear();
+    ui->purchaseDate->clear();
+    ui->MachineGroup->clear();
+    ui->MachineEnable->clear();
+    ui->DateCreated->clear();
+    ui->CreatedBy->clear();
+    ui->DatelastModified->clear();
+    ui->LastModifiedBy->clear();
+}
+void Machine::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton && event->pos().y() > ui->frame_2->height() - 5) {
+        resizing = true;
+        dragStartPosition = event->pos();
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
+
+void Machine::mouseMoveEvent(QMouseEvent *event)
+{
+    if (resizing) {
+        QPoint diff = event->pos() - dragStartPosition;
+        int newHeight = ui->frame_2->height() - diff.y();
+        ui->frame_2->setFixedHeight(newHeight);
+        dragStartPosition = event->pos();
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
+
+void Machine::mouseReleaseEvent(QMouseEvent *event)
+{
+    if (resizing) {
+        resizing = false;
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
 }

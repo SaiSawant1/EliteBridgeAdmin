@@ -8,7 +8,7 @@ selectGroup::selectGroup(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
+    setWindowTitle("Select Group");
 }
 
 selectGroup::~selectGroup()

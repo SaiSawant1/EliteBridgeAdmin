@@ -126,7 +126,7 @@
               </size>
              </property>
              <property name="text">
-              <string>Name           </string>
+              <string>Name             </string>
              </property>
             </widget>
            </item>
@@ -400,7 +400,7 @@
   </action>
   <action name="actionUpdate_User_Group">
    <property name="text">
-    <string>Update User Group</string>
+    <string>Remove User Form Group</string>
    </property>
   </action>
  </widget>

@@ -58,7 +58,7 @@
            <item>
             <widget class="QLabel" name="label_2">
              <property name="text">
-              <string>Auxiliary               </string>
+              <string>Auxiliary                </string>
              </property>
             </widget>
            </item>
@@ -72,7 +72,7 @@
            <item>
             <widget class="QLabel" name="label_3">
              <property name="text">
-              <string>AuxiliaryAlias       </string>
+              <string>AuxiliaryAlias        </string>
              </property>
             </widget>
            </item>
@@ -100,7 +100,7 @@
            <item>
             <widget class="QLabel" name="label_7">
              <property name="text">
-              <string>Date Created        </string>
+              <string>Date Created         </string>
              </property>
             </widget>
            </item>
@@ -114,7 +114,7 @@
            <item>
             <widget class="QLabel" name="label_8">
              <property name="text">
-              <string>Created By            </string>
+              <string>Created By             </string>
              </property>
             </widget>
            </item>

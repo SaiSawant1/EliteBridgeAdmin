@@ -19,7 +19,6 @@ public:
     explicit ItemGroup(QWidget *parent = nullptr);
     ~ItemGroup();
     void onCellClicked(int row, int column);
-
     void fillAdmin();
     void readDb();
     void refresh();

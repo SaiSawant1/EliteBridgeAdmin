@@ -181,6 +181,10 @@ void AuxMainwindow2:: readDb()
 }
 
 void AuxMainwindow2::addUserForm() {
+    if(ui->Aux->text()==""){
+        ui->Aux->setStyleSheet("QLineEdit { background-color: red; }");
+        return;
+    }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     QString path = SharedData::getInstance()->getValue();
     db.setDatabaseName(path);
@@ -206,6 +210,8 @@ void AuxMainwindow2::addUserForm() {
 
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data inserted successfully!");
+        ui->Aux->setStyleSheet("QLineEdit { background-color: red; }");
+        clearLineEdits();
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to insert data: " + query.lastError().text());
     }
@@ -268,6 +274,10 @@ void AuxMainwindow2::search() {
 
 void AuxMainwindow2::updateUser()
 {
+    if(ui->Aux->text()==""){
+        ui->Aux->setStyleSheet("QLineEdit { background-color: red; }");
+        return;
+    }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     QString path = SharedData::getInstance()->getValue();
     db.setDatabaseName(path);
@@ -292,6 +302,8 @@ void AuxMainwindow2::updateUser()
 
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data updated successfully!");
+        ui->Aux->setStyleSheet("QLineEdit { background-color: white; }");
+        clearLineEdits();
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to update data!");
     }
@@ -312,10 +324,11 @@ void AuxMainwindow2::onCellClicked(int row, int column)
         }
     }
 
-    QTableWidgetItem* item = ui->tableWidget->item(row, column);
+    QTableWidgetItem* item = ui->tableWidget->item(row, 0);
     if (item != nullptr)
     {
         selectedValue = item->text();
+        fillLineEdits();
     }
 
     for (int col = 0; col < ui->tableWidget->columnCount(); ++col)
@@ -359,6 +372,7 @@ void AuxMainwindow2::deleteUser()
 
         dataBase.close();
         addUndoLabel->setDisabled(false);
+        clearLineEdits();
     } else {
         return;
     }
@@ -437,5 +451,89 @@ void AuxMainwindow2::undoFunc()
     addUndoLabel->setDisabled(true);
 }
 
+void AuxMainwindow2::fillLineEdits(){
+    QString path=SharedData::getInstance()->getValue();
+    QSqlDatabase dataBase;
+    dataBase = QSqlDatabase::addDatabase("QSQLITE","DBConnection");
+    dataBase.setDatabaseName(path);
+
+    if(!dataBase.open())
+    {
+        qDebug()<<"dataBase open error";
+        return ;
+    }
+
+
+    QSqlQuery query(dataBase);
+    query.prepare("SELECT * FROM Aux2 WHERE Aux = :userId");
+    query.bindValue(":userId", selectedValue);
+
+
+    if(!query.exec())
+    {
+        qDebug()<<"Query execution Failed";
+        return;
+    }
+
+    if(query.next()){
+        ui->Aux->setText(query.value(0).toString());
+        ui->Auxiliary->setText(query.value(1).toString());
+        ui->AuxiliaryAlias->setText(query.value(2).toString());
+        ui->AuxEnable->setText(query.value(3).toString());
+        ui->DateCreated->setText(query.value(4).toString());
+        ui->CreatedBy->setText(query.value(5).toString());
+        ui->LastModifiedBy->setText(query.value(6).toString());
+    }
+
+
+    dataBase.close();
+    return ;
+}
+void AuxMainwindow2::clearLineEdits(){
+
+    ui->Aux->clear();
+    ui->Auxiliary->clear();
+    ui->AuxiliaryAlias->clear();
+    ui->AuxEnable->clear();
+    ui->DateCreated->clear();
+    ui->CreatedBy->clear();
+    ui->LastModifiedBy->clear();
+}
+void AuxMainwindow2::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton && event->pos().y() > ui->frame_2->height() - 5) {
+        resizing = true;
+        dragStartPosition = event->pos();
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
+
+void AuxMainwindow2::mouseMoveEvent(QMouseEvent *event)
+{
+    if (resizing) {
+        QPoint diff = event->pos() - dragStartPosition;
+        int newHeight = ui->frame_2->height() - diff.y();
+        ui->frame_2->setFixedHeight(newHeight);
+        dragStartPosition = event->pos();
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
+
+void AuxMainwindow2::mouseReleaseEvent(QMouseEvent *event)
+{
+    if (resizing) {
+        resizing = false;
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
 
 

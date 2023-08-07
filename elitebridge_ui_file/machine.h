@@ -14,6 +14,8 @@
 #include <QLineEdit>
 #include <QTableView>
 #include <QHBoxLayout>
+#include <QMouseEvent>
+#include <QEvent>
 
 struct undoStructMachine{
     QString Machine_2;
@@ -47,7 +49,13 @@ private slots:
     void updateUser();
     void userSave();
     void fillUndoStruct();
+    void fillLineEdits();
+    void clearLineEdits();
     void undoFunc();
+
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 
 private:
     QString selectedValue;
@@ -61,6 +69,9 @@ private:
     ClickableLabel* addExitLabel;
     QLineEdit* lineEdit;
     undoStructMachine* undo;
+    bool resizing;
+    QPoint dragStartPosition;
+
     void readDb();
 };
 

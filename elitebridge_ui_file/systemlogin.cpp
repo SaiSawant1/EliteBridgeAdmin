@@ -3,12 +3,14 @@
 #include "mainwindow.h"
 #include "shareddata.h"
 #include <QMessageBox>
+#include <QLineEdit>
 SystemLogin::SystemLogin(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::SystemLogin)
 {
     ui->setupUi(this);
     setWindowTitle("System Login");
+    ui->password->setEchoMode(QLineEdit::Password);
 }
 
 SystemLogin::~SystemLogin()
@@ -53,5 +55,21 @@ void SystemLogin::on_pushButton_clicked()
     dataBase.close();
 
 
+}
+
+
+
+
+void SystemLogin::on_show_clicked()
+{
+    if(!visible){
+        ui->password->setEchoMode(QLineEdit::Normal);
+        ui->show->setText("hide");
+        visible=true;
+    }else{
+        ui->password->setEchoMode(QLineEdit::Password);
+        ui->show->setText("show");
+        visible=false;
+    }
 }
 

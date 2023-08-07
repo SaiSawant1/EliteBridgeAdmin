@@ -20,13 +20,14 @@ public:
     void fillAdmin();
     void readDb();
     void refresh();
+
 private slots:
     void on_add_clicked();
 
     void on_delete_2_clicked();
 
     void on_update_clicked();
-
+    void clearLineEdits();
 private:
     Ui::AdminSetup *ui;
     QString selectedValue;

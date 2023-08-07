@@ -44,7 +44,7 @@
            <item>
             <widget class="QLabel" name="label">
              <property name="text">
-              <string>Machine              </string>
+              <string>Machine                </string>
              </property>
             </widget>
            </item>
@@ -58,7 +58,7 @@
            <item>
             <widget class="QLabel" name="label_2">
              <property name="text">
-              <string>Description         </string>
+              <string>Description           </string>
              </property>
             </widget>
            </item>
@@ -72,7 +72,7 @@
            <item>
             <widget class="QLabel" name="label_3">
              <property name="text">
-              <string>Alias                    </string>
+              <string>Alias                      </string>
              </property>
             </widget>
            </item>
@@ -86,7 +86,7 @@
            <item>
             <widget class="QLabel" name="label_4">
              <property name="text">
-              <string>PurchaseDate    </string>
+              <string>PurchaseDate       </string>
              </property>
             </widget>
            </item>
@@ -100,7 +100,7 @@
            <item>
             <widget class="QLabel" name="label_5">
              <property name="text">
-              <string>MachineGroup   </string>
+              <string>MachineGroup     </string>
              </property>
             </widget>
            </item>
@@ -114,7 +114,7 @@
            <item>
             <widget class="QLabel" name="label_6">
              <property name="text">
-              <string>MachineEnable   </string>
+              <string>MachineEnable    </string>
              </property>
             </widget>
            </item>

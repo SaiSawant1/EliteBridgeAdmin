@@ -191,6 +191,15 @@ void UserGroupMainWindow::readDb(){
 }
 
 void UserGroupMainWindow::addGroup(){
+    if(ui->groupID->text()=="" || ui->name->text()==""){
+        if(ui->groupID->text()==""){
+            ui->groupID->setStyleSheet("QLineEdit { background-color: red; }");
+        }
+        if(ui->name->text()==""){
+            ui->name->setStyleSheet("QLineEdit { background-color: red; }");
+        }
+        return;
+    }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     QString path=SharedData::getInstance()->getValue();
     db.setDatabaseName(path);
@@ -212,14 +221,27 @@ void UserGroupMainWindow::addGroup(){
 
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data inserted successfully!");
+        clearLineEdits();
+        ui->groupID->setStyleSheet("QLineEdit { background-color: white; }");
+        ui->name->setStyleSheet("QLineEdit { background-color: white; }");
 
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
     }
     db.close();
     groupSave();
+
 }
 void UserGroupMainWindow::updateGroup(){
+    if(ui->groupID->text()=="" || ui->name->text()==""){
+        if(ui->groupID->text()==""){
+            ui->groupID->setStyleSheet("QLineEdit { background-color: red; }");
+        }
+        if(ui->name->text()==""){
+            ui->name->setStyleSheet("QLineEdit { background-color: red; }");
+        }
+        return;
+    }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     QString path=SharedData::getInstance()->getValue();
     db.setDatabaseName(path);
@@ -237,11 +259,16 @@ void UserGroupMainWindow::updateGroup(){
 
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data updated successfully!");
+
+        ui->groupID->setStyleSheet("QLineEdit { background-color: white; }");
+        ui->name->setStyleSheet("QLineEdit { background-color: white; }");
+
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to update data!");
     }
     db.close();
     groupSave();
+    clearLineEdits();
 }
 void UserGroupMainWindow:: groupSave(){
     ui->tableWidget->clearContents();
@@ -275,6 +302,7 @@ void UserGroupMainWindow::deleteGroup(){
     db.close();
     groupSave();
     addUndoLabel->setDisabled(false);
+    clearLineEdits();
 
 }
 void UserGroupMainWindow::search(){
@@ -418,4 +446,7 @@ void UserGroupMainWindow::on_actionUpdate_Group_Transaction_triggered()
     updateGroupTransactionWIndow->setSelectedValue(selectedValue);
     updateGroupTransactionWIndow->show();
 }
-
+void UserGroupMainWindow::clearLineEdits(){
+    ui->groupID->clear();
+    ui->name->clear();
+}

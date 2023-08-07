@@ -189,6 +189,10 @@ void JobMainWindow:: readDb()
 
 
 void JobMainWindow::addUserForm(){
+    if(ui->Job_2->text()==""){
+        ui->Job_2->setStyleSheet("QLineEdit { background-color: red; }");
+        return;
+    }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
     QString path=SharedData::getInstance()->getValue();
@@ -218,6 +222,8 @@ void JobMainWindow::addUserForm(){
 
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data inserted successfully!");
+        ui->Job_2->setStyleSheet("QLineEdit { background-color: white; }");
+        clearLineEdits();
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
     }
@@ -371,6 +377,7 @@ void JobMainWindow::deleteUser()
 
         dataBase.close();
         addUndoLabel->setDisabled(false);
+        clearLineEdits();
     }
     else{
         return;
@@ -466,6 +473,10 @@ void JobMainWindow::undoFunc(){
 
 void JobMainWindow::updateUser()
 {
+    if(ui->Job_2->text()==""){
+        ui->Job_2->setStyleSheet("QLineEdit { background-color: red; }");
+        return;
+    }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
      QString path=SharedData::getInstance()->getValue();
     db.setDatabaseName(path);
@@ -496,6 +507,8 @@ void JobMainWindow::updateUser()
 
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data update successfully!");
+        ui->Job_2->setStyleSheet("QLineEdit { background-color: white; }");
+        clearLineEdits();
 
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to update data!");
@@ -537,7 +550,53 @@ void JobMainWindow::fillLineEdits(){
 
     }
 
-
-
     db.close();
+}
+void JobMainWindow::clearLineEdits(){
+    ui->Job_2->clear();
+    ui->Description->clear();
+    ui->Alias->clear();
+    ui->contractDate->clear();
+    ui->JobGroup->clear();
+    ui->JobEnable->clear();
+    ui->DateCreated->clear();
+    ui->CreatedBy->clear();
+    ui->DatelastModified->clear();
+    ui->LastModifiedBy->clear();
+}
+void JobMainWindow::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton && event->pos().y() > ui->frame_2->height() - 5) {
+        resizing = true;
+        dragStartPosition = event->pos();
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
+
+void JobMainWindow::mouseMoveEvent(QMouseEvent *event)
+{
+    if (resizing) {
+        QPoint diff = event->pos() - dragStartPosition;
+        int newHeight = ui->frame_2->height() - diff.y();
+        ui->frame_2->setFixedHeight(newHeight);
+        dragStartPosition = event->pos();
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
+
+void JobMainWindow::mouseReleaseEvent(QMouseEvent *event)
+{
+    if (resizing) {
+        resizing = false;
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
 }

@@ -8,7 +8,7 @@ UpdateUserGroup::UpdateUserGroup(QWidget *parent) :
     ui(new Ui::UpdateUserGroup)
 {
     ui->setupUi(this);
-    setWindowTitle("Update User Group");
+    setWindowTitle("Remove User From Group");
 }
 
 UpdateUserGroup::~UpdateUserGroup()

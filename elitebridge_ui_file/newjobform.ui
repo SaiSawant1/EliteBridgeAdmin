@@ -119,7 +119,7 @@
           <item>
            <widget class="QLabel" name="label_6">
             <property name="text">
-             <string>Contract date</string>
+             <string>Contract date </string>
             </property>
            </widget>
           </item>

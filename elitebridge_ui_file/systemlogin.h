@@ -21,8 +21,12 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+
+    void on_show_clicked();
+
 private:
     Ui::SystemLogin *ui;
+    bool visible=false;
 };
 
 #endif // SYSTEMLOGIN_H

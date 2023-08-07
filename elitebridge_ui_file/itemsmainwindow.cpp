@@ -406,6 +406,7 @@ void ItemsMainWindow::deleteItem()
 
         dataBase.close();
         addUndoLabel->setDisabled(false);
+        clearLineEdits();
     }
     else{
         return;
@@ -723,6 +724,12 @@ void ItemsMainWindow::fillLineEdits(){
 
 void ItemsMainWindow::updateItem(){
     if(ui->lineEditID->text()=="" || ui->lineEditName->text()==""){
+        if(ui->lineEditID->text()==""){
+            ui->lineEditID->setStyleSheet("QLineEdit { background-color: red; }");
+        }
+        if(ui->lineEditName->text()==""){
+            ui->lineEditName->setStyleSheet("QLineEdit { background-color: red; }");
+        }
         return;
     }
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
@@ -755,6 +762,8 @@ void ItemsMainWindow::updateItem(){
     if (query.exec()) {
         QMessageBox::information(nullptr, "Success", "Data Updated ");
         clearLineEdits();
+        ui->lineEditID->setStyleSheet("QLineEdit { background-color: white; }");
+        ui->lineEditName->setStyleSheet("QLineEdit { background-color: white; }");
 
     } else {
         QMessageBox::warning(nullptr, "Error", "Failed to insert data!");
@@ -793,8 +802,8 @@ void ItemsMainWindow::fillGroupCombo(){
     ui->lineEditGroup->addItem("(none)");
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
-    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
+    QString path=SharedData::getInstance()->getValue();
+    db.setDatabaseName(path);
 
     if (!db.open()) {
         qInfo()<<"db connection failed";
@@ -865,8 +874,8 @@ void ItemsMainWindow::fillSubGroupCombo(){
     ui->lineEditSubGroup->addItem("(none)");
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
-    db.setDatabaseName("D:/ElieteBridge-git/build-elitebridge_ui_file-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/database/eliteBridgeDB");
+    QString path=SharedData::getInstance()->getValue();
+    db.setDatabaseName(path);
 
     if (!db.open()) {
         qInfo()<<"db connection failed";

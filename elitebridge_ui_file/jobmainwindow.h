@@ -12,6 +12,7 @@
 #include <QTableView>
 #include "ClickableLabel.h"
 #include <QLineEdit>
+#include <QMouseEvent>
 
 struct undoStructJob{
     QString job_2;
@@ -47,7 +48,12 @@ private slots:
     void userSave();
     void fillUndoStruct();
     void fillLineEdits();
+    void clearLineEdits();
     void undoFunc();
+
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 private:
     Ui::JobMainWindow *ui;
     QString selectedValue;
@@ -61,6 +67,12 @@ private:
     QLineEdit* lineEdit;
     void readDb();
     undoStructJob* undo;
+
+
+    bool resizing;
+    QPoint dragStartPosition;
+
+
 };
 
 #endif // JOBMAINWINDOW_H
